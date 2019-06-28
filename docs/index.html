@@ -8,16 +8,38 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
+<nav>
+  <a href="#/">EN</a>
+  <a href="#/zh-cn/">中文</a>
+</nav>
 <body>
+<vuep template="#example"></vuep>
+
+<script v-pre type="text/x-template" id="example">
+  <template>
+    <div>Hello, {{ name }}!</div>
+  </template>
+</script>
   <div id="app"></div>
   <div data-app id="main">加载中</div>
   <script>
     window.$docsify = {
         el: '#main',
-        name: '',
+        loadNavbar: true,
+        loadSidebar: true,
+        name: 'note',
         repo: ''
     }
   </script>
+  <script>
+      module.exports = {
+          data: function () {
+              return { name: 'Note' }
+          }
+      }
+  </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/vue"></script>
+  <script src="//unpkg.com/docsify"></script>
 </body>
 </html>
