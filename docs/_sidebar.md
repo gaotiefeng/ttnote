@@ -1,3 +1,3 @@
 
-* [composer](/docs/composer)
-* [docker](/docs/docker)
+* [composer](composer/composer.md)
+* [docker](docker/docker.md)
