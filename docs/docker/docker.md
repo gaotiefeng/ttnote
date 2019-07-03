@@ -5,7 +5,7 @@
 
 ```
 curl -sSL https://get.daocloud.io/docker | sh
-````
+```
 - 拖取镜像/载入镜像
 ```
 docker pull limingxinleo/rbac-api
