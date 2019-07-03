@@ -6,22 +6,22 @@
 ```
 curl -sSL https://get.daocloud.io/docker | sh
 ```
-- 拖取镜像/载入镜像
+#####拖取镜像/载入镜像
+
 ```
 docker pull limingxinleo/rbac-api
-
 docker pull limingxinleo/rbac-dashboard
 ```
-- 列出镜像列表
+#####列出镜像列表
 ```
 docker images
 ```
-- 在docker容器中运行项目
+#####在docker容器中运行项目
 ##### [-d 让容器后台运行 -p 将容器内部使用的网络端口映射到我们使用的主机上]
 ```
 docker run -d -p 9601:9501 rbac
 ```
--  进入容器bash
+#####进入容器bash
 ```
 docker exec -it c1dc8b498447 bash
 ```
