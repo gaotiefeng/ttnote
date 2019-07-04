@@ -42,7 +42,3 @@ docker ps
 ```
 docker rm 
 ```
-##### 进入容器bash
-```
-
-```
