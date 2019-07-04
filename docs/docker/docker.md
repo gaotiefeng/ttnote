@@ -1,13 +1,10 @@
-###docker :id=docker
-
+###docker
 - [http://get.daocloud.io/#install-docker](http://get.daocloud.io/#install-docker)
 ##安装docker
-
 ```
 curl -sSL https://get.daocloud.io/docker | sh
 ```
 #####拖取镜像/载入镜像
-
 ```
 docker pull limingxinleo/rbac-api
 docker pull limingxinleo/rbac-dashboard
@@ -44,4 +41,8 @@ docker ps
 ##### 删除容器[-f 强制][ID]
 ```
 docker rm 
+```
+##### 进入容器bash
+```
+
 ```

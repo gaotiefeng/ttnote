@@ -1,15 +1,15 @@
 ##mysql
 
-- 安装包处理
-- 下载mysql包
-  ~~~
+###安装包处理
+##下载mysql包
+  ```
   https://dev.mysql.com/downloads/mysql/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
-  ~~~
- - 解压包
+  ```
+###解压包
   `tar -zxvf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz`
   
   `mv mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz /usr/local/mysql`
-- 添加my.cnf
+###添加my.cnf
   ```
   [mysqld]
    basedir=/usr/local/mysql
@@ -54,7 +54,7 @@
    `./mysqld_safe --user=mysql &`
    ##问题
    `[ERROR] Could not open file '/var/log/mysqld.log' for error logging: Permission denied`
-   ###日志文件设置权限
+   ###日志文件设置权限777
    ### 开机启动服务
    `cp -a /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql`
    `chkconfig --list mysql`
@@ -67,4 +67,5 @@
    ###远程访问权限
    `grant all privileges on *.* to 'root'@'%' identified by 'tf2019';`
    `flush privileges;`
-   `systemctl stop firewalld.service`            #停止firewall
+   `systemctl stop firewalld.service`            
+   ###停止firewall

@@ -1,5 +1,4 @@
 
-* [composer](composer/composer.md)
+* [composer](composer/composer.md) | [swoole](php/extension.md) | [mysql](mysql/mysql.md)
 * [docker](docker/docker.md)
 * [安装gcc](gcc)
-* [mysql](mysql/mysql.md)
