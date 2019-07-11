@@ -1,8 +1,12 @@
-######yum groupinstall "X Window System"
-######yum grouplist
-######yum groupinstall "GNOME Desktop"
-######vmware-hgfsclient
-######sudo vmware-config-tools.pl 
+######安装桌面
+```
+yum groupinstall "X Window System"
+yum grouplist
+yum groupinstall "GNOME Desktop"
+vmware-hgfsclient
+sudo vmware-config-tools.pl 
+```
+####设置静态IP
 ```
 ONBOOT="yes"
 IPADDR="192.168.41.100"
