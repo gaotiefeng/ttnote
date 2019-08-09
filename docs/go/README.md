@@ -7,6 +7,10 @@ wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
 
 export PATH=$PATH:/usr/local/go/bin
+
+export GOPROXY=https://goproxy.io
+export GO111MODULE=on
+
 ```
 - GO语言结构
 #####包声明 -package main
@@ -130,7 +134,7 @@ goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行�
 go func(x,z)
 ```
 -通道（channel）
- 通道（channel）是用来传递数据的一个数据结构。
+ 通道（channel）是用来传递数据的一个数据结构。单向、双向通道（缓冲区）close()
  ```
 ch := make(chan int)
 ```
