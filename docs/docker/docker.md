@@ -4,6 +4,8 @@ docker run -d --restart=always --name rabbitmq -p 4369:4369 -p 5672:5672 -p 1567
 
 ```
 
+######默认密码guest
+
 ###docker
 - [http://get.daocloud.io/#install-docker](http://get.daocloud.io/#install-docker)
 ##安装docker
