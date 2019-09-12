@@ -14,11 +14,11 @@ yum install nginx
 yum install nginx-all-modules
 service nginx start
 ```
-# 开机自启动
+## 开机自启动
 ```angular2
 systemctl enable nginx.service
 ```
-### 安装mariadb
+## 安装mariadb
 ```
 yum --enablerepo=remi install mariadb-server
 rpm -q mariadb mariadb-server
@@ -28,7 +28,7 @@ rpm -q mariadb mariadb-server
 systemctl start|stop mariadb（service mariadb start|stop）
 mysql_secure_installation
 ```
-### 安装php
+## 安装php
 ```
 yum --enablerepo=remi install php72 php72-php-devel php72-php-fpm php72-php-gd php72-php-pdo php72-php-mysql php72-php-xml php72-php-mbstring php72-php-phalcon php72-php-zip php72-php-opcache
 yum --enablerepo=remi install php72-php-redis php72-php-pecl-swoole4  php72-php-process php72-php-pecl-mongodb php72-php-bcmath
@@ -42,7 +42,7 @@ ln -s /opt/remi/php72/root/sbin/php-fpm /usr/local/sbin/php-fpm
 ```
 systemctl start php72-php-fpm.service
 ```
-###### 安裝swoole扩展
+## 安裝swoole扩展
 ```
 git clone https://github.com/swoole/swoole-src.git
 cd swoole-src

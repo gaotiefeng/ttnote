@@ -1,4 +1,4 @@
-### 安装go
+## 安装go
 ```
 route add default gw 10.0.0.1 
 
@@ -21,35 +21,32 @@ export GO111MODULE=on
 ##### 注释 单行注释// 多行注释/* */
 ##### 常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。
 
-- GO语言运算符
-    - 算术运算符
-    ```
+## GO语言运算符
+
+    算术运算符
+    
     +  -  *  /  %  ++  --
-    ```
+    
     - 关系运算符
-    ```
+    
     ==	!= > < <= >= 
-    ```
-    - 逻辑运算符 true/false
-    ```
+    
+    逻辑运算符 true/false
+    
     &&	||  !  
-    ```
+    
     - 位运算符
     
-    ```
     &   |   ^  <<  >>
-    ```
     
-    - 赋值运算符
+    赋值运算符
     
-    ```
     =   +=  -= *= /= %= <<= >>= &= ^=  |=
-    ```
-    - 其他运算符
-    ```
+   
+    其他运算符
         &   *
     ```
-- GO语言条件语句
+## GO语言条件语句
        ```
        var a int  = 30
        if a > 20 {
@@ -73,7 +70,7 @@ export GO111MODULE=on
                statement(s);
        }
        ```
-- Go循环语句
+Go循环语句
    ```
     for ture {
         break
@@ -81,7 +78,8 @@ export GO111MODULE=on
         goto
     }
     ```
-- Go语言数组
+
+## Go语言数组
 array 使用type  struct  长度不可变
 ```
 type Books struct {
@@ -128,7 +126,9 @@ type error interface {
     Error() string
 }
 ```
--GO 并发Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
+## GO并发
+
+Go语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
 goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
 ```
 go func(x,z)

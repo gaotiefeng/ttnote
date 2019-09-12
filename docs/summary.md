@@ -2,4 +2,4 @@
 * [composer](composer/composer.md)
 * [docker](docker/docker.md)
 * [lnmp](nginx/nginx.md)
-* [go](go)
+* [go](go/README.md)

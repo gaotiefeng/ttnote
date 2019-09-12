@@ -1,4 +1,4 @@
-__**安装composer**
+## 安装composer
 
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
