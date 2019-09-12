@@ -1,3 +1,10 @@
+######elasticsearch
+```
+docker run -d --restart always --name elasticsearch -p 9200:9200 -p 9300:9300 \
+-v /mnt/elasticsearch/data:/usr/share/elasticsearch/data -e ES_JAVA_OPTS="-Xms512m -Xmx512m" \
+-e "discovery.type=single-node" elasticsearch:5-alpine
+```
+
 ###安装es  官网下载
 ```
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz
@@ -19,6 +26,12 @@ Exception in thread "main" java.nio.file.AccessDeniedException: /usr/local/elast
 	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
 	at java.base/java.nio.file.Files.newInputStream(Files.java:158)
 	at org.elasticsearch.tools.launchers.JvmOptionsParser.main(JvmOptionsParser.java:61)
+```
+###配置
+```
+vim /etc/elasticsearch/elasticsearch.yml
+http.port: 9200
+network.host: 0.0.0.0
 ```
 ####安装kibana//创建etc/yum.repos.d/kibana.repo
 ```

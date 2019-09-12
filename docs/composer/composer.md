@@ -27,6 +27,7 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 composer config -g repo.packagist composer https://packagist.org
 ```
 
+######composer install
 composer  killed 
 ```
 free -m

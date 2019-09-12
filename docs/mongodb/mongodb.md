@@ -1,4 +1,4 @@
-####安装mongodb
+#### 安装mongodb
 ```
 wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.10.tgz
 ```

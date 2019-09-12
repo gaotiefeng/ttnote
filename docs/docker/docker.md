@@ -1,32 +1,23 @@
-######RabbitMq
-```
-docker run -d --restart=always --name rabbitmq -p 4369:4369 -p 5672:5672 -p 15672:15672 -p 25672:25672 -v /opt/lib/rabbitmq:/var/lib/rabbitmq rabbitmq:management-alpine
-
-```
-
-######默认密码guest
-
-###docker
-- [http://get.daocloud.io/#install-docker](http://get.daocloud.io/#install-docker)
-##安装docker
+##### docker
+- [http://get.daocloud.io/#install-docker](http://get.daocloud.io/#install-docker)安装docker
 ```
 curl -sSL https://get.daocloud.io/docker | sh
 ```
-#####拖取镜像/载入镜像
+##### 拖取镜像/载入镜像
 ```
 docker pull limingxinleo/rbac-api
 docker pull limingxinleo/rbac-dashboard
 ```
-#####列出镜像列表
+##### 列出镜像列表
 ```
 docker images
 ```
-#####在docker容器中运行项目
+##### 在docker容器中运行项目
 ##### [-d 让容器后台运行 -p 将容器内部使用的网络端口映射到我们使用的主机上]
 ```
 docker run -d -p 9601:9501 rbac
 ```
-#####进入容器bash
+#####  进入容器bash
 ```
 docker exec -it c1dc8b498447 bash
 ```
@@ -34,7 +25,7 @@ docker exec -it c1dc8b498447 bash
 ```
 docker restart|stop|start c1dc8b498447
 ```
-#####查看log[ID|名字]
+##### 查看log[ID|名字]
 ```
 docker logs -f c1dc8b498447
 ```
@@ -50,3 +41,6 @@ docker ps
 ```
 docker rm 
 ```
+
+
+
