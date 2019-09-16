@@ -4,8 +4,17 @@ docker run -d --restart always --name elasticsearch -p 9200:9200 -p 9300:9300 \
 -v /mnt/elasticsearch/data:/usr/share/elasticsearch/data -e ES_JAVA_OPTS="-Xms512m -Xmx512m" \
 -e "discovery.type=single-node" elasticsearch:5-alpine
 ```
+### kibana
+```
+docker pull kibana:5.6.11
 
-###安装es  官网下载
+docker images
+
+docker run --name kibana5.6.11 -e ELASTICSEARCH_URL=http://192.168.41.99:9200 -p 5601:5601 -d 388661dcd03e
+
+```
+########http://192.168.1.1:5601
+### 安装es  官网下载
 ```
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz
 ```
