@@ -10,7 +10,7 @@ docker pull kibana:5.6.11
 
 docker images
 
-docker run --name kibana5.6.11 -e ELASTICSEARCH_URL=http://192.168.41.99:9200 -p 5601:5601 -d 388661dcd03e
+docker run --name kibana5.6.11 -e ELASTICSEARCH_URL=http://localhost:9200 -p 5601:5601 -d 388661dcd03e
 
 ```
 ########http://192.168.1.1:5601
