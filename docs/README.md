@@ -1,3 +1,3 @@
 
-* 环境安装 -- [lnmp](nginx/nginx.md) -|- [composer](composer/composer.md) -|- [redis](redis/redis.md) -|- [mysql](mysql/mysql.md) -|- [mongodb](mongodb/mongodb.md) -|- [elasticsearch](elasticsearch/elasticsearch.md) -|- [rabbitMq](rabbitmq/rabbitmq.md)
+* 环境安装 -- [lnmp](nginx/nginx.md) -|- [composer](composer/composer.md) -|- [redis](redis/redis.md) -|- [mysql](mysql/mysql.md) -|- [mongodb](mongodb/mongodb.md) -|- [elasticsearch](elasticsearch/elasticsearch.md) -|- [rabbitMq](rabbitmq/rabbitmq.md) -|- [node](node/node.md)
 * [docker](docker/docker.md)

@@ -60,12 +60,18 @@
    `chkconfig --list mysql`
    `chkconfig --add mysql`
    ### 创建快捷方式
-   `ln -s /usr/local/mysql/bin/mysql /usr/bin`
+   ```
+   ln -s /usr/local/mysql/bin/mysql /usr/bin
+   ```
    ### 修改密码
-   `set password=password("tf2019");`
-   `UPDATE user SET authentication_string=PASSWORD('tf2019') where USER='root';`
+   ```
+   set password=password("tf2019");
+   UPDATE user SET authentication_string=PASSWORD('tf2019') where USER='root';
+   ```
    ### 远程访问权限
-   `grant all privileges on *.* to 'root'@'%' identified by 'tf2019';`
-   `flush privileges;`
-   `systemctl stop firewalld.service`            
-   ### 停止firewall
+   ```
+   grant all privileges on *.* to 'root'@'%' identified by 'tf2019';
+   flush privileges;
+   systemctl stop firewalld.service
+   ```            
+   ###停止firewall
