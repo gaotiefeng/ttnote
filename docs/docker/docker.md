@@ -12,6 +12,10 @@ docker pull limingxinleo/rbac-dashboard
 ```
 docker images
 ```
+##### 生成镜像
+```
+docker build . -t 
+```
 ##### 在docker容器中运行项目
 ##### [-d 让容器后台运行 -p 将容器内部使用的网络端口映射到我们使用的主机上]
 ```
