@@ -1,3 +1,9 @@
+#### 换源Remi
+```
+sudo rpm --import https://rpms.remirepo.net/RPM-GPG-KEY-remi
+sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/remi-release-7.rpm
+```
 ***安装 nginx***
 >替换“centos” 为 “rhel” 或 “OS”, depending on the distribution used, 替换 “OSRELEASE” 为 “6” 或 “7”, for 6.x or 7.x versions, respectively.
 ```
@@ -37,6 +43,16 @@ ln -s /usr/bin/php72 /usr/local/bin/php && \
 ln -s /opt/remi/php72/root/bin/phpize /usr/local/bin/phpize && \
 ln -s /opt/remi/php72/root/bin/php-config /usr/local/bin/php-config && \
 ln -s /opt/remi/php72/root/sbin/php-fpm /usr/local/sbin/php-fpm
+```
+### fpm修改
+```
+vim /etc/opt/remi/php72/php-fpm.d/www.conf
+user = nginx
+group = nginx
+
+vim /etc/opt/remi/php72/php-fpm.conf
+daemonize = yes
+pid = /var/opt/remi/php72/run/php-fpm/php-fpm.pid
 ```
 ### 启动
 ```
