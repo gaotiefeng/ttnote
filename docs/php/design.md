@@ -1,5 +1,5 @@
 #### 单例模式    单例模式解决的是如何在整个项目中创建唯一对象实例的问题
-`
+```
 class Single{
      public $hash;
      static protected $ins=null;
@@ -15,9 +15,10 @@ class Single{
          return self::$ins;
      }
  }
- `
+ ```
 #### 工厂模式    工厂模式解决的是如何不通过new建立实例对象的方法
-`<?php
+```
+<?php
  interface Transport{
      public function go();
 
@@ -56,9 +57,11 @@ class Single{
      }
  }
  $transport=transFactory::factory('car');
- $transport->go();`
+ $transport->go();
+ ```
 #### 注册树模式
-`<?php
+```
+<?php
  //创建单例
  class Single{
      public $hash;
@@ -97,11 +100,14 @@ class Single{
  }
  Register::set('rand',RandFactory::factory());
  $object=Register::get('rand');
- print_r($object);`
+ print_r($object);
+ ```
 
 #### 适配器模式
+
 #### 观察者模式
-`<?php
+```
+<?php
  // 主题接口
  interface Subject{
      public function register(Observer $observer);
@@ -147,5 +153,6 @@ class Single{
  $action->register(new Cat());
  $action->register(new People());
  $action->register(new Dog());
- $action->notify();`
+ $action->notify();
+ ```
 
