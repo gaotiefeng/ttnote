@@ -5,12 +5,12 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
-##全局配置
+## 全局配置
 ```
 mv composer.phar /usr/local/bin/composer
 ```
 
-##Composer 配置国内镜像
+## Composer 配置国内镜像
 
 ```
 #阿里云
@@ -27,7 +27,7 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 composer config -g repo.packagist composer https://packagist.org
 ```
 
-######composer install
+###### composer install
 composer  killed 
 ```
 free -m
