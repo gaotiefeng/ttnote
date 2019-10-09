@@ -9,7 +9,10 @@ php -r "unlink('composer-setup.php');"
 ```
 mv composer.phar /usr/local/bin/composer
 ```
-
+## 查看设置
+```
+composer config -gl
+```
 ## Composer 配置国内镜像
 
 ```
