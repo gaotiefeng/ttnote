@@ -44,3 +44,7 @@ echo “/var/_swap_/swapfile none swap sw 0 0” >> /etc/fstab
 #cat /proc/meminfo
 free -m
 ```
+
+```
+composer self-update
+```
