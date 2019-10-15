@@ -70,7 +70,7 @@
    ```
    ### 远程访问权限
    ```
-   grant all privileges on *.* to 'root'@'%' identified by 'tf2019';
+   grant all privileges on *.* to 'root'@'%' identified by 'tf2019..';
    flush privileges;
    systemctl stop firewalld.service
    ```            
