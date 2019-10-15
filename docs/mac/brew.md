@@ -28,6 +28,18 @@ brew install nginx
 brew services start nginx
 127.0.0.1:8080
 ```
+## 配置php-fpm
+```
+location ~ \.php$ {
+root          html;
+fastcgi_pass  127.0.0.1:9000;
+fastcgi_index  index.php;
+fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+include        fastcgi_params;
+}
+```
+
+###error_log 修改文件
 
 
 ## mysql8
@@ -53,6 +65,20 @@ alter user 'root'@'%' identified with mysql_native_password by 'Gtf2019.';
 ```
 flush privileges;
 ```
+## 安装php
+```
+brew install php
+
+brew services start php
+```
+######php-fpm /usr/local/etc/php/7.3/php-fpm.conf
+###/private/etc/php-fpm.conf  error_log
+
+```
+killall php-fpm
+sudo php-fpm -D
+```
+
 
 ## install redis
 ```
