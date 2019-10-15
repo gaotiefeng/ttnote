@@ -100,8 +100,8 @@ pecl uninstall swoole
 ###### 编译安装swoole
 ```
 wget https://github.com/swoole/swoole-src/archive/v4.4.7.zip
-unzip v4.2.3.zip
-cd swoole-src-4.2.3
+unzip v4.4.7.zip
+cd swoole-src-4.4.7
 phpize
 ./configure --enable-async-redis --enable-mysqlnd --enable-openssl --enable-http2
 make
