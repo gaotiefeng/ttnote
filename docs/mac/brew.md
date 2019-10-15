@@ -1,4 +1,4 @@
-###### brew
+## brew
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -11,25 +11,26 @@ sudo brew update
 brew -v
 brew -h
 ``` 
-###### composer
+## composer
 ```
 brew install composer 
 
 composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 ```
-###### oh my zsh命令行工具
+## oh my zsh命令行工具
 ```
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 ```
-###### install nginx  127.0.0.1:8080
+## install nginx  
 ```
 brew install nginx
 brew services start nginx
+127.0.0.1:8080
 ```
 
 
-###### mysql8
+## mysql8
 
 ```
 brew install mysql
@@ -53,14 +54,14 @@ alter user 'root'@'%' identified with mysql_native_password by 'Gtf2019.';
 flush privileges;
 ```
 
-###### install redis
+## install redis
 ```
 brew install redis
 ```
 
 ###### pecl install redis
 
-###### swoole
+## swoole
 ```
 pecl install swoole
 ```
