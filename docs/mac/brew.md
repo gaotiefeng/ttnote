@@ -52,3 +52,10 @@ alter user 'root'@'%' identified with mysql_native_password by 'Gtf2019.';
 ```
 flush privileges;
 ```
+
+###### install redis
+```
+brew install redis
+```
+
+###### pecl install redis
