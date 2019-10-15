@@ -72,8 +72,6 @@ pecl uninstall swoole
 
 ###### 编译安装swoole
 ```
-yum install libnghttp2-devel openssl-devel hiredis-devel
-
 wget https://github.com/swoole/swoole-src/archive/v4.4.7.zip
 unzip v4.2.3.zip
 cd swoole-src-4.2.3
@@ -81,6 +79,7 @@ phpize
 ./configure --enable-async-redis --enable-mysqlnd --enable-openssl --enable-http2
 make
 ```
+
 ###错误
 ```
 fatal error: 'openssl/ssl.h' file not found
