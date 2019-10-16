@@ -1,9 +1,10 @@
-######elasticsearch
+## elasticsearch
 ```
 docker run -d --restart always --name elasticsearch -p 9200:9200 -p 9300:9300 \
 -v /mnt/elasticsearch/data:/usr/share/elasticsearch/data -e ES_JAVA_OPTS="-Xms512m -Xmx512m" \
 -e "discovery.type=single-node" elasticsearch:5-alpine
 ```
+#####-e "discovery.type=single-node" 如果你正在使用单个节点开发，那就要添加这句话避开引导检查
 ### kibana
 ```
 docker pull kibana:5.6.11
