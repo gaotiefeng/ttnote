@@ -134,7 +134,7 @@ docker run -d --restart always --name elasticsearch --net default-network  -p 92
 ```
 docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5601:5601 -d kibana:5.6.16  
 ```
-####查看镜像
+####查看正在运行的容器
 ```
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
