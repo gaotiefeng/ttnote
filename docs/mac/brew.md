@@ -143,3 +143,7 @@ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
 brew install yarn
 ```
+
+```
+netstat -AaLlnW
+```
