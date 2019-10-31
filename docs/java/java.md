@@ -10,3 +10,22 @@ Java 中主要有如下几种类型的变量
 局部变量
 类变量（静态变量）
 成员变量（非静态变量）
+
+
+```
+public static int n(int n) {
+
+        if(n< 2) {
+            return  n;
+        }
+        int pre1 = 1;
+        int pre2 = 2;
+        int sum = 0;
+        for (int i = 2; i < n; i++){
+            sum =  pre1 + pre2;
+            pre1 = pre2;
+            pre2 = sum;
+         }
+        return sum;
+    }
+```

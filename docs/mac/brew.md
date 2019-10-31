@@ -143,7 +143,11 @@ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
 brew install yarn
 ```
-
+### 安装php-protobuf
+```
+pecl install protobuf
+```
+###查看端口
 ```
 netstat -AaLlnW
 ```
