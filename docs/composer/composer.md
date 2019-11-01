@@ -48,3 +48,6 @@ free -m
 ```
 composer self-update
 ```
+```
+composer dump-autoload
+```
