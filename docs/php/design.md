@@ -1,3 +1,4 @@
+- 单例模式
 #### 单例模式    单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 ```
 class Single{
@@ -16,9 +17,12 @@ class Single{
      }
  }
  ```
-#### 工厂模式    工厂模式解决的是如何不通过new建立实例对象的方法
+- 工厂模式
+###### 工厂模式    工厂模式解决的是如何不通过new建立实例对象的方法
+###### 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
 ```
 <?php
+// todo insterface and abstract
  interface Transport{
      public function go();
 
@@ -59,6 +63,54 @@ class Single{
  $transport=transFactory::factory('car');
  $transport->go();
  ```
+
+
+- 原型设计模式（Prototype Design Pattern) clone
+###### 所谓的原创不过是深思熟虑后的模仿，最具有原创了的作家往往互相抄袭  -----伏尔泰
+###### 为了与他人相似，我们舍弃了真我的四分之三  ----亚瑟·叔本华
+###### 就像你的行为原则会被定为全世界的准则那样行事  ----伊曼努尔·康德
+```
+<?php
+
+abstract class Iproto {
+    protected $name;
+
+    abstract function __clone();
+
+    abstract function setName();
+    abstract function getName();
+}
+// todo 多个创建
+class A extends Iproto {
+    
+    protected $name;
+
+    public function setName($name)
+    {
+        $this->name = $name
+    }
+    
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    function __clone(){}
+}
+
+class Client {
+    private $name;
+    private $a;
+
+    public function __construct()
+    {
+        $this->a = new a();
+        $a = clone $this->a;
+        $a->setName('this is clone');
+        $this->name = $a->geName();
+    }
+}
+```
 ###### 注册树模式
 
 ```
@@ -72,11 +124,3 @@ class Single{
 <?php
  //主题接口
  ```
-
-- 原型设计模式（Prototype Design Pattern)
-###### 所谓的原创不过是深思熟虑后的模仿，最具有原创了的作家往往互相抄袭  -----伏尔泰
-###### 为了与他人相似，我们舍弃了真我的四分之三  ----亚瑟·叔本华
-###### 就像你的行为原则会被定为全世界的准则那样行事  -----伊曼努尔·康德
-```
-
-```
