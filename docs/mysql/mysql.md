@@ -1,5 +1,30 @@
 ## mysql
 
+## mysql 源
+```
+yum -y localinstall http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm   
+```
+##安装
+```
+yum -y install mysql-community-server mysql-community-devel
+```
+
+```
+systemctl start mysqld
+systemctl enable mysqld
+```
+####查看密码
+```
+grep 'temporary password' /var/log/mysqld.log
+```
+
+```
+####密码设置为mysql.
+set global validate_password_policy=0;
+set global validate_password_length=1;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysql.';
+```
+
 ### 安装包处理
 ## 下载mysql包
   ```
