@@ -1,3 +1,8 @@
+## init
+```
+git init 
+git remote add origin  git@address.git
+```
 ## add .gitignore
 ```
 git rm -r --cached .
