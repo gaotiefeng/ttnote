@@ -54,12 +54,22 @@ public final String hello() {
 ######final修饰的class可以阻止被继承；
 ######final修饰的field必须在创建对象时初始化，随后不可修改。
 
-######抽象类（abstract class）
+## 抽象类（abstract class）
 - 这种尽量引用高层类型，避免引用实际子类型的方式，称之为面向抽象编程。
 - 面向抽象编程的本质就是：
 - 上层代码只定义规范（例如：abstract class Person）；
 - 不需要子类就可以实现业务逻辑（正常编译）；
 - 具体的业务逻辑由不同的子类实现，调用者并不关心。
+
+## 接口
+```
+interface Person {
+    void run();
+    String getName();
+}
+```
+######所谓interface，就是比抽象类还要抽象的纯抽象接口，因为它连字段都不能有。因为接口定义的所有方法默认都是public abstract的，所以这两个修饰符不需要写出来（写不写效果都一样）。
+######一个interface可以继承自另一个interface。interface继承自interface使用extends
 
 ###### Java修饰符
 像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：
