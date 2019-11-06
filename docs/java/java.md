@@ -38,6 +38,28 @@ class Student extends Person {
 
 
 - 在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
+覆写Object方法
+因为所有的class最终都继承自Object，而Object定义了几个重要的方法：
+- toString()：把instance输出为String；
+- equals()：判断两个instance是否逻辑相等；
+- hashCode()：计算一个instance的哈希值。
+
+final修饰的方法不能被Override
+```
+public final String hello() {
+        return "Hello, " + name;
+    }
+```
+######final修饰的方法可以阻止被覆写；
+######final修饰的class可以阻止被继承；
+######final修饰的field必须在创建对象时初始化，随后不可修改。
+
+######抽象类（abstract class）
+- 这种尽量引用高层类型，避免引用实际子类型的方式，称之为面向抽象编程。
+- 面向抽象编程的本质就是：
+- 上层代码只定义规范（例如：abstract class Person）；
+- 不需要子类就可以实现业务逻辑（正常编译）；
+- 具体的业务逻辑由不同的子类实现，调用者并不关心。
 
 ###### Java修饰符
 像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：
