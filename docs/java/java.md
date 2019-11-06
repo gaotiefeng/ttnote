@@ -1,6 +1,7 @@
 ###### oop
 #### 构造方法 
 >字符串型的数组 变量 args
+
 ```
 public static void main(String[] args) {
         
@@ -12,6 +13,7 @@ public static void main(String[] args) {
 #### 继承extends
 >超类（super class），父类（parent class），基类（base class）
 >引用父类
+
 ```
 class Person {
     protected String name;
@@ -26,6 +28,7 @@ class Student extends Person {
 >向下转型（downcasting）如果把一个父类类型强制转型为子类类型，就是向下转型（downcasting）。
 >Java提供了instanceof操作符，
 >继承是is关系，组合是has关系。
+
 ```
 class Book {
     protected String name;
