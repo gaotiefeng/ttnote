@@ -121,32 +121,36 @@ class Parson {
 >和char类型不同，字符串类型String是引用类型，我们用双引号"..."表示字符串。一个字符串可以存储0个到任意个字符：
 #### 字符串和编码
 >在Java中，String是一个引用类型，它本身也是一个class。但是，Java编译器对String有特殊处理，即可以直接用"..."来表示一个字符串：
-####
+
 ```
 String a = "HELLO";
 实际上字符串在String内部是通过一个char[]数组表示的，因此，按下面的写法也是可以的：
 
 String s2 = new String(new char[] {'H', 'e', 'l', 'l', 'o', '!'});
 ```
-####
+
 >字符串比较 equals
 - 要忽略大小写比较，使用equalsIgnoreCase()方法。
+
 ```
         String a = "1";
         String b = "1";
         System.out.println(a.equals(b));
 ```
+
 #### 空值
 - 空值null和空字符串""，空字符串是一个有效的字符串对象，它不等于null。
 
 #### 数组 数组是引用类型
 >定义一个数组类型的变量，使用数组类型“类型[]”，例如，int[]。和单个基本类型变量不同，数组变量初始化必须使用new int[5]表示创建一个可容纳5个int元素的数组。
 Java的数组有几个特点：
-######数组所有元素初始化为默认值，整型都是0，浮点型是0.0，布尔型是false；
-######数组一旦创建后，大小就不可改变。
-######要访问数组中的某一个元素，需要使用索引。数组索引从0开始，例如，5个元素的数组，索引范围是0~4。
-######可以修改数组中的某一个元素，使用赋值语句，例如，ns[1] = 79;。
-######可以用数组变量.length获取数组大小：
+数组所有元素初始化为默认值，整型都是0，浮点型是0.0，布尔型是false；
+数组一旦创建后，大小就不可改变。
+要访问数组中的某一个元素，需要使用索引。数组索引从0开始，例如，5个元素的数组，索引范围是0~4。
+可以修改数组中的某一个元素，使用赋值语句，例如，ns[1] = 79;。
+可以用数组变量.length获取数组大小：
+>
+
 ```
 int[] ns = new int[5];
 ns[0] = 1;
@@ -186,6 +190,7 @@ public class Main {
 
 #### 输入
 ***和输出相比，Java的输入就要复杂得多。***
+
 ```
 import java.util.Scanner;
 
@@ -204,6 +209,7 @@ public class Main {
 - if
 >当if语句块只有一行语句时，可以省略花括号{}：
 if语句还可以编写一个else { ... }，当条件判断为false时，将执行else的语
+>
 ```
 if (条件) {
     // 条件满足时执行
@@ -235,9 +241,11 @@ public class Main {
     }
 }
 ```
+
 >判断值类型的变量是否相等，可以使用==
 ######两个String类型，它们的内容是相同的，但是，分别指向不同的对象，用==判断，结果为false
 ***要判断引用类型的变量内容是否相等，必须使用equals()方法***
+
 ```
  str != null
 要避免NullPointerException错误，可以利用短路运算符&&
@@ -245,6 +253,7 @@ if (str != null && str.equals(str1))
 ```
 
 - switch  ***case具有穿透力 要写break***
+
 ```
 public class Main {
     public static void main(String[] args) {
@@ -263,13 +272,17 @@ public class Main {
     }
 }
 ```
+
 - while 
+
 ```
 while (条件表达式) {
        循环语句
    }
 ```
+
 - do while
+
 ```
 do {
     执行循环语句
@@ -287,7 +300,9 @@ public class Main {
     }
 }
 ```
+
 - for 
+
 ```
 public class Main {
     public static void main(String[] args) {
@@ -303,6 +318,7 @@ public class Main {
 ***break会跳出当前循环，也就是整个循环都不会执行了。而continue则是提前结束本次循环，直接继续执行下次循环。***
 
 #### 数组遍历
+
 ```
 public status void main(String[] arr)
 {
@@ -318,12 +334,12 @@ public status void main(String[] arr)
     }
 }
 ```
+
 #### 数组排序
 
 - 冒泡排序
 >冒泡排序的特点是，每一轮循环后，最大的一个数被交换到末尾，因此，下一轮循环就可以“刨除”最后的数，每一轮循环都比上一轮循环的结束位置靠前一位。
 ***每一次把做大的数，放在数组尾部***
-
 
 ```
 @RequestMapping(value = ("/array/sort"), method = RequestMethod.GET)
