@@ -317,6 +317,7 @@ public status void main(String[] arr)
 #### 数组排序
 
 - 冒泡排序
+>冒泡排序的特点是，每一轮循环后，最大的一个数被交换到末尾，因此，下一轮循环就可以“刨除”最后的数，每一轮循环都比上一轮循环的结束位置靠前一位。
 ***每一次把做大的数，放在数组尾部***
 ```
 @RequestMapping(value = ("/array/sort"), method = RequestMethod.GET)
@@ -328,6 +329,7 @@ public status void main(String[] arr)
         System.out.println(ns.length);
         for (int i = 0; i < ns.length - 1; i++) {
             for (int j = 0; j < ns.length - i - 1; j++) {
+                //可以根据 < > 来做升序降序
                 if (ns[j] > ns[j+1]) {
                     // 交换ns[j]和ns[j+1]:
                     int tmp = ns[j];
@@ -341,6 +343,22 @@ public status void main(String[] arr)
         System.out.println(Arrays.toString(ns));
         return  Arrays.toString(ns);
     }
+```
+### Arrays.sort(ns);后，这个整型数组在内存中变为：
+
+#### 二维数组
+
+```
+public class Main {
+    public static void main(String[] args) {
+        int[][] ns = {
+            { 1, 2, 3, 4 },
+            { 5, 6, 7, 8 },
+            { 9, 10, 11, 12 }
+        };
+        System.out.println(ns.length); // 3
+    }
+}
 ```
 ##算法
 ```
