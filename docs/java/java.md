@@ -297,6 +297,24 @@ public class Main {
 
 ```
 ***break会跳出当前循环，也就是整个循环都不会执行了。而continue则是提前结束本次循环，直接继续执行下次循环。***
+
+#### 数组遍历
+```
+public status void main(String[] arr)
+{
+    int n = {1,2,3}
+    for (int i=0; i<= n.length; i++) {
+        int a = n[i];
+        System.out.println(a);
+    }
+    
+    for (int k : n) {
+        // TODO k=数组的值
+        System.out.println(k);
+    }
+}
+```
+#### 数组排序
 ##算法
 ```
 public static int n(int n) {
