@@ -5,4 +5,4 @@
 * [mnmp](mac/brew.md)
 * [go](go/README.md)
 * [php](php/design.md)
-* [php](java/java.md)
+* [java](java/java.md)
