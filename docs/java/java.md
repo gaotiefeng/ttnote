@@ -303,7 +303,7 @@ public class Main {
 public status void main(String[] arr)
 {
     int n = {1,2,3}
-    for (int i=0; i<= n.length; i++) {
+    for (int i=0; i< n.length - 1; i++) {
         int a = n[i];
         System.out.println(a);
     }
@@ -315,6 +315,33 @@ public status void main(String[] arr)
 }
 ```
 #### 数组排序
+
+- 冒泡排序
+***每一次把做大的数，放在数组尾部***
+```
+@RequestMapping(value = ("/array/sort"), method = RequestMethod.GET)
+    public String  sortM()
+    {
+        int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
+        // 排序前:
+        System.out.println(Arrays.toString(ns));
+        System.out.println(ns.length);
+        for (int i = 0; i < ns.length - 1; i++) {
+            for (int j = 0; j < ns.length - i - 1; j++) {
+                if (ns[j] > ns[j+1]) {
+                    // 交换ns[j]和ns[j+1]:
+                    int tmp = ns[j];
+                    ns[j] = ns[j+1];
+                    ns[j+1] = tmp;
+                    System.out.println(Arrays.toString(ns));
+                }
+            }
+        }
+        // 排序后:
+        System.out.println(Arrays.toString(ns));
+        return  Arrays.toString(ns);
+    }
+```
 ##算法
 ```
 public static int n(int n) {
