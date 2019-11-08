@@ -77,7 +77,7 @@ interface Person {
 - 在接口中，可以定义default方法
 
 - 静态字段：static 
-- 静态方法：static 静态方法经常用于工具类
+>静态方法：static 静态方法经常用于工具类
 
 #### 包
 - java定义了一种名字空间，称之为包：package。一个类总是属于某个包，类名（比如Person）只是一个简写，真正的完整类名是包名.类名
