@@ -82,6 +82,7 @@ interface Person {
 #### 包
 - java定义了一种名字空间，称之为包：package。一个类总是属于某个包，类名（比如Person）只是一个简写，真正的完整类名是包名.类名
 - 使用package来解决名字冲突。
+- import 导入包
 ```
 package hello
 
@@ -92,7 +93,7 @@ class Parson {
      }
 }
 ```
-- import 导入包
+
 #### 作用域
 - Java修饰符
 - 像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：
