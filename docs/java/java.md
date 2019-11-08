@@ -115,6 +115,8 @@ class Parson {
 
 #### 模块
 
+#### 字符串类型
+和char类型不同，字符串类型String是引用类型，我们用双引号"..."表示字符串。一个字符串可以存储0个到任意个字符：
 #### 字符串和编码
 在Java中，String是一个引用类型，它本身也是一个class。但是，Java编译器对String有特殊处理，即可以直接用"..."来表示一个字符串：
 ```
@@ -130,6 +132,171 @@ String s2 = new String(new char[] {'H', 'e', 'l', 'l', 'o', '!'});
         String b = "1";
         System.out.println(a.equals(b));
 ```
+#### 空值
+- 空值null和空字符串""，空字符串是一个有效的字符串对象，它不等于null。
+
+#### 数组 数组是引用类型
+>定义一个数组类型的变量，使用数组类型“类型[]”，例如，int[]。和单个基本类型变量不同，数组变量初始化必须使用new int[5]表示创建一个可容纳5个int元素的数组。
+Java的数组有几个特点：
+######数组所有元素初始化为默认值，整型都是0，浮点型是0.0，布尔型是false；
+######数组一旦创建后，大小就不可改变。
+######要访问数组中的某一个元素，需要使用索引。数组索引从0开始，例如，5个元素的数组，索引范围是0~4。
+######可以修改数组中的某一个元素，使用赋值语句，例如，ns[1] = 79;。
+######可以用数组变量.length获取数组大小：
+```
+int[] ns = new int[5];
+ns[0] = 1;
+ns[1] = 1;
+ns[2] = 1;
+ns[3] = 1;
+ns[4] = 1;
+```
+
+######字符串数组
+
+#### 流程控制
+
+- 输出
+>System.out.println()
+>println是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用print()：
+
+>格式化输出使用System.out.printf()，通过使用占位符%?
+
+```
+public class Main {
+    public static void main(String[] args) {
+        double d = 3.1415926;
+        System.out.printf("%.2f\n", d); // 显示两位小数3.14
+        System.out.printf("%.4f\n", d); // 显示4位小数3.1416
+    }
+}
+```
+***
+占位符 | 说明 |
+-|-
+%d	|格式化输出整数|
+%x	|格式化输出十六进制整数|
+%f	|格式化输出浮点数|
+%e	|格式化输出科学计数法表示的浮点数|
+%s	|格式化字符串|
+
+- 输入
+***和输出相比，Java的输入就要复杂得多。***
+```
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // 创建Scanner对象
+        System.out.print("Input your name: "); // 打印提示
+        String name = scanner.nextLine(); // 读取一行输入并获取字符串
+        System.out.print("Input your age: "); // 打印提示
+        int age = scanner.nextInt(); // 读取一行输入并获取整数
+        System.out.printf("Hi, %s, you are %d\n", name, age); // 格式化输出
+    }
+}
+```
+
+- if
+当if语句块只有一行语句时，可以省略花括号{}：
+if语句还可以编写一个else { ... }，当条件判断为false时，将执行else的语
+```
+if (条件) {
+    // 条件满足时执行
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 70;
+        if (n >= 60) {
+            System.out.println("及格了");
+        } else {
+            System.out.println("挂科了");
+        }
+        System.out.println("END");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 70;
+        if (n >= 90) {
+            System.out.println("优秀");
+        } else if (n >= 60) {
+            System.out.println("及格了");
+        } else {
+            System.out.println("挂科了");
+        }
+        System.out.println("END");
+    }
+}
+```
+######判断值类型的变量是否相等，可以使用==
+######两个String类型，它们的内容是相同的，但是，分别指向不同的对象，用==判断，结果为false
+***要判断引用类型的变量内容是否相等，必须使用equals()方法***
+```
+ str != null
+要避免NullPointerException错误，可以利用短路运算符&&
+if (str != null && str.equals(str1))
+```
+
+- switch  ***case具有穿透力 要写break***
+```
+public class Main {
+    public static void main(String[] args) {
+        int option = 1;
+        switch (option) {
+        case 1:
+            System.out.println("Selected 1");
+            break;
+        case 2:
+            System.out.println("Selected 2");
+            break;
+        case 3:
+            System.out.println("Selected 3");
+            break;
+        }
+    }
+}
+```
+- while 
+```
+while (条件表达式) {
+       循环语句
+   }
+```
+- do while
+```
+do {
+    执行循环语句
+} while (条件表达式);
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        int n = 1;
+        do {
+            sum = sum + n;
+            n ++;
+        } while (n <= 100);
+        System.out.println(sum);
+    }
+}
+```
+- for 
+```
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i=1; i<=100; i++) {
+            sum = sum + i;
+        }
+        System.out.println(sum);
+    }
+}
+
+```
+***break会跳出当前循环，也就是整个循环都不会执行了。而continue则是提前结束本次循环，直接继续执行下次循环。***
 ##算法
 ```
 public static int n(int n) {
