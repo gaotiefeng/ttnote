@@ -320,6 +320,8 @@ public status void main(String[] arr)
 - 冒泡排序
 >冒泡排序的特点是，每一轮循环后，最大的一个数被交换到末尾，因此，下一轮循环就可以“刨除”最后的数，每一轮循环都比上一轮循环的结束位置靠前一位。
 ***每一次把做大的数，放在数组尾部***
+
+
 ```
 @RequestMapping(value = ("/array/sort"), method = RequestMethod.GET)
     public String  sortM()
@@ -345,7 +347,8 @@ public status void main(String[] arr)
         return  Arrays.toString(ns);
     }
 ```
-### Arrays.sort(ns);后，这个整型数组在内存中变为：
+
+###### Arrays.sort(ns);后，这个整型数组在内存中变为：
 
 #### 二维数组
 
@@ -361,7 +364,9 @@ public class Main {
     }
 }
 ```
+
 ##算法
+
 ```
 public static int n(int n) {
 
