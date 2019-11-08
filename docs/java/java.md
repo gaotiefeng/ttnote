@@ -121,12 +121,14 @@ class Parson {
 >和char类型不同，字符串类型String是引用类型，我们用双引号"..."表示字符串。一个字符串可以存储0个到任意个字符：
 #### 字符串和编码
 >在Java中，String是一个引用类型，它本身也是一个class。但是，Java编译器对String有特殊处理，即可以直接用"..."来表示一个字符串：
+
 ```
 String a = "HELLO";
 实际上字符串在String内部是通过一个char[]数组表示的，因此，按下面的写法也是可以的：
 
 String s2 = new String(new char[] {'H', 'e', 'l', 'l', 'o', '!'});
 ```
+
 >字符串比较 equals
 - 要忽略大小写比较，使用equalsIgnoreCase()方法。
 ```
