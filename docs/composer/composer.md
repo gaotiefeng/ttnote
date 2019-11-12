@@ -50,4 +50,6 @@ composer self-update
 ```
 ```
 composer dump-autoload
+
+composer config secure-http false
 ```
