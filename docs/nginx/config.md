@@ -1,3 +1,6 @@
+
+>nginx -s reload 重新加载
+>nginx -s stop 
 ## 顶级配置
 
 ```
