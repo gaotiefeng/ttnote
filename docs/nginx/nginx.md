@@ -5,6 +5,7 @@ sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 sudo rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/remi-release-7.rpm
 ```
 ***安装 nginx***
+>nginx 配置 
 >替换“centos” 为 “rhel” 或 “OS”, depending on the distribution used, 替换 “OSRELEASE” 为 “6” 或 “7”, for 6.x or 7.x versions, respectively.
 ```
 $ vim /etc/yum.repos.d/nginx.repo
