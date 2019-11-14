@@ -387,6 +387,24 @@ public class Main {
 ## java核心类
 ***字符串和编码***
 
+- 判断字符串是否为空和判断空白字符串
+>"".isEmpty(); // true，因为字符串长度为0
+ "  ".isEmpty(); // false，因为字符串长度不为0
+ "  \n".isBlank(); // true，因为只包含空白字符
+ " Hello ".isBlank(); // false，因为包含非空白字符
+
+- 替换字符串 .replace
+- 拼接字符串 join()
+
+
+关键字 | 说明 |
+----  |  ----
+equals()	| 字符串比较
+contains()	| 是否包含字符串
+trim()	| 去除首位空白符
+strip()	| 类似中文的空格字符\u3000也会被移除
+
+
 ##算法
 台阶算法
 ```
