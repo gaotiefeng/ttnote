@@ -420,7 +420,46 @@ equals()	| 字符串比较
 contains()	| 是否包含字符串
 trim()	| 去除首位空白符
 strip()	| 类似中文的空格字符\u3000也会被移除
+split() | 分割字符串
 
+## StringBuilder
+>Java编译器对String做了特殊处理，使得我们可以直接用+拼接字符串。
+
+
+
+```
+循环中使用
+StringBuilder sb = new StringBuilder(1024);
+for (int i = 0; i < 1000; i++) {
+    sb.append(',');
+    sb.append(i);
+}
+String s = sb.toString();
+```
+
+- 要高效拼接字符串，应该使用StringBuilder。
+
+>类似用分隔符拼接数组的需求很常见，所以Java标准库还提供了一个StringJoiner来干这个事：
+
+```
+public class Main {
+    public static void main(String[] args) {
+        String[] names = {"Bob", "Alice", "Grace"};
+        var sj = new StringJoiner(", ");
+        for (String name : names) {
+            sj.add(name);
+        }
+        System.out.println(sj.toString());
+    }
+}
+
+```
+
+## 数据类型
+
+- 基本类型：byte，short，int，long，boolean，float，double，char
+- 引用类型：所有class和interface类型
+>引用类型可以赋值为null，表示空，但基本类型不能赋值为null：
 
 ##算法
 台阶算法

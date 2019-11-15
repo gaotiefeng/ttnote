@@ -327,3 +327,32 @@ server {
 }
 
 ```
+
+## symfony
+```
+server {
+    server_name www.domain.tld;
+    root /path/to/public;
+
+    location / {
+        # try to serve file directly, fallback to index.php
+        try_files $uri /index.php$is_args$args;
+    }
+
+
+    location ~ ^/index\.php(/|$) {
+        #fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_pass 127.0.0.1:9001;
+        internal;
+    }
+
+    # return 404 for all other php files not matching the front controller
+    # this prevents access to other php files you don't want to be accessible.
+    location ~ \.php$ {
+        return 404;
+    }
+
+}
+```
