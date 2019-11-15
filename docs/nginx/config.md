@@ -289,3 +289,41 @@ server {
 }
 
 ```
+
+## laravel 
+```
+server {
+    charset utf-8;
+    client_max_body_size 128M;
+
+    listen 80; ## listen for ipv4
+
+    server_name abc.laravel.com;
+    root        /path/to/public;
+    index       index.php;
+
+    #access_log  /path/to/basic/log/access.log;
+    #error_log   /path/to/basic/log/error.log;
+
+    location / {
+    	try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ ^/assets/.*\.php$ {
+        deny all;
+    }
+    
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass 127.0.0.1:9001;
+        #fastcgi_pass unix:/var/run/php5-fpm.sock;
+        try_files $uri =404;
+    }
+
+    location ~* /\. {
+        deny all;
+    }
+}
+
+```
