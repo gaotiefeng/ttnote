@@ -396,6 +396,23 @@ public class Main {
 - 替换字符串 .replace
 - 拼接字符串 join()
 
+> 类型转换
+
+```
+int
+Integer.parseInt("123")
+bool
+Boolean.parseBoolean("true");
+Integer.getInteger("java.version"); // 版本号，getInteger(String)方法，它不是将字符串转换为int，而是把该字符串对应的系统变量转换为Integer：
+String和char[]类型可以互相转换
+char[] c = "hello".toCharArray()
+String s = new String(c) //如果修改了char[]数组，String并不会改变： new String 是复制 char[] 数组
+```
+
+- 字符编码
+    ASCII GB2312 Unicode UTF-8 GBK
+    
+- 早期JDK版本的String总是以char[]存储   较新的JDK版本的String则以byte[]存储
 
 关键字 | 说明 |
 ----  |  ----
