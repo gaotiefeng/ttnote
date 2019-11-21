@@ -4,7 +4,7 @@
 ```
 yum -y localinstall http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm   
 ```
-##安装
+## 安装
 ```
 yum -y install mysql-community-server mysql-community-devel
 ```
@@ -13,7 +13,7 @@ yum -y install mysql-community-server mysql-community-devel
 systemctl start mysqld
 systemctl enable mysqld
 ```
-####查看密码
+#### 查看密码
 ```
 grep 'temporary password' /var/log/mysqld.log
 ```
@@ -91,12 +91,25 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysql.';
    ### 修改密码
    ```
    set password=password("tf2019");
-   UPDATE user SET authentication_string=PASSWORD('tf2019') where USER='root';
+   UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
    ```
    ### 远程访问权限
    ```
-   grant all privileges on *.* to 'root'@'%' identified by 'tf2019..';
+   grant all privileges on *.* to 'root'@'%' identified by 'qingchen2019';
    flush privileges;
    systemctl stop firewalld.service
    ```            
    ###停止firewall
+   
+   
+   ## 忘记密码
+    - 修改my.conf
+     ```
+    [mysqld]
+
+    skip-grant-tables
+    ```
+    - 修改密码
+    ```
+    update mysql.user set authentication_string = password('qingchen2019') where user='root';
+    ```
