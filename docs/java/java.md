@@ -487,6 +487,25 @@ public class Main {
 - 引用类型：所有class和interface类型
 >引用类型可以赋值为null，表示空，但基本类型不能赋值为null：
 
+
+- enum来定义枚举类
+
+<div style="color: gold">定义的enum类型总是继承自java.lang.Enum，且无法被继承；
+只能定义出enum的实例，而无法通过new操作符创建enum的实例；
+定义的每个实例都是引用类型的唯一实例；
+可以将enum类型用于switch语句。
+enum定义的枚举类是一种引用类型
+ordinal()
+返回定义的常量的顺序，从0开始计数
+</div>
+
+
+
+
+
+
+
+
 ##算法
 台阶算法
 ```
