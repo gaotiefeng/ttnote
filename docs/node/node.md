@@ -8,7 +8,7 @@ https://nodejs.org/en/download/
 ```
 yum install -y wget
 
-wget https://nodejs.org/dist/v12.13.1/node-v10.15.1-linux-x64.tar.xz 
+wget https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz 
 ```
 
 ### 解压
