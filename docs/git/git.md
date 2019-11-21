@@ -1,3 +1,34 @@
+# 安装git
+
+## 编译安装git
+- [https://github.com/git/git/releases](https://github.com/git/git/releases)
+
+
+```
+wget https://github.com/git/git/archive/v2.24.0.tar.gz
+
+yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+
+
+tar -zxvf v2.24.0.tar.gz
+
+cd git-2.24.0.tar.gz
+
+#编译
+make prefix=/usr/local/git all
+#安装
+make prefix=/usr/local/git install
+#环境变量
+vim /etc/profile
+# 末尾添加
+export PATH=/usr/local/git/bin
+export GIT=/usr/local/git/bin
+export PATH=$PATH:${GITWW}
+#生效
+source /etc/profile
+```
+
+
 ## init
 ```
 git init 
