@@ -185,6 +185,21 @@ server {
 }
 
 ```
+## ssl
+
+```
+    listen 443;
+    # 绑定的域名，填写您的域名
+    server_name www.tfuu.cn;
+    ssl on;
+    ssl_certificate /cert/www.tfuu.cn.pem;
+    ssl_certificate_key /cert/www.tfuu.cn.key;
+    ssl_session_timeout 5m;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+
+```
 
 ## yii
 ```
