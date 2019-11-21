@@ -22,7 +22,7 @@ yum install nginx-all-modules
 service nginx start
 ```
 ## 开机自启动
-```angular2
+```
 systemctl enable nginx.service
 ```
 ## 安装mariadb
