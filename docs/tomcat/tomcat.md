@@ -20,6 +20,8 @@ vim /etc/rc.d/init.d/tomcat
 ```
 
 - sh
+
+
 ```
 #!/bin/bash
 # /etc/rc.d/init.d/tomcat
@@ -68,6 +70,7 @@ Linux
 >chmod 755 /etc/rc.d/init.d/tomcat
 
 - 配置文件 echo $JAVA_HOME
+
 ```
 vim /software/apache-tomcat-8.5.47/bin/catalina.sh
 export JAVA_HOME = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64     
