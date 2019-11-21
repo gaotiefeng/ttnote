@@ -1,6 +1,6 @@
 ## 安装java
 
-- centos
+##centos
 
 ```
 yum search java|grep jdk
