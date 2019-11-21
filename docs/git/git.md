@@ -21,7 +21,7 @@ make prefix=/usr/local/git install
 #环境变量
 vim /etc/profile
 # 末尾添加
-export PATH=/usr/local/git/bin
+export PATH=$PATH:/usr/local/git/bin
 export GIT=/usr/local/git/bin
 export PATH=$PATH:${GITWW}
 #生效
