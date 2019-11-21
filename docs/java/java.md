@@ -1,6 +1,6 @@
 ## 安装java
 
-##centos
+######centos
 
 ```
 yum search java|grep jdk
@@ -22,6 +22,7 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH
 
 java -version
 ```
+
 
 ## oop
 ## 构造方法 
