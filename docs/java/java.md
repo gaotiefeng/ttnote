@@ -1,3 +1,26 @@
+## 安装java
+- centos
+```
+yum search java|grep jdk
+
+yum install java-1.8.0-openjdk
+
+#安装目录
+cd /usr/lib/jvm
+
+#环境变量
+vim /etc/porfile
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
+JRE_HOME=$JAVA_HOME/jre
+CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
+PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+export JAVA_HOME JRE_HOME CLASS_PATH PATH
+
+#source /etc/porfile
+
+java -version
+```
+
 ## oop
 ## 构造方法 
 >字符串型的数组 变量 args
