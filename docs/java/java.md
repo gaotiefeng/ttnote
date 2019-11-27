@@ -411,6 +411,15 @@ public class Main {
 ```
 
 ## java核心类
+<p style="color: aqua">String类</p>
+<p style="color: aqua">StringBuilder中新增字符时，不会创建新的临时对象</p>
+<p style="color: aqua">StringJoiner 类似用分隔符拼接数组的需求很常见</p>
+<p style="color: aqua">JavaBean主要用来传递数据</p>
+<p style="color: aqua">使用enum来定义枚举类</p>
+<p style="color: aqua">BigInteger由CPU原生提供的整型最大范围是64位long型整数。使用long型整数可以直接通过CPU指令进行计算，速度非常快。</p>
+<p style="color: aqua">BigDecimal可以表示一个任意大小且精度完全准确的浮点数</p>
+<p style="color: aqua">Math类就是用来进行数学计算的；Random用来创建伪随机数；SecureRandom就是用来创建安全的随机数的</p>
+
 ***字符串和编码***
 
 - 判断字符串是否为空和判断空白字符串
@@ -488,7 +497,7 @@ public class Main {
 >引用类型可以赋值为null，表示空，但基本类型不能赋值为null：
 
 
-- enum来定义枚举类
+- <p style="color: cornflowerblue">enum来定义枚举类</p>
 
 <div style="color: gold">定义的enum类型总是继承自java.lang.Enum，且无法被继承；
 只能定义出enum的实例，而无法通过new操作符创建enum的实例；
