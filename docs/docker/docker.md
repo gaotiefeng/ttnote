@@ -3,20 +3,25 @@
 ```
 curl -sSL https://get.daocloud.io/docker | sh
 ```
-> 拖取镜像/载入镜像
+
+ <div style="color: chocolate">拖取镜像/载入镜像</div>
+ 
 ```
 docker pull limingxinleo/rbac-api
 docker pull limingxinleo/rbac-dashboard
 ```
-> 列出镜像列表
+ <div style="color: chocolate"> 列出镜像列表</div>
+ 
 ```
 docker images
 ```
-> 生成镜像
+
+ <div style="color: chocolate">生成镜像</div>
+
 ```
 docker build . -t 
 ```
-> 在docker容器中运行项目
+ 在docker容器中运行项目
 ##### [-d 让容器后台运行 -p 将容器内部使用的网络端口映射到我们使用的主机上]
 #####-v 宿主机目录：容器目录  --privileged=true  权限问题  目录777
 ```
@@ -34,11 +39,11 @@ docker restart|stop|start c1dc8b498447
 ```
 docker logs -f c1dc8b498447
 ```
-> 查看容器进程[ID]
+#### 查看容器进程[ID]
 ```
 docker top c1dc8b498447
 ```
-> 查看容器[-a 查看所有 -l最后创建的容器]
+#### 查看容器[-a 查看所有 -l最后创建的容器]
 ```
 docker ps 
 ```
@@ -47,7 +52,7 @@ docker ps
 docker rm 
 ```
 
-#### docker 配置同一网
+## docker 配置同一网
 ```
 docker network create \
 --subnet 10.0.0.0/24 \
@@ -65,7 +70,7 @@ docker run -d --restart always --name elasticsearch --net default-network  -p 92
 ```
 docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5601:5601 -d kibana:5.6.16  
 ```
-####查看正在运行的容器
+## 查看正在运行的容器
 ```
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
