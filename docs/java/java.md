@@ -68,8 +68,8 @@ class Student extends Person {
 
 
 - 在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
-覆写Object方法
-因为所有的class最终都继承自Object，而Object定义了几个重要的方法：
+<div style="color: lightsalmon">覆写Object方法
+因为所有的class最终都继承自Object，而Object定义了几个重要的方法：</div>
 - toString()：把instance输出为String；
 - equals()：判断两个instance是否逻辑相等；
 - hashCode()：计算一个instance的哈希值。
@@ -411,14 +411,14 @@ public class Main {
 ```
 
 ## java核心类
-<p style="color: aqua">String类</p>
-<p style="color: aqua">StringBuilder中新增字符时，不会创建新的临时对象</p>
-<p style="color: aqua">StringJoiner 类似用分隔符拼接数组的需求很常见</p>
-<p style="color: aqua">JavaBean主要用来传递数据</p>
-<p style="color: aqua">使用enum来定义枚举类</p>
-<p style="color: aqua">BigInteger由CPU原生提供的整型最大范围是64位long型整数。使用long型整数可以直接通过CPU指令进行计算，速度非常快。</p>
-<p style="color: aqua">BigDecimal可以表示一个任意大小且精度完全准确的浮点数</p>
-<p style="color: aqua">Math类就是用来进行数学计算的；Random用来创建伪随机数；SecureRandom就是用来创建安全的随机数的</p>
+<p style="color: #FF8A96">String类</p>
+<p style="color: #FF8A96">StringBuilder中新增字符时，不会创建新的临时对象</p>
+<p style="color: #FF8A96">StringJoiner 类似用分隔符拼接数组的需求很常见</p>
+<p style="color: #FF8A96">JavaBean主要用来传递数据</p>
+<p style="color: #FF8A96">使用enum来定义枚举类</p>
+<p style="color: #FF8A96">BigInteger由CPU原生提供的整型最大范围是64位long型整数。使用long型整数可以直接通过CPU指令进行计算，速度非常快。</p>
+<p style="color: #FF8A96">BigDecimal可以表示一个任意大小且精度完全准确的浮点数</p>
+<p style="color: #FF8A96">Math类就是用来进行数学计算的；Random用来创建伪随机数；SecureRandom就是用来创建安全的随机数的</p>
 
 ***字符串和编码***
 
@@ -512,8 +512,9 @@ ordinal()
 - 工具Math类就是用来进行数学计算的，它提供了大量的静态方法来便于我们实现数学计算
 
 
-##异常处理
-
+## 异常处理
+<div style="color: lightsalmon">一个健壮的程序必须处理各种各样的错误。</div>
+- Java内置了一套异常处理机制，总是使用异常来表示错误。
 
 ##反射
 

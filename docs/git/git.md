@@ -52,6 +52,12 @@ $ git config --global user.email "1096392101@qq.com"
 ssh-keygen -t rsa -C "1096392101@qq.com"
 ```
 
+## 查看公钥
+```
+cd ~/.ssh
+cat id_rsa.pub 
+```
+
 ## git stash
 ```
 git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
