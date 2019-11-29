@@ -516,6 +516,39 @@ ordinal()
 <div style="color: lightsalmon">一个健壮的程序必须处理各种各样的错误。</div>
 - Java内置了一套异常处理机制，总是使用异常来表示错误。
 
+<div style="color: lightsalmon">捕获异常</div>
+存在多个catch的时候，catch的顺序非常重要：子类必须写在前面
+
+```
+try {
+
+}catch(IOException e) {
+
+}catch(NumberFormatException e) {
+
+}
+```
+
+<div style="color: lightsalmon">finally语句块保证有无错误都会执行。</div>
+
+```
+public static void main(String[] args) {
+    try {
+        process1();
+        process2();
+        process3();
+    } catch (UnsupportedEncodingException e) {
+        System.out.println("Bad encoding");
+    } catch (IOException e) {
+        System.out.println("IO error");
+    } finally {
+        System.out.println("END");
+    }
+}
+```
+
+
+
 ##反射
 
 ##注解
