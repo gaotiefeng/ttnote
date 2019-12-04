@@ -547,11 +547,18 @@ public static void main(String[] args) {
 }
 ```
 
+-assert 断言只能用于开发和测试 AssertionError
+
+-日志包java.util.logging
+-Commons Logging的特色是，它可以挂接不同的日志系统，并通过配置文件指定挂接的日志系统。默认情况下，Commons Loggin自动搜索并使用Log4j（Log4j是另一个流行的日志系统），如果没有找到Log4j，再使用JDK Logging。
+-Log4j
+-使用SLF4J和Logback
 
 
 ##反射
 
-##注解
+
+##注解（Annotation）
 
 
 ##泛型
@@ -567,6 +574,38 @@ public static void main(String[] args) {
 
 ##多线程
 
+-创建线程
+
+```
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start(); // 启动新线程
+    }
+}
+
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("start new thread!");
+    }
+}
+```
+
+-java8
+```
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            System.out.println("start new thread!");
+        });
+        t.start(); // 启动新线程
+    }
+}
+
+```
+
+##maven
 
 ##算法
 台阶算法
