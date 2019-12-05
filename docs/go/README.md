@@ -8,6 +8,7 @@ tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
 
 export PATH=$PATH:/usr/local/go/bin
 
+##https://mirrors.aliyun.com/goproxy/
 export GOPROXY=https://goproxy.io
 export GO111MODULE=on
 

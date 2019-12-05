@@ -53,3 +53,8 @@ composer dump-autoload
 
 composer config secure-http false
 ```
+
+####### kill php
+```
+ps -ef|grep php|awk -F ' ' '{print $2}'|xargs kill -9
+```
