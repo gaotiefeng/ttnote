@@ -107,6 +107,13 @@ phpize
 make
 ```
 
+###php-config
+```
+whereis php #安装路径
+which php   #运行
+--with-php-config=/usr/bin/php
+```
+
 ###错误
 ```
 fatal error: 'openssl/ssl.h' file not found
