@@ -72,7 +72,7 @@ export GO111MODULE=on
        }
        ```
        
-<div style="color: aquamarine">Go循环语句</div>
+<div style="color: #F136FF">Go循环语句</div>
 
 ```
 for ture {
@@ -82,10 +82,10 @@ for ture {
 }
 ```
 
-<div style="color:aquamarine">变量</div>
-<div style="color:aquamarine">全局变量（函数外变量）</div>
-<div style="color:aquamarine">局部变量（函数内变量）</div>
-<div style="color:aquamarine">形式参数（函数定义中的变量）形式参数会作为函数的局部变量来使用</div>
+<div style="color:#F136FF">变量</div>
+<div style="color:#F136FF">全局变量（函数外变量）</div>
+<div style="color:#F136FF">局部变量（函数内变量）</div>
+<div style="color:#F136FF">形式参数（函数定义中的变量）形式参数会作为函数的局部变量来使用</div>
 
 ```
 var str string;
