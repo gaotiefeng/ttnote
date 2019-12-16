@@ -609,7 +609,7 @@ public class Main {
 
 ##算法
 台阶算法
-```
+```java
 public static int n(int n) {
 
         if(n< 2) {
