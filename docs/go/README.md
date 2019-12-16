@@ -126,14 +126,19 @@ type Books struct {
     book_id int
 }
 ```
+
+## slice 切片
 slice  切片[] 空切片nil   数组的抽象长度可变 append追加
 ```
 make([]type, len)
 ```
+
+## map 集合
 map 集合  无序的key->value 集合
 ```
 map_val = := make(map[string]int)
 ```
+
 range go语言范围   数组返回元素对应的索引和索引值   集合返回key-value 中的key
 ```
 for i, num := range nums {
@@ -142,7 +147,11 @@ for i, num := range nums {
         }
     }
 ```
+
 - GO语言 递归，就是在运行的过程中调用自己。
+根据条件退出
+
+
 - GO语言 类型转换用于将一种数据类型的变量转换为另外一种类型的变量
 ```
 type_name(expression)
