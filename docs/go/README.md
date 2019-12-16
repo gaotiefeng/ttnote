@@ -95,6 +95,26 @@ func Str(a,b) {
 }
 ```
 
+## 常量
+
+```
+const identifier [type] = value
+```
+
+> 显示类型定义 隐式类型定义
+
+```
+显式类型定义： const b string = "abc"
+隐式类型定义： const b = "abc"
+```
+
+- iota，特殊常量
+
+<div style="color:#3C562E;background: #FF93EB">iota，特殊常量，可以认为是一个可以被编译器修改的常量。
+      在每一个const关键字出现时，被重置为0，然后再下一个const出现之前，每出现一次iota，其所代表的数字会自动增加1。
+      iota 可以被用作枚举值：
+</div>
+
 
 ## Go语言数组
 array 使用type  struct  长度不可变
