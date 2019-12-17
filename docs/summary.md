@@ -7,3 +7,4 @@
 * [go](go/README.md)
 * [php](php/design.md)
 * [java](java/java.md)
+* [java-maven](java/summary.md)

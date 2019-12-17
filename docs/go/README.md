@@ -133,6 +133,8 @@ slice  切片[] 空切片nil   数组的抽象长度可变 append追加
 make([]type, len)
 ```
 
+***new 只分配内存，而 make 只能用于 slice、map 和 channel 的初始化***
+
 ## map 集合
 map 集合  无序的key->value 集合
 ```
