@@ -1,5 +1,5 @@
 ## 安装go
-```
+```linux
 route add default gw 10.0.0.1 
 
 wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
@@ -48,7 +48,7 @@ export GO111MODULE=on
         &   *
     ```
 ## GO语言条件语句
-       ```
+       ```go
        var a int  = 30
        if a > 20 {
             printnl(a);
@@ -74,7 +74,7 @@ export GO111MODULE=on
        
 <div style="color: #F136FF">Go循环语句</div>
 
-```
+```go
 for ture {
     break
     continue
@@ -87,7 +87,7 @@ for ture {
 <div style="color:#F136FF">局部变量（函数内变量）</div>
 <div style="color:#F136FF">形式参数（函数定义中的变量）形式参数会作为函数的局部变量来使用</div>
 
-```
+```go
 var str string;
 
 func Str(a,b) {
@@ -118,7 +118,7 @@ const identifier [type] = value
 
 ## Go语言数组
 array 使用type  struct  长度不可变
-```
+```go
 type Books struct {
     title string
     author string
@@ -129,7 +129,7 @@ type Books struct {
 
 ## slice 切片
 slice  切片[] 空切片nil   数组的抽象长度可变 append追加
-```
+```go
 make([]type, len)
 ```
 
@@ -155,7 +155,7 @@ for i, num := range nums {
 
 
 - GO语言 类型转换用于将一种数据类型的变量转换为另外一种类型的变量
-```
+```go
 type_name(expression)
    var sum int = 17
    var count int = 5
@@ -167,12 +167,12 @@ type_name(expression)
 type_name 为类型，expression 为表达式。
 
 -Go 语言接口
-```
+```go
 type jiekou interface{
 }
 ```
 -GO 错误处理error类型是一个接口类型
-```
+```go
 type error interface {
     Error() string
 }
@@ -181,12 +181,12 @@ type error interface {
 
 Go语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
 goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
-```
+```go
 go func(x,z)
 ```
 -通道（channel）
  通道（channel）是用来传递数据的一个数据结构。单向、双向通道（缓冲区）close()
- ```
+ ```go
 ch := make(chan int)
 ```
 
