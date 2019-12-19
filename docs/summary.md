@@ -1,8 +1,8 @@
 
 * [lnmp](lnmp/lnmp.md)
 * [mnmp](mac/brew.md)
-* [composer](composer/composer.md)
-* [docker](docker/docker.md)
+* [composer](tool/composer/composer.md)
+* [docker](tool/docker/docker.md)
 * [nginx](nginx/config.md)
 * [database](database/summary.md)
 * [tool](tool/summary.md)
