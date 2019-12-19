@@ -555,24 +555,24 @@ public static void main(String[] args) {
 -使用SLF4J和Logback
 
 
-##反射
+## 反射
 
 
-##注解（Annotation）
+## 注解（Annotation）
 
 
-##泛型
+## 泛型
 
 
 
-##集合
+## 集合
 
-##IO
+## IO
 
-##加密安全
+## 加密安全
 
 
-##多线程
+## 多线程
 
 -创建线程
 
@@ -593,6 +593,7 @@ class MyRunnable implements Runnable {
 ```
 
 -java8
+
 ```
 public class Main {
     public static void main(String[] args) {
@@ -605,24 +606,3 @@ public class Main {
 
 ```
 
-##maven
-
-##算法
-台阶算法
-```java
-public static int n(int n) {
-
-        if(n< 2) {
-            return  n;
-        }
-        int pre1 = 1;
-        int pre2 = 2;
-        int sum = 0;
-        for (int i = 2; i < n; i++){
-            sum =  pre1 + pre2;
-            pre1 = pre2;
-            pre2 = sum;
-         }
-        return sum;
-    }
-```
