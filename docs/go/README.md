@@ -137,12 +137,12 @@ make([]type, len)
 
 ## map 集合
 map 集合  无序的key->value 集合
-```
+```go
 map_val = := make(map[string]int)
 ```
 
 range go语言范围   数组返回元素对应的索引和索引值   集合返回key-value 中的key
-```
+```go
 for i, num := range nums {
         if num == 3 {
             fmt.Println("index:", i)
