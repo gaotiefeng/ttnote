@@ -1,4 +1,4 @@
-###安装redis
+## 安装redis
 ```bash
 yum --enablerepo=remi install redis
 vim /etc/redis.conf
