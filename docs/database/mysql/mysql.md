@@ -3,7 +3,20 @@
 ##mysql 源
 
 - 官方源[https://dev.mysql.com/downloads/repo/yum/](https://dev.mysql.com/downloads/repo/yum/)
- 
+
+- 官方源[http://repo.mysql.com/yum/](http://repo.mysql.com/yum/)
+
+- 系统是centos7，选择el7版本
+
+- .repo
+```file
+[mysql56-community]
+name=MySQL 8.0 Community Server
+baseurl=http://repo.mysql.com/yum/mysql-8.0-community/el/8/$basearch/
+enabled=1    
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+```
 
 ```bash
 yum -y localinstall http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm   
