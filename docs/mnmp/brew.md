@@ -39,7 +39,7 @@ include        fastcgi_params;
 }
 ```
 
-###error_log 修改文件
+`error_log 修改文件`
 
 
 ## mysql8
@@ -71,8 +71,8 @@ brew install php
 
 brew services start php
 ```
-######php-fpm /usr/local/etc/php/7.3/php-fpm.conf
-###/private/etc/php-fpm.conf  error_log
+###### php-fpm /usr/local/etc/php/7.3/php-fpm.conf
+###### /private/etc/php-fpm.conf  error_log
 
 ```
 killall php-fpm
@@ -92,7 +92,7 @@ brew install redis
 pecl install swoole
 ```
 ###### 卸载扩展
-######删除php.ini 中的 extension=swoole.so  
+###### 删除php.ini 中的 extension=swoole.so  
 ```
 pecl uninstall swoole
 ```
@@ -107,14 +107,14 @@ phpize
 make
 ```
 
-###php-config
+###### php-config
 ```
 whereis php #安装路径
 which php   #运行
 --with-php-config=/usr/bin/php
 ```
 
-###错误
+###### 错误
 ```
 fatal error: 'openssl/ssl.h' file not found
 
@@ -123,7 +123,7 @@ fatal error: 'openssl/ssl.h' file not found
 ```
 
 
-#### docker 配置同一网
+## docker 配置同一网
 ```
 docker network create \
 --subnet 10.0.0.0/24 \
@@ -141,20 +141,20 @@ docker run -d --restart always --name elasticsearch --net default-network  -p 92
 ```
 docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5601:5601 -d kibana:5.6.16  
 ```
-####查看正在运行的容器
+###### 查看正在运行的容器
 ```
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
 
-### 安装yarn
+####### 安装yarn
 ```
 brew install yarn
 ```
-### 安装php-protobuf
+####### 安装php-protobuf
 ```
 pecl install protobuf
 ```
-###查看端口
+## 查看端口
 ```
 netstat -AaLlnW
 ```

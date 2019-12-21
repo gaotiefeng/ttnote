@@ -1,6 +1,6 @@
 
 * [lnmp](lnmp/lnmp.md)
-* [mnmp](mac/brew.md)
+* [mnmp](mnmp/brew.md)
 * [composer](tool/composer/composer.md)
 * [docker](tool/docker/docker.md)
 * [nginx](nginx/config.md)
