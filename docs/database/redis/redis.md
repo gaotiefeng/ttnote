@@ -1,5 +1,5 @@
 ###安装redis
-```
+```bash
 yum --enablerepo=remi install redis
 vim /etc/redis.conf
 requirepass yourpassword
@@ -7,7 +7,7 @@ service redis start
 ```
 
 ## 集合
-```2
+```
 $redis = new Redis();
 $redis->del($key) //删除
 $redis->exists($key) // key 存在返回 1 ，否则返回 0 。
