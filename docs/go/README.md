@@ -24,53 +24,56 @@ export GO111MODULE=on
 
 ## GO语言运算符
 
-    算术运算符
-    
-    +  -  *  /  %  ++  --
-    
-    - 关系运算符
-    
-    ==	!= > < <= >= 
-    
-    逻辑运算符 true/false
-    
-    &&	||  !  
-    
-    - 位运算符
-    
-    &   |   ^  <<  >>
-    
-    赋值运算符
-    
-    =   +=  -= *= /= %= <<= >>= &= ^=  |=
+```
+算术运算符
+
++  -  *  /  %  ++  --
+
+- 关系运算符
+
+==	!= > < <= >= 
+
+逻辑运算符 true/false
+
+&&	||  !  
+
+- 位运算符
+
+&   |   ^  <<  >>
+
+赋值运算符
+
+=   +=  -= *= /= %= <<= >>= &= ^=  |=
    
-    其他运算符
-        &   *
-    ```
+其他运算符
+    &   *
+```
+
 ## GO语言条件语句
-       ```go
-       var a int  = 30
-       if a > 20 {
-            printnl(a);
-       }
-       if ...else 
-       if 嵌套 if
-       switch var {
-                case 1:
-                    ....
-                case 2:
-                    ....
-       }
-       select {
-            case communication clause  :
-               statement(s);      
-            case communication clause  :
-               statement(s); 
-            /* 你可以定义任意数量的 case */
-            default : /* 可选 */
-               statement(s);
-       }
-       ```
+
+```go
+var a int  = 30
+if a > 20 {
+    printnl(a);
+}
+if ...else 
+if 嵌套 if
+switch var {
+        case 1:
+            ....
+        case 2:
+            ....
+}
+select {
+    case communication clause  :
+       statement(s);      
+    case communication clause  :
+       statement(s); 
+    /* 你可以定义任意数量的 case */
+    default : /* 可选 */
+       statement(s);
+}
+```
        
 <div style="color: #F136FF">Go循环语句</div>
 
@@ -97,13 +100,13 @@ func Str(a,b) {
 
 ## 常量
 
-```
+```go
 const identifier [type] = value
 ```
 
 > 显示类型定义 隐式类型定义
 
-```
+```go
 显式类型定义： const b string = "abc"
 隐式类型定义： const b = "abc"
 ```
@@ -155,6 +158,7 @@ for i, num := range nums {
 
 
 - GO语言 类型转换用于将一种数据类型的变量转换为另外一种类型的变量
+
 ```go
 type_name(expression)
    var sum int = 17
@@ -167,11 +171,14 @@ type_name(expression)
 type_name 为类型，expression 为表达式。
 
 -Go 语言接口
+
 ```go
 type jiekou interface{
 }
 ```
+
 -GO 错误处理error类型是一个接口类型
+
 ```go
 type error interface {
     Error() string
@@ -180,13 +187,16 @@ type error interface {
 ## GO并发
 
 Go语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
-goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
+`goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。`
+
 ```go
 go func(x,z)
 ```
+
 -通道（channel）
  通道（channel）是用来传递数据的一个数据结构。单向、双向通道（缓冲区）close()
- ```go
+ 
+```go
 ch := make(chan int)
 ```
 
