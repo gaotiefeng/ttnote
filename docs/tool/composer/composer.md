@@ -30,8 +30,10 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 composer config -g repo.packagist composer https://packagist.org
 ```
 
-###### composer install
-composer  killed 
+
+`composer install composer  killed 内存不足`
+
+
 ```
 free -m
 mkdir -p /var/_swap_
@@ -48,8 +50,12 @@ free -m
 ```
 composer self-update
 ```
+
+>加载文件
+
 ```
-composer dump-autoload
+#使用 dumpautoload 后会优先加载需要的类并提前返回，不然的话 compoesr 只能去动态读取 psr-4 和 prs-0 的内容，这样大大减少了 IO 操作和深层次的循环，提升部分性能问题
+composer dump-atoload -o
 
 composer config secure-http false
 ```
