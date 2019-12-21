@@ -1,5 +1,6 @@
 ## docker安装
 - [http://get.daocloud.io/#install-docker](http://get.daocloud.io/#install-docker)安装docker
+
 ```
 curl -sSL https://get.daocloud.io/docker | sh
 ```
@@ -41,11 +42,14 @@ docker exec -it c1dc8b498447 bash
 ```
 docker restart|stop|start c1dc8b498447
 ```
+
 - 查看log[ID|名字]
+
 ```
 docker logs -f c1dc8b498447
 ```
 - 查看容器进程[ID]
+
 ```
 docker top c1dc8b498447
 ```
@@ -55,7 +59,9 @@ docker top c1dc8b498447
 ```
 docker ps 
 ```
+
 - 删除容器[-f 强制][ID]
+
 ```
 docker rm 
 ```
