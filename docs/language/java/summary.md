@@ -1,3 +1,3 @@
-* [java](java/java.md)
-* [maven](java/maven.md)
-* [suanfa](java/suan.md)
+* [java](language/java/java.md)
+* [maven](language/java/maven.md)
+* [suanfa](language/java/suan.md)
