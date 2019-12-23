@@ -6,6 +6,4 @@
 * [nginx](nginx/config.md)
 * [database](database/summary.md)
 * [tool](tool/summary.md)
-* [go](go/README.md)
-* [php](php/design.md)
-* [java](java/summary.md)
+* [language](language/summary.md)
