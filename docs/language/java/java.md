@@ -567,6 +567,12 @@ public static void main(String[] args) {
 
 ## 集合
 
+>Collection，它是除Map外所有其他集合类的根接口。
+- java.util 三种类型
+- List：一种有序列表的集合，例如，按索引排列的Student的List；
+- Set：一种保证没有重复元素的集合，例如，所有无重复名称的Student的Set；
+- Map：一种通过键值（key-value）查找的映射表集合，例如，根据Student的name查找对应Student的Map。
+
 ## IO
 
 ## 加密安全
