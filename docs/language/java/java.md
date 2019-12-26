@@ -573,6 +573,14 @@ public static void main(String[] args) {
 - Set：一种保证没有重复元素的集合，例如，所有无重复名称的Student的Set；
 - Map：一种通过键值（key-value）查找的映射表集合，例如，根据Student的name查找对应Student的Map。
 
+- 集合总是通过统一的方式——迭代器（Iterator）来实现 不应该使用遗留类
+<div style="color: blue">
+Hashtable：一种线程安全的Map实现；
+Vector：一种线程安全的List实现；
+Stack：基于Vector实现的LIFO的栈。
+</div>
+
+
 ## IO
 
 ## 加密安全
