@@ -580,6 +580,7 @@ Vector：一种线程安全的List实现；
 Stack：基于Vector实现的LIFO的栈。
 </div>
 
+- 集合类中，List是最基础的一种集合：它是一种有序链表。
 
 ## IO
 
