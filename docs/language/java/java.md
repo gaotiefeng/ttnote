@@ -1,8 +1,7 @@
 ## 安装java
 
-######centos
-
 ```
+######centos
 yum search java|grep jdk
 
 yum install java-1.8.0-openjdk
