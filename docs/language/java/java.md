@@ -554,7 +554,21 @@ public static void main(String[] args) {
 -使用SLF4J和Logback
 
 
-## 反射
+## 反射（Reflection）
+>由于JVM为每个加载的class创建了对应的Class实例，并在实例中保存了该class的所有信息，
+>包括类名、包名、父类、实现的接口、所有方法、字段等，因此，如果获取了某个Class实例，
+>我们就可以通过这个Class实例获取到该实例对应的class的所有信息。
+>这种通过Class实例获取class信息的方法称为反射（Reflection）。
+
+- getClass 获取class
+- Class.newInstance() 构造函数的局限  只有public的无参数构造
+- Constructor 反射API提供了Constructor对象，它包含一个构造方法的所有信息，可以创建一个实例
+- getInterfaces 获取接口
+- getSuperclass 获取父类
+
+- 动态代理功能，允许在运行期动态创建一个接口的实例；
+- 动态代理是通过Proxy创建代理对象，然后将接口方法“代理”给InvocationHandler完成的
+
 
 
 ## 注解（Annotation）
