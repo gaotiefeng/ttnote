@@ -410,14 +410,14 @@ public class Main {
 ```
 
 ## java核心类
-<p style="color: #FF8A96">String类</p>
-<p style="color: #FF8A96">StringBuilder中新增字符时，不会创建新的临时对象</p>
-<p style="color: #FF8A96">StringJoiner 类似用分隔符拼接数组的需求很常见</p>
-<p style="color: #FF8A96">JavaBean主要用来传递数据</p>
-<p style="color: #FF8A96">使用enum来定义枚举类</p>
-<p style="color: #FF8A96">BigInteger由CPU原生提供的整型最大范围是64位long型整数。使用long型整数可以直接通过CPU指令进行计算，速度非常快。</p>
-<p style="color: #FF8A96">BigDecimal可以表示一个任意大小且精度完全准确的浮点数</p>
-<p style="color: #FF8A96">Math类就是用来进行数学计算的；Random用来创建伪随机数；SecureRandom就是用来创建安全的随机数的</p>
+<p style="color: lightsalmon">String类</p>
+<p style="color: lightsalmon">StringBuilder中新增字符时，不会创建新的临时对象</p>
+<p style="color: lightsalmon">StringJoiner 类似用分隔符拼接数组的需求很常见</p>
+<p style="color: lightsalmon">JavaBean主要用来传递数据</p>
+<p style="color: lightsalmon">使用enum来定义枚举类</p>
+<p style="color: lightsalmon">BigInteger由CPU原生提供的整型最大范围是64位long型整数。使用long型整数可以直接通过CPU指令进行计算，速度非常快。</p>
+<p style="color: lightsalmon">BigDecimal可以表示一个任意大小且精度完全准确的浮点数</p>
+<p style="color: lightsalmon">Math类就是用来进行数学计算的；Random用来创建伪随机数；SecureRandom就是用来创建安全的随机数的</p>
 
 ***字符串和编码***
 
@@ -496,9 +496,9 @@ public class Main {
 >引用类型可以赋值为null，表示空，但基本类型不能赋值为null：
 
 
-- <p style="color: cornflowerblue">enum来定义枚举类</p>
+- <p style="color: lightsalmon">enum来定义枚举类</p>
 
-<div style="color: gold">定义的enum类型总是继承自java.lang.Enum，且无法被继承；
+<div style="color: lightsalmon">定义的enum类型总是继承自java.lang.Enum，且无法被继承；
 只能定义出enum的实例，而无法通过new操作符创建enum的实例；
 定义的每个实例都是引用类型的唯一实例；
 可以将enum类型用于switch语句。
@@ -597,7 +597,11 @@ public static void main(String[] args) {
 
 ## 泛型
 
+- 泛型就是定义一种模板，例如ArrayList<T>，然后在代码中为用到的类创建对应的ArrayList<类型>
 
+```java
+ArrayList<String> strList = new ArrayList<String>();
+```
 
 ## 集合
 
