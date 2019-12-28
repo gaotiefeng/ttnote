@@ -641,6 +641,11 @@ public class Pair<T, K> {
 }
 ```
 
+- extends 通配符
+- 这种使用<? extends Number>的泛型定义称之为上界通配符（Upper Bounds Wildcards）
+- super通配符
+
+
 ## 集合
 
 >Collection，它是除Map外所有其他集合类的根接口。
