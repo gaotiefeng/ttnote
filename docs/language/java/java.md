@@ -512,13 +512,13 @@ ordinal()
 
 
 ## 异常处理
-<div style="color: lightsalmon">一个健壮的程序必须处理各种各样的错误。</div>
-- Java内置了一套异常处理机制，总是使用异常来表示错误。
+<div style="color: lightsalmon">一个健壮的程序必须处理各种各样的错误。
+- Java内置了一套异常处理机制，总是使用异常来表示错误。</div>
 
-<div style="color: lightsalmon">捕获异常</div>
-存在多个catch的时候，catch的顺序非常重要：子类必须写在前面
+<div style="color: lightsalmon">捕获异常
+存在多个catch的时候，catch的顺序非常重要：子类必须写在前面</div>
 
-```
+```java
 try {
 
 }catch(IOException e) {
@@ -530,7 +530,7 @@ try {
 
 <div style="color: lightsalmon">finally语句块保证有无错误都会执行。</div>
 
-```
+```java
 public static void main(String[] args) {
     try {
         process1();
@@ -601,6 +601,44 @@ public static void main(String[] args) {
 
 ```java
 ArrayList<String> strList = new ArrayList<String>();
+```
+
+向上转型
+在Java标准库中的ArrayList<T>实现了List<T>接口，它可以向上转型为List<T>
+
+- 编写泛型类
+
+```java
+public class Pair<T> {
+    private T first;
+    private T last;
+    public Pair(T first, T last) {
+        this.first = first;
+        this.last = last;
+    }
+    public T getFirst() {
+        return first;
+    }
+    public T getLast() {
+        return last;
+    }
+}
+```
+
+- T 不能用于静态方法,静态泛型方法应该使用其他类型区分
+- 多个泛型
+
+```java
+public class Pair<T, K> {
+    private T first;
+    private K last;
+    public Pair(T first, K last) {
+        this.first = first;
+        this.last = last;
+    }
+    public T getFirst() { ... }
+    public K getLast() { ... }
+}
 ```
 
 ## 集合
