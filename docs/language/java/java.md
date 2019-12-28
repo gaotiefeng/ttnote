@@ -570,9 +570,30 @@ public static void main(String[] args) {
 - 动态代理是通过Proxy创建代理对象，然后将接口方法“代理”给InvocationHandler完成的
 
 
-
 ## 注解（Annotation）
 
+- 什么是注解（Annotation）？注解是放在Java源码的类、方法、字段、参数前的一种特殊“注释”：
+
+>第一类编译器使用的注解-SOURCE类型
+
+```java
+@Override：让编译器检查该方法是否正确地实现了覆写；
+@SuppressWarnings：告诉编译器忽略此处代码产生的警告。
+```
+
+>第二类是由工具处理.class文件使用的注解，比如有些工具会在加载class的时候，对class做动态修改，实现一些特殊的功能。
+这类注解会被编译进入.class文件，但加载结束后并不会存在于内存中。这类注解只被一些底层库使用，一般我们不必自己处理。-CLASS类型
+
+>第三类是在程序运行期能够读取的注解，它们在加载后一直存在于JVM中，这也是最常用的注解。
+例如，一个配置了@PostConstruct的方法会在调用构造方法后自动被调用（这是Java代码读取该注解实现的功能，JVM并不会识别该注解）。-RUNTIME类型
+
+```java
+    @Value(min=0)
+    public int n;
+```
+
+- 元注解
+有一些注解可以修饰其他注解，这些注解就称为元注解（meta annotation）
 
 ## 泛型
 
