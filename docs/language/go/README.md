@@ -127,7 +127,7 @@ type Books struct {
     book_id int
 }
 ```
-4
+
 ## Go语言数组
 
 ```go
