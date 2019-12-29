@@ -647,6 +647,17 @@ public class Pair<T, K> {
 
 
 ## 集合
+- 集合是由若干确定的元素所构成的整体
+
+- 数学中  有限集合  无限集合
+
+<div style="color: chocolate">既然Java提供了数组这种数据类型，可以充当集合，那么，我们为什么还需要其他集合类？这是因为数组有如下限制：
+数组初始化后大小不可变；
+数组只能按索引顺序存取。
+因此，我们需要各种不同类型的集合类来处理不同的数据，例如：
+可变大小的顺序链表；
+保证无重复元素的集合；
+</div>
 
 >Collection，它是除Map外所有其他集合类的根接口。
 - java.util 三种类型
@@ -660,8 +671,123 @@ Hashtable：一种线程安全的Map实现；
 Vector：一种线程安全的List实现；
 Stack：基于Vector实现的LIFO的栈。
 </div>
-
 - 集合类中，List是最基础的一种集合：它是一种有序链表。
+
+- List 两种实现方式  <span style="color: chocolate">ArrayList   LinkedList</span>
+
+- ArrayList在内部使用了数组来存储所有元素
+- 在LinkedList中，它的内部每个元素都指向下一个元素：
+
+ | 	ArrayList	| 	LinkedList | 
+----|------|----
+获取指定元素	|   速度很快|	|需要从头开始查找元素
+添加元素到末尾|	速度很快	|速度很快
+在指定位置添加/删除|	需要移动元素 |	不需要移动元素
+内存占用	    |少	| 较大
+
+- 通过List 接口提供的of() 创建  //覆写equals
+
+```java
+
+List <Integer> list = List.of(1,2,3);
+
+```
+
+- 在末尾添加一个元素：void add(E e)
+- 在指定索引添加一个元素：void add(int index, E e)
+- 删除指定索引的元素：int remove(int index)
+- 删除某个元素：int remove(Object e)
+- 获取指定索引的元素：E get(int index)
+- 获取链表大小
+
+### 编写equals
+- 如何正确编写equals()方法？equals()方法要求我们必须满足以下条件：
+
+- 自反性（Reflexive）：对于非null的x来说，x.equals(x)必须返回true；
+- 对称性（Symmetric）：对于非null的x和y来说，如果x.equals(y)为true，则y.equals(x)也必须为true；
+- 传递性（Transitive）：对于非null的x、y和z来说，如果x.equals(y)为true，y.equals(z)也为true，那么x.equals(z)也必须为true；
+- 一致性（Consistent）：对于非null的x和y来说，只要x和y状态不变，则x.equals(y)总是一致地返回true或者false；
+- 对null的比较：即x.equals(null)永远返回false。
+
+```java
+class Person {
+	String firstName;
+	String lastName;
+	int age;
+
+	public Person(String firstName, String lastName, int age) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+	}
+	
+	/**
+	 * TODO: 覆写equals方法
+	 */
+	public boolean equals(Object o) {
+		if (o instanceof Person) {
+	        Person p = (Person) o;
+	        return Objects.equals(this.firstName+this.lastName, p.firstName+p.lastName) && this.age == p.age;
+	    }
+	    return false;
+	}
+}
+```
+
+### MAP
+- Map这种键值（key-value）映射表的数据结构，作用就是能高效通过key快速查找value（元素）。
+```java
+
+Map<string Class> list = new HashMap<>();
+list.put("first", Class);
+Class class = list.get("first");
+System.out.println(class.attribute)
+
+```
+
+-  Set实际上相当于只存储key、不存储value的Map。我们经常用Set用于去除重复元素。
+
+```java
+  Set<String> set = new HashSet<>();
+```
+
+
+- Map中不存在重复的key，因为放入相同的key，只会把原有的key-value对应的value给替换掉。
+  因为HashMap是一种通过对key计算hashCode()，通过空间换时间的方式，直接定位到value所在的内部数组的索引，因此，查找效率非常高。
+- Map的内部，对key做比较是通过equals()实现的
+- 但如果我们放入的key是一个自己写的类，就必须保证正确覆写了equals()方法
+- 通过key计算索引的方式就是调用key对象的 hashCode()方法，它返回一个int整数。HashMap正是通过这个方法直接定位key对应的value的索引，继而直接返回value。
+
+- 正确的map 
+  1：作为key的对象必须正确覆写equals()方法，相等的两个key实例调用equals()必须返回true；
+  2：作为key的对象还必须正确覆写hashCode()方法，且hashCode()方法要严格遵循以下规范：
+  如果两个对象相等，则两个对象的hashCode()必须相等；
+  如果两个对象不相等，则两个对象的hashCode()尽量不要相等。
+
+- EnumMap key 作为枚举类型 
+
+```java
+
+Map<enum String> enum = new EnumMap<>();
+
+```
+
+- TreeMap
+  Map，它在内部会对Key进行排序，这种Map就是SortedMap。注意到SortedMap是接口，它的实现类是TreeMap。
+
+### properties 
+- 创建Properties实例；
+  调用load()读取文件；
+  调用getProperty()获取配置。
+  
+```java
+    String f = "setting.properties";
+    Properties props = new Properties();
+    props.load(new java.io.FileInputStream(f));
+    
+    String filepath = props.getProperty("last_open_file");
+    String interval = props.getProperty("auto_save_interval", "120");
+```
 
 ## IO
 
