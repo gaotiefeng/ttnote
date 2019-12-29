@@ -789,6 +789,19 @@ Map<enum String> enum = new EnumMap<>();
     String interval = props.getProperty("auto_save_interval", "120");
 ```
 
+- 队列queue
+  queue 是一种经常使用的集合
+  把元素添加到尾部，把元素从头部取出
+  int size()：获取队列长度；
+  boolean add(E)/boolean offer(E)：添加元素到队尾； add 抛异常  offer 不抛异常
+  E remove()/E poll()：获取队首元素并从队列中删除；    remove 抛异常 poll 不抛异常
+  E element()/E peek()：获取队首元素但并不从队列中删除。 element  抛异常 peek 不抛异常
+
+```java
+// 这是一个Queue:
+Queue<String> queue = new LinkedList<>();
+```
+
 ## IO
 
 ## 加密安全
