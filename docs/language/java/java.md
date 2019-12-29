@@ -802,6 +802,25 @@ Map<enum String> enum = new EnumMap<>();
 Queue<String> queue = new LinkedList<>();
 ```
 
+- PriorityQueue实现了一个优先队列：从队首获取元素时，总是获取优先级最高的元素。
+  PriorityQueue默认按元素比较的顺序排序（必须实现Comparable接口），也可以通过Comparator自定义排序算法（元素就不必实现Comparable接口）
+
+### Deque
+- 允许两头都进，两头都出，这种队列叫双端队列（Double Ended Queue），学名Deque。
+
+ | 	queue	| 	deque | 
+----|------|----
+添加元素到队尾	    | add(E e) / offer(E e)	    | addLast(E e) / offerLast(E e)
+取队首元素并删除	| E remove() / E poll()	E   | removeFirst() / E pollFirst()
+取队首元素但不删除	| E element() / E peek()	| E getFirst() / E peekFirst()
+添加元素到队首	    |   无	                    | addFirst(E e) / offerFirst(E e)
+取队尾元素并删除	| 无	                    | E removeLast() / E pollLast()
+取队尾元素但不删除	| 无	                    | E getLast() / E peekLast()
+
+- stack
+  栈（Stack）是一种后进先出（LIFO：Last In First Out）的数据结构。
+  
+  
 ## IO
 
 ## 加密安全
