@@ -118,9 +118,7 @@ const identifier [type] = value
       iota 可以被用作枚举值：
 </div>
 
-
-## Go语言数组
-array 使用type  struct  长度不可变
+## 结构体
 ```go
 type Books struct {
     title string
@@ -129,6 +127,17 @@ type Books struct {
     book_id int
 }
 ```
+4
+## Go语言数组
+
+```go
+var array := []int {}
+```
+
+- 使用指针在函数间传递大数组
+
+
+
 
 ## slice 切片
 slice  切片[] 空切片nil   数组的抽象长度可变 append追加
