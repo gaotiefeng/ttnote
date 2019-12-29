@@ -678,7 +678,7 @@ Stack：基于Vector实现的LIFO的栈。
 - ArrayList在内部使用了数组来存储所有元素
 - 在LinkedList中，它的内部每个元素都指向下一个元素：
 
- | 	ArrayList	| 	LinkedList | 
+ 解析 | 	ArrayList	| 	LinkedList | 
 ----|------|----
 获取指定元素	|   速度很快|	|需要从头开始查找元素
 添加元素到末尾|	速度很快	|速度很快
@@ -808,8 +808,8 @@ Queue<String> queue = new LinkedList<>();
 ### Deque
 - 允许两头都进，两头都出，这种队列叫双端队列（Double Ended Queue），学名Deque。
 
- | 	queue	| 	deque | 
-----|------|----
+ 解析 | 	queue	| 	deque | 
+        ----|------|----
 添加元素到队尾	    | add(E e) / offer(E e)	    | addLast(E e) / offerLast(E e)
 取队首元素并删除	| E remove() / E poll()	E   | removeFirst() / E pollFirst()
 取队首元素但不删除	| E element() / E peek()	| E getFirst() / E peekFirst()
