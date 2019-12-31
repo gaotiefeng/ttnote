@@ -145,6 +145,10 @@ docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http:/
 ```
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
+#######查看安装路径
+```bash
+brew --prefix openssl
+```
 
 ####### 安装yarn
 ```
