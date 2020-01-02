@@ -124,14 +124,15 @@ fatal error: 'openssl/ssl.h' file not found
 
 
 ## docker 配置同一网
-```
+```bash
 docker network create \
 --subnet 10.0.0.0/24 \
 --opt encrypted \
 --attachable \
 default-network
 ```
-```
+
+```bash
 docker run -d --restart always --name elasticsearch --net default-network  -p 9200:9200 -p 9300:9300 \
 -v /Users/gaotiefeng/DockerFile/elasticsearch/data:/usr/share/elasticsearch/data -e ES_JAVA_OPTS="-Xms512m -Xmx512m" \
 -e "discovery.type=single-node" elasticsearch:5-alpine
@@ -142,22 +143,27 @@ docker run -d --restart always --name elasticsearch --net default-network  -p 92
 docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5601:5601 -d kibana:5.6.16  
 ```
 ###### 查看正在运行的容器
-```
+
+```bash
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
 #######查看安装路径
+
 ```bash
 brew --prefix openssl
 ```
 
 ####### 安装yarn
-```
+
+```bash
 brew install yarn
 ```
+
 ####### 安装php-protobuf
 ```
 pecl install protobuf
 ```
+
 ## 查看端口
 ```
 netstat -AaLlnW
