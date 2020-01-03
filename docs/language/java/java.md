@@ -820,12 +820,6 @@ Queue<String> queue = new LinkedList<>();
 - stack
   栈（Stack）是一种后进先出（LIFO：Last In First Out）的数据结构。
   所谓FIFO，是最先进队列的元素一定最早出队列，而LIFO是最后进Stack的元素一定最早出Stack。如何做到这一点呢？只需要把队列的一端封死：
-  
-             ───────────────────────────────┐
-    (\(\       (\(\    (\(\    (\(\    (\(\ │
-   (='.') <─> (='.')  (='.')  (='.')  (='.')│
-  O(_")")    O(_")") O(_")") O(_")") O(_")")│
-             ───────────────────────────────┘
   因此，Stack是这样一种数据结构：只能不断地往Stack中压入（push）元素，最后进去的必须最早弹出（pop）来：
   把元素压栈：push(E)；
   把栈顶的元素“弹出”：pop(E)；
@@ -833,8 +827,39 @@ Queue<String> queue = new LinkedList<>();
   
 - Iterator 迭代器
   因为编译器把for each循环通过Iterator改写为了普通的for循环
-  
+  我们把这种通过Iterator对象遍历集合的模式称为迭代器。
+  如果我们自己编写了一个集合类，想要使用for each循环，只需满足以下条件：
+  集合类实现Iterable接口，该接口要求返回一个Iterator对象；
+  用Iterator对象迭代集合内部数据。
 
+- Collections
+  java.util 工具类 它提供了一系列静态方法，能更方便地操作各种集合。
+  
+- Collections可以对List进行排序。因为排序会直接修改List元素的位置，因此必须传入可变List
+```java
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("pear");
+        list.add("orange");
+        // 排序前:
+        System.out.println(list);
+        Collections.sort(list);
+        // 排序后:
+        System.out.println(list);
+    }
+}
+```
+
+- 洗牌<div style="color: chocolate">Collections.shuffle(list);</div> PHP 中数组打乱shuffle
+- 线程安全集合
+  Collections还提供了一组方法，可以把线程不安全的集合变为线程安全的集合：
+  
+  变为线程安全的List：List<T> synchronizedList(List<T> list)
+  变为线程安全的Set：Set<T> synchronizedSet(Set<T> s)
+  变为线程安全的Map：Map<K,V> synchronizedMap(Map<K,V> m)
+  
 ## IO
 
 ## 加密安全
