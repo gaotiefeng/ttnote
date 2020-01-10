@@ -147,19 +147,19 @@ docker run --name kibana5.6.16 --net default-network -e ELASTICSEARCH_URL=http:/
 ```bash
 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
-#######查看安装路径
+###### 查看安装路径
 
 ```bash
 brew --prefix openssl
 ```
 
-####### 安装yarn
+###### 安装yarn
 
 ```bash
 brew install yarn
 ```
 
-####### 安装php-protobuf
+###### 安装php-protobuf
 ```
 pecl install protobuf
 ```
