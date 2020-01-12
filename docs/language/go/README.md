@@ -1,4 +1,5 @@
 ## 安装go
+
 ```linux
 route add default gw 10.0.0.1 
 
@@ -193,6 +194,42 @@ type error interface {
     Error() string
 }
 ```
+## 文件上传
+- 表单中增加enctype="multipart/form-data"
+  服务端调用r.ParseMultipartForm,把上传的文件存储在内存和临时文件中
+  使用r.FormFile获取文件句柄，然后对文件进行存储等处理。
+```go
+// 处理/upload 逻辑
+func upload(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("method:", r.Method) //获取请求的方法
+	if r.Method == "GET" {
+		crutime := time.Now().Unix()
+		h := md5.New()
+		io.WriteString(h, strconv.FormatInt(crutime, 10))
+		token := fmt.Sprintf("%x", h.Sum(nil))
+
+		t, _ := template.ParseFiles("upload.gtpl")
+		t.Execute(w, token)
+	} else {
+		r.ParseMultipartForm(32 << 20)
+		file, handler, err := r.FormFile("uploadfile")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer file.Close()
+		fmt.Fprintf(w, "%v", handler.Header)
+		f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)  // 此处假设当前目录下已存在test目录
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer f.Close()
+		io.Copy(f, file)
+	}
+}
+```
+
 ## GO并发
 
 Go语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
