@@ -13,7 +13,7 @@ WebSocket URL的起始输入是ws://或是wss://（在SSL上）。下图展示�
 
 ![](1.websocket.png)
 
-图8.2 WebSocket原理图
+图1 WebSocket原理图
 
 ## WebSocket原理
 WebSocket的协议颇为简单，在第一次handshake通过以后，连接便建立成功，其后的通讯数据都是以”\x00″开头，以”\xFF”结尾。在客户端，这个是透明的，WebSocket组件会自动将原始数据“掐头去尾”。
