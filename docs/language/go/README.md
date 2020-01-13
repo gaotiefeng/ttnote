@@ -241,9 +241,42 @@ go func(x,z)
 
 -通道（channel）
  通道（channel）是用来传递数据的一个数据结构。单向、双向通道（缓冲区）close()
+ 定义一个channel时，也需要定义发送到channel的值的类型。注意，必须使用make 创建channel
+ value 为缓冲区大小，下列例子中 前6个为无阻赛，当第7个开始时为阻塞，channel取出之后，不阻塞
  
 ```go
-ch := make(chan int)
+function get(c chan int){
+        var y = 1
+        c < -y
+}
+var value = 6
+ch := make(chan int,value)
+go get(c)
 ```
+ 当 value = 0 时，channel 是无缓冲阻塞读写的，当value > 0 时，channel 有缓冲、是非阻塞的，直到写满 value 个元素才阻塞写入。
+
+- Range和close
+```go
+function get(c chan int, n int) {
+       for i := 0, i < n , i++ {
+            c <- i
+        }
+       close(c)
+}
+
+function main() {
+    var c := chan(int)
+    go get(c,cap(n))
+    for i := range c {
+        fmt.Println(i)
+    }
+
+```
+
+- for i := range c能够不断的读取channel里面的数据，直到该channel被显式的关闭。
+  上面代码我们看到可以显式的关闭channel，生产者通过内置函数close关闭channel。
+  关闭channel之后就无法再发送任何数据了，
+  在消费方可以通过语法v, ok := <-ch测试channel是否被关闭。
+  如果ok返回false，那么说明channel已经没有任何数据并且已经被关闭。
 
     
