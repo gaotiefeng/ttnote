@@ -279,4 +279,5 @@ function main() {
   在消费方可以通过语法v, ok := <-ch测试channel是否被关闭。
   如果ok返回false，那么说明channel已经没有任何数据并且已经被关闭。
 
+- select 
     
