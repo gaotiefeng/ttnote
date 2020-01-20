@@ -944,3 +944,6 @@ Blocked：运行中的线程，因为某些操作被阻塞而挂起；
 Waiting：运行中的线程，因为某些操作在等待中；
 Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待；
 Terminated：线程已终止，因为run()方法执行完毕。
+
+- 中断线程
+- interrupt()方法
