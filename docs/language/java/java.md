@@ -906,7 +906,7 @@ public class Main {
 
 -创建线程
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Thread t = new Thread(new MyRunnable());
@@ -924,7 +924,7 @@ class MyRunnable implements Runnable {
 
 -java8
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Thread t = new Thread(() -> {
