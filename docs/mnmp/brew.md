@@ -1,9 +1,9 @@
 ## brew
-```
+```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-```
+```bash
 brew search 
 brew list
 brew info
@@ -11,8 +11,17 @@ sudo brew update
 brew -v
 brew -h
 ``` 
-## composer
+
+## brew 启动服务
+
+```bash
+brew services list
+brew services start
+brew services stop
 ```
+
+## composer
+```bash
 brew install composer 
 
 composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
