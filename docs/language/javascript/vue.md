@@ -19,5 +19,6 @@ npm install vue-router --save-dev
 ```
 
 - 注意main.js 引入 router命名的问题 必须为router [router](https://router.vuejs.org)
+- 添加子路由需要引入<router-view>
 
 
