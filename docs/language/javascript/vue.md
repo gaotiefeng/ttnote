@@ -79,6 +79,23 @@ export default new VueRouter({
 });
 ```
 
+- router 路由跳转的几种方式
+
+```vue
+
+query => get
+this.$router.push({name:'home',query: {id:'1'}})  
+
+params => post
+this.$router.push({name:'home',params: {id:'1'}})  
+```
+
+```html5
+
+<router-link :to="{name:'home', params: {id:1}}">  
+<router-link :to="{name:'home', query: {id:1}}">
+
+```
 
 
 
