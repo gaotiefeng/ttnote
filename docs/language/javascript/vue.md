@@ -2,7 +2,7 @@
 
 - 前端框架->主要是 数据渲染视图  -> 数据的变化
 
-### 安装 cli
+## 安装 cli
 
 ```
 npm install -g @vue/cli
@@ -12,7 +12,7 @@ vue create my-project
 vue ui
 ```
 
-#### vue-router 路由管理器
+## vue-router 路由管理器
 
 ```
 npm install vue-router --save-dev
@@ -96,6 +96,24 @@ this.$router.push({name:'home',params: {id:'1'}})
 <router-link :to="{name:'home', query: {id:1}}">
 
 ```
+
+## vue-axios
+
+>从浏览器中创建 XMLHttpRequest
+>从 node.js 发出 http 请求
+>支持 Promise API
+>拦截请求和响应
+>转换请求和响应数据
+>取消请求
+>自动转换JSON数据
+>客户端支持防止 CSRF/XSRF
+
+- 按照axios
+
+```bash
+npm install axios --save
+```
+
 
 
 
