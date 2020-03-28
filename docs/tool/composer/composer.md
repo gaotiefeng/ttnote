@@ -55,7 +55,7 @@ composer self-update
 
 ```
 #使用 dumpautoload 后会优先加载需要的类并提前返回，不然的话 compoesr 只能去动态读取 psr-4 和 prs-0 的内容，这样大大减少了 IO 操作和深层次的循环，提升部分性能问题
-composer dump-atoload -o
+composer dumpautoload
 
 composer config secure-http false
 ```

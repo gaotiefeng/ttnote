@@ -112,7 +112,11 @@ this.$router.push({name:'home',params: {id:'1'}})
 
 ```bash
 npm install axios --save
+#axios post 请求参数处理qs
+npm install qs --save-dev
 ```
+
+
 
 
 
