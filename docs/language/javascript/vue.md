@@ -108,7 +108,7 @@ this.$router.push({name:'home',params: {id:'1'}})
 >自动转换JSON数据
 >客户端支持防止 CSRF/XSRF
 
-- 按照axios
+- 按装axios
 
 ```bash
 npm install axios --save
@@ -116,6 +116,54 @@ npm install axios --save
 npm install qs --save-dev
 ```
 
+- 创建http.js
+```vue
+import axios from 'axios'
+import Qs from 'qs'
+
+// 创建axios实例
+const service = axios.create({
+  baseURL: 'http://localhost:9501', // api的base_url
+  timeout: 5000                  // 请求超时时间
+})
+
+// request拦截器
+service.interceptors.request.use(config => {
+  if (config.method === 'post' && typeof config.data === 'string') {
+    config.data = Qs.stringify(config.data)
+  }
+
+  // config.headers['Content-Type'] = 'application/json'
+  // config.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
+  // config.headers['Content-Type'] = 'multipart/form-data'
+  return config
+}, error => {
+  console.log(error) // for debug
+  Promise.reject(error)
+})
+// respone拦截器
+service.interceptors.response.use(
+  response => {
+    let res = response.data
+    if (res.code !== 0) {
+      alert(res.code)
+    }
+    return Promise.resolve(res)
+  },
+  error => {
+    console.log('err' + error)// for debug
+    
+    return Promise.reject(error)
+  }
+)
+export default service
+```
+
+
+- cookie
+```
+npm install js-cookie --save
+```
 
 
 
