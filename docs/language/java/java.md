@@ -27,7 +27,7 @@ java -version
 ## 构造方法 
 >字符串型的数组 变量 args
 
-```
+```java
 public static void main(String[] args) {
         
     }
@@ -39,7 +39,7 @@ public static void main(String[] args) {
 >超类（super class），父类（parent class），基类（base class）
 >引用父类
 
-```
+```java
 class Person {
     protected String name;
 }
