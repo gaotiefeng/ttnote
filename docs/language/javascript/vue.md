@@ -108,7 +108,7 @@ this.$router.push({name:'home',params: {id:'1'}})
 >自动转换JSON数据
 >客户端支持防止 CSRF/XSRF
 
-- 按装axios
+##### 按装axios
 
 ```bash
 npm install axios --save
@@ -116,7 +116,7 @@ npm install axios --save
 npm install qs --save-dev
 ```
 
-- 创建http.js
+##### 创建http.js
 ```vue
 import axios from 'axios'
 import Qs from 'qs'
@@ -161,7 +161,7 @@ export default service
 
 
 - cookie
-```
+```bash
 npm install js-cookie --save
 ```
 
