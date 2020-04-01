@@ -1,26 +1,16 @@
-## 单例模式
-######   单例模式解决的是如何在整个项目中创建唯一对象实例的问题
-```
-class Single{
-     public $hash;
-     static protected $ins=null;
-     final protected function __construct(){
-         $this->hash=rand(1,9999);
-     }
+## 创建型设计模式
 
-     static public function getInstance(){
-         if (self::$ins instanceof self) {
-             return self::$ins;
-         }
-         self::$ins=new self();
-         return self::$ins;
-     }
- }
- ```
-## 工厂模式
-###### 工厂模式    工厂模式解决的是如何不通过new建立实例对象的方法
-###### 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
-```
+### 抽象工厂 abstractFactory
+
+![](Factory/abstract/abstractFactory.png)
+
+>Factory/abstract/ 代码
+
+### 工厂模式
+- 工厂模式解决的是如何不通过new建立实例对象的方法
+- 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
+
+```php
 <?php
 // todo insterface and abstract
  interface Transport{
@@ -64,13 +54,37 @@ class Single{
  $transport->go();
  ```
 
+### 单例模式
+> 单例模式解决的是如何在整个项目中创建唯一对象实例的问题
+
+
+```php
+class Single{
+     public $hash;
+     static protected $ins=null;
+     final protected function __construct(){
+         $this->hash=rand(1,9999);
+     }
+
+     static public function getInstance(){
+         if (self::$ins instanceof self) {
+             return self::$ins;
+         }
+         self::$ins=new self();
+         return self::$ins;
+     }
+ }
+ ```
+
+
+
 
 ## 原型设计模式（Prototype Design Pattern) clone
 ###### 所谓的原创不过是深思熟虑后的模仿，最具有原创了的作家往往互相抄袭  -----伏尔泰
 ###### 为了与他人相似，我们舍弃了真我的四分之三  ----亚瑟·叔本华
 ###### 就像你的行为原则会被定为全世界的准则那样行事  ----伊曼努尔·康德
 
-```
+```php
 <?php
 
 abstract class Iproto {
@@ -114,16 +128,16 @@ class Client {
 ```
 
 
-## 注册模式
+### 注册模式
 >注册模式，解决全局共享和交换对象。已经创建好的对象，挂在到某个全局可以使用的数组上，在需要使用的时候，直接从该数组上获取即可。将对象注册到全局的树上。任何地方直接去访问。
 
-## 适配器模式
+### 适配器模式
 >定义一个接口(有几个方法，以及相应的参数)。然后，有几种不同的情况，就写几个类实现该接口。将完成相似功能的函数，统一成一致的方法。
 
 
-## 结构设计模式
-###### 适配器模式（Adapter）(类和对象)
-###### 能生存下来的物种，不是最强壮的，也不是最聪明的，而是能因应环境变化的物种 --查尔斯·达尔文
+### 结构设计模式
+> 适配器模式（Adapter）(类和对象)
+> 能生存下来的物种，不是最强壮的，也不是最聪明的，而是能因应环境变化的物种 --查尔斯·达尔文
 
 
 ```
@@ -131,7 +145,7 @@ class Client {
  //创建单例  
  ```
  
-###### 观察者模式
+### 观察者模式
 
 ```
 <?php
