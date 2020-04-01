@@ -2,12 +2,12 @@
 
 ## 抽象工厂 abstractFactory
 
-![](Factory/abstract/abstractFactory.png)
+![](Factory/abstract/abstractFactory.jpg)
 
 >! 在不指定具体类的情况下创建一系列相关或依赖对象。通常，
 >！创建的类都实现同一个接口。抽象工厂的客户机并不关心这些对象是如何创建的，它只知道它们是如何组合在一起的。
 
-> Factory/abstract/ 代码
+[抽象工厂代码]（https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/Factory/）
 
 ## 工厂模式
 - 工厂模式解决的是如何不通过new建立实例对象的方法
