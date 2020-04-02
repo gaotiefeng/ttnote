@@ -80,7 +80,7 @@ brew install php
 
 brew services start php
 ```
-###### php-fpm /usr/local/etc/php/7.3/php-fpm.conf
+###### 配置文件->php-fpm /usr/local/etc/php/7.3/php-fpm.conf
 ###### /private/etc/php-fpm.conf  error_log
 
 ```
@@ -94,7 +94,10 @@ sudo php-fpm -D
 brew install redis
 ```
 
-###### pecl install redis
+###### redis扩展
+```
+pecl install redis
+```
 
 ## swoole
 ```
