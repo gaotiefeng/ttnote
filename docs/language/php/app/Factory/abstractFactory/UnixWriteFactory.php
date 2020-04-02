@@ -1,7 +1,7 @@
 <?php
 
 
-namespace php;
+namespace App\Factory\abstractFactory;
 
 
 class UnixWriteFactory implements WriteFactory

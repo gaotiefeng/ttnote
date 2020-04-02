@@ -9,6 +9,7 @@ use App\Builder\Part\Doors;
 use App\Builder\Part\Engine;
 use App\Builder\Part\Wheel;
 
+/** 具体建造者 */
 class CarBuilder implements Builder
 {
     /** @var Car  */

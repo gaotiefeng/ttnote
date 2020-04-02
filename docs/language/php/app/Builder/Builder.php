@@ -3,7 +3,7 @@
 
 namespace App\Builder;
 
-
+/** 抽象建造者 */
 interface Builder
 {
     public function createVehicle();

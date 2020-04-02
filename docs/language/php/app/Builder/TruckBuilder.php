@@ -8,6 +8,7 @@ use App\Builder\Part\Engine;
 use App\Builder\Part\Truck;
 use App\Builder\Part\Wheel;
 
+/** 具体建造者 */
 class TruckBuilder implements Builder
 {
     /** @var Truck $truck */
