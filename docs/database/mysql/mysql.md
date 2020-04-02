@@ -49,19 +49,19 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysql.';
 
 ## 安装包处理
 
-- 下载mysql包
+###### 下载mysql包
 
 ```bash
   https://dev.mysql.com/downloads/mysql/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
 ```
-- 解压包
+###### 解压包
 
 ```
   tar -zxvf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
   mv mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz /usr/local/mysql
 ```
   
--  添加my.cnf
+######  添加my.cnf
 
 ```
 [mysqld]
@@ -89,7 +89,7 @@ collation-server=utf8_unicode_ci
 skip-character-set-client-handshake
 ```
 
-- 创建mysql组和mysql用户
+###### 创建mysql组和mysql用户
 
 ```
 groupadd mysql
@@ -104,19 +104,20 @@ chmod 755 /tmp/mysqld/mysqld.pid
 touch /var/log/mysqld.log
 ```
 
-- 初始化数据库:
+###### 初始化数据库:
+
 ```./mysqld --initialize --user=mysql --basedir=/usr/local/mysql--datadir=/usr/local/mysql/data```
 
-- 安全启动:
+###### 安全启动:
 
 ```./mysqld_safe --user=mysql &```
 
-- 问题
+###### 问题
 
 ```[ERROR] Could not open file '/var/log/mysqld.log' for error logging: Permission denied```
 
-- 日志文件设置权限777
-- 开机启动服务
+###### 日志文件设置权限777
+###### 开机启动服务
 
 ```
 cp -a /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
@@ -124,17 +125,19 @@ chkconfig --list mysql
 chkconfig --add mysql
 ```
 
-- 创建快捷方式
+###### 创建快捷方式
+
 ```
 ln -s /usr/local/mysql/bin/mysql /usr/bin
 ```
-- 修改密码
+
+###### 修改密码
 
 ```
 set password=password("tf2019");
 UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
 ```
-- 远程访问权限
+###### 远程访问权限
 
 ```
 grant all privileges on *.* to 'root'@'%' identified by 'qingchen2019';
@@ -144,15 +147,16 @@ systemctl stop firewalld.service
 
 
 ## 忘记密码
-- 修改my.conf
+###### 修改my.conf
+
 
  ```
 [mysqld]
-
 skip-grant-tables
 ```
 
-- 修改密码
+###### 修改密码
+
 ```
 update mysql.user set authentication_string = password('qingchen2019') where user='root';
 ```
