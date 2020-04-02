@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
 
-namespace Php\Builder\Part;
+namespace App\Builder\Part;
 
 
-use Php\Builder\Vehicle;
+use App\Builder\Vehicle;
 
 class Car extends Vehicle
 {

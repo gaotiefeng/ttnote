@@ -2,7 +2,7 @@
 
     "autoload": {
         "psr-4": {
-            "Php\\Builder\\": "Builder/"
+            "App\\": "app/"
         },
         "files": [
 

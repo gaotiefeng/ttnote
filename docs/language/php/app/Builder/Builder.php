@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Php\Builder;
+namespace App\Builder;
 
 
 interface Builder

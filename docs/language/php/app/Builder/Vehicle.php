@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 
-namespace Php\Builder;
+namespace App\Builder;
 
 
 abstract class Vehicle

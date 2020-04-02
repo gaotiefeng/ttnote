@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Php\Builder;
+namespace App\Builder;
 
-use Php\Builder\Part\Doors;
-use Php\Builder\Part\Engine;
-use Php\Builder\Part\Truck;
-use Php\Builder\Part\Wheel;
+use App\Builder\Part\Doors;
+use App\Builder\Part\Engine;
+use App\Builder\Part\Truck;
+use App\Builder\Part\Wheel;
 
 class TruckBuilder implements Builder
 {
