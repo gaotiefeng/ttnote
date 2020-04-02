@@ -4,8 +4,8 @@
 
 ![](Factory/abstract/abstractFactory.jpg)
 
->! 在不指定具体类的情况下创建一系列相关或依赖对象。通常，
->！创建的类都实现同一个接口。抽象工厂的客户机并不关心这些对象是如何创建的，它只知道它们是如何组合在一起的。
+> 在不指定具体类的情况下创建一系列相关或依赖对象。通常，
+> <span style="color:red;">创建的类都实现同一个接口。</span>抽象工厂的客户机并不关心这些对象是如何创建的，它只知道它们是如何组合在一起的。
 
 [抽象工厂代码]（https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/Factory/)
 
