@@ -22,6 +22,9 @@ class WorkerPool implements Countable
      */
     private $freeWorkers = [];
 
+    /**
+     * object => occupiedWorkers[key];
+     */
     public function get(): StringReversWorker
     {
         if (count($this->freeWorkers) == 0) {
@@ -34,6 +37,9 @@ class WorkerPool implements Countable
         return $worker;
     }
 
+    /**
+     * object => freeWorkers[key];
+     */
     public function dispose(StringReversWorker $worker)
     {
         $key = spl_object_hash($worker);
