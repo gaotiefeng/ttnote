@@ -11,7 +11,7 @@ class FileLoggerFactory implements LoggerFactory
     public function __construct($file_path = '')
     {
         if ($file_path == '') {
-            $file_path = __DIR__.'/../../../runtime/logs';
+            $file_path = __DIR__ . '/../../../runtime/logs';
             if (!is_dir($file_path)) {
                 mkdir($file_path,0777,true);
             }
