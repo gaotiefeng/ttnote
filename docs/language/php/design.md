@@ -91,6 +91,80 @@
 比如像数据库连接，socket连接，大量耗费资源的代表数字资源的对象，像字体或者位图。不过，在特定情况下，
 简单的对象创建池(没有请求外部的资源，仅仅将自身保存在内存中)或许并不会提升效率和性能，这时候，就需要使用者酌情考虑了。
 
+![4](app/Purpose/purpose.png)
+<p style="text-align:center;">图4</p>    
+
+[图4->对象池设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Purpose/)
+
+```php
+<?php declare(strict_types=1);
+
+namespace App\Purpose;
+
+use DateTime;
+
+class StringReversWorker
+{
+    ## php7.4
+    ##private DateTime $createdAt;
+
+    /** @var DateTime $createdAt*/
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
+
+    public function run(string $text)
+    {
+        return strrev($text);
+    }
+}
+
+use Countable;
+
+class WorkerPool implements Countable
+{
+    /**
+     * @var StringReversWorker[]
+     */
+    private $occupiedWorkers = [];
+
+    /**
+     * @var StringReversWorker[]
+     */
+    private $freeWorkers = [];
+
+    public function get(): StringReversWorker
+    {
+        if (count($this->freeWorkers) == 0) {
+            $worker = new StringReversWorker();
+        }else {
+            $worker = array_pop($this->freeWorkers);
+        }
+        ##spl_object_hash — 返回指定对象的hash id
+        $this->occupiedWorkers[spl_object_hash($worker)] = $worker;
+        return $worker;
+    }
+
+    public function dispose(StringReversWorker $worker)
+    {
+        $key = spl_object_hash($worker);
+
+        if (isset($this->occupiedWorkers[$key]))
+        {
+            unset($this->occupiedWorkers[$key]);
+            $this->freeWorkers[$key] = $worker;
+        }
+    }
+
+    public function count():int
+    {
+        return count($this->occupiedWorkers) + count($this->freeWorkers);
+    }
+}
+```
 
 ## 单例模式
 > 单例模式解决的是如何在整个项目中创建唯一对象实例的问题
