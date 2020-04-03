@@ -24,6 +24,11 @@
 - 这个模式是一个 “真正” 的设计模式，因为它遵循了依赖反转原则（Dependency Inversion Principle “D” 代表了真正的面向对象程序设计。
 - 它意味着工厂方法类依赖于类的抽象，而不是具体将被创建的类，这是工厂方法模式与简单工厂模式和静态工厂模式最重要的区别
 
+![](app/Factory/Factory/factory.png)
+
+[工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/Factory/)
+
+
 ```php
 <?php
 // todo insterface and abstractFactory
