@@ -2,12 +2,13 @@
 
 ## 抽象工厂 abstractFactory
 
-![](app/Factory/abstractFactory/abstractFactory.jpg)
+![1](app/Factory/abstractFactory/abstractFactory.jpg)
+<p style="text-align:center;">图1</p>    
 
 > 在不指定具体类的情况下创建一系列相关或依赖对象。通常，
 > <span style="color:red;">创建的类都实现同一个接口。</span>抽象工厂的客户机并不关心这些对象是如何创建的，它只知道它们是如何组合在一起的。
 
-[抽象工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/)
+[图1->抽象工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/)
 
 ## 生成器模式
 
@@ -15,19 +16,22 @@
 在特定的情况下，比如如果生成器对将要创建的对象有足够多的了解，那么代表生成器的接口(interface)可以是一个抽象类(也就是说可以有一定的具体实现，就像众所周知的适配器模式)。
 如果对象有复杂的继承树，理论上创建对象的生成器也同样具有复杂的继承树。
 >
-![](app/Builder/builder.png)
+![2](app/Builder/builder.png) 
+<p style="text-align:center;">图2</p>    
 
-[生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Builder/)
+[图2->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Builder/)
 
 ## 工厂模式
 - 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
 - 这个模式是一个 “真正” 的设计模式，因为它遵循了依赖反转原则（Dependency Inversion Principle “D” 代表了真正的面向对象程序设计。
 - 它意味着工厂方法类依赖于类的抽象，而不是具体将被创建的类，这是工厂方法模式与简单工厂模式和静态工厂模式最重要的区别
 
-![](app/Factory/Factory/factory.png)
+![3](app/Factory/Factory/factory.png)
+<p style="text-align:center;">图3</p>    
 
-[工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/Factory/)
+[图3->工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/Factory/)
 
+###### 简单的列子
 
 ```php
 <?php
@@ -72,6 +76,21 @@
  $transport=transFactory::factory('car');
  $transport->go();
  ```
+
+## 对象池设计模式 Purpose
+
+>对象池设计模式 是创建型设计模式，它会对新创建的对象应用一系列的初始化操作，
+让对象保持立即可使用的状态 - 一个存放对象的 “池子” - 而不是对对象进行一次性的的使用(创建并使用，完成之后立即销毁)。
+对象池的使用者会对对象池发起请求，以期望获取一个对象，并使用获取到的对象进行一系列操作，当使用者对对象的使用完成之后，
+使用者会将由对象池的对象创建工厂创建的对象返回给对象池，而不是用完之后销毁获取到的对象。
+对象池在某些情况下会带来重要的性能提升，比如耗费资源的对象初始化操作，实例化类的代价很高，但每次实例化的数量较少的情况下。
+对象池中将被创建的对象会在真正被使用时被提前创建，
+避免在使用时让使用者浪费对象创建所需的大量时间(比如在对象某些操作需要访问网络资源的情况下)从池子中取得对象的时间是可预测的，
+但新建一个实例所需的时间是不确定。
+总之，对象池会为你节省宝贵的程序执行时间，
+比如像数据库连接，socket连接，大量耗费资源的代表数字资源的对象，像字体或者位图。不过，在特定情况下，
+简单的对象创建池(没有请求外部的资源，仅仅将自身保存在内存中)或许并不会提升效率和性能，这时候，就需要使用者酌情考虑了。
+
 
 ## 单例模式
 > 单例模式解决的是如何在整个项目中创建唯一对象实例的问题
