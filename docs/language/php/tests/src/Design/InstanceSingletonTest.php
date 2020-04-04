@@ -19,4 +19,8 @@ class InstanceSingletonTest extends TestCase
         $this->assertInstanceOf(Instance\Singleton::class, $firstCall);
         $this->assertSame($firstCall, $secondCall);
     }
+
+    public function testaads()
+    {
+    }
 }

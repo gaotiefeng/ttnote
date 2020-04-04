@@ -171,7 +171,34 @@ class WorkerPool implements Countable
 ###### 单例模式已经被考虑列入到反模式中！请使用依赖注入获得更好的代码可测试性和可控性！ 
 >单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 >使应用中只存在一个对象的实例，并且使这个单实例负责所有对该对象的调用。
- 
+
+[单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Instance/)
+
+```php
+<?php
+class Singleton
+{
+    private static $uniqueInstance = null;
+
+    public static function getInstance()
+    {
+        if (self::$uniqueInstance === null) {
+            self::$uniqueInstance = new self;
+        }
+
+        return self::$uniqueInstance;
+    }
+
+    protected function __construct()
+    {
+    }
+
+    private function __clone()
+    {
+    }
+}
+```
+
 - 场景 数据库连接器 日志记录器 应用锁文件     
 
 ```php
