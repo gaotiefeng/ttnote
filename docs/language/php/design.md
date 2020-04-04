@@ -172,7 +172,7 @@ class WorkerPool implements Countable
 >单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 >使应用中只存在一个对象的实例，并且使这个单实例负责所有对该对象的调用。
 
-[单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Instance/)
+[单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
 
 ```php
 <?php
@@ -224,6 +224,7 @@ class Single{
 
 ## 原型设计模式（Prototype Design Pattern) clone
 ###### 通过创建一个原型对象，然后复制原型对象来避免通过标准的方式创建大量的对象产生的开销(new Foo())。
+[原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
 
 
 ```php
