@@ -20,7 +20,5 @@ class InstanceSingletonTest extends TestCase
         $this->assertSame($firstCall, $secondCall);
     }
 
-    public function testaads()
-    {
-    }
+
 }
