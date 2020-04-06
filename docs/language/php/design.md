@@ -220,6 +220,17 @@ class Single{
  ```
 
 ## 静态工厂
+>和抽象工厂类似，静态工厂模式用来创建一系列互相关联或依赖的对象，
+>和抽象工厂类似，静态工厂模式用来创建一系列互相关联或依赖的对象，
+和抽象工厂模式不同的是静态工厂模式只用一个静态方法就解决了所有类型的对象创建，
+通常被命名为``工厂`` 或者 构建器
+
+![5](app/Design/Create/StaticFactory/staticFactory.png)
+<p style="text-align:center;">图5</p>   
+
+[原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/StaticFactory)
+
+
 
 
 ## 原型设计模式（Prototype Design Pattern) clone
