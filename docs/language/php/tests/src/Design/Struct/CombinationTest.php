@@ -12,14 +12,14 @@ class CombinationTest extends \PHPUnit\Framework\TestCase
     {
         $form = new Form();
         $form->addElement(new TextElement('Email:'));
-        $form->addElement(new InputElement());
+        $form->addElement(new InputElement("111"));
         $embed = new Form();
         $embed->addElement(new TextElement('Password:'));
-        $embed->addElement(new InputElement());
+        $embed->addElement(new InputElement("222"));
         $form->addElement($embed);
 
         $this->assertSame(
-            '<form>Email:<input type="text" /><form>Password:<input type="text" /></form></form>',
+            '<form>Email:<input type="text" value="111" /><form>Password:<input type="text" value="222" /></form></form>',
             $form->render()
         );
 
