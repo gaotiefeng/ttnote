@@ -306,12 +306,21 @@ class Client {
 ###### 目的-解耦一个对象的实现与抽象，这样两者可以独立地变化。
 
 ![桥接模式](app/Design/Struct/Bridging/bridging.png)
-<p style="text-align:center;">桥接模式</p>   
+<p style="text-align:center;">桥接模式图</p>   
 
-[桥接模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Bridging)
+[代码-桥接模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Bridging)
 
 
 ## 组合模式
+
+###### 以单个对象的方式来对待一组对象
+       
+
+![组合模式](app/Design/Struct/Combination/combination.png)
+<p style="text-align:center;">组合模式图</p>   
+
+[代码-组合模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Combination)
+
 
 ## 桥接模式
 
