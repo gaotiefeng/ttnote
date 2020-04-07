@@ -5,11 +5,9 @@
  * Date: 2020/4/3
  * Time: 11:47 上午
  */
+namespace App\tests\src\Design\Create;
 
-namespace App\tests\Puspose;
-
-
-use App\Purpose\WorkerPool;
+use App\Design\Create\Purpose\WorkerPool;
 use PHPUnit\Framework\TestCase;
 
 class PoolTest extends TestCase

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Builder;
+namespace App\Design\Create\Builder;
 
-use App\Builder\Builder;
-use App\Builder\Part\Car;
-use App\Builder\Part\Doors;
-use App\Builder\Part\Engine;
-use App\Builder\Part\Wheel;
+use App\Design\Create\Builder\Builder;
+use App\Design\Create\Builder\Part\Car;
+use App\Design\Create\Builder\Part\Doors;
+use App\Design\Create\Builder\Part\Engine;
+use App\Design\Create\Builder\Part\Wheel;
 
 /** 具体建造者 */
 class CarBuilder implements Builder

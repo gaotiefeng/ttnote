@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\tests\src\Design\Struct;
+
 use App\Design\Struct\Bridging\HelloWorldService;
 use App\Design\Struct\Bridging\HtmlFormatter;
 use App\Design\Struct\Bridging\PlainTextFormatter;

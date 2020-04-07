@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\tests\src\Bulider;
+namespace App\tests\src\Design\Create;
 
 
-use App\Builder\CarBuilder;
-use App\Builder\Director;
-use App\Builder\Part\Car;
-use App\Builder\Part\Truck;
-use App\Builder\TruckBuilder;
+use App\Design\Create\Builder\CarBuilder;
+use App\Design\Create\Builder\Director;
+use App\Design\Create\Builder\Part\Car;
+use App\Design\Create\Builder\Part\Truck;
+use App\Design\Create\Builder\TruckBuilder;
 use PHPUnit\Framework\TestCase;
 
 class DirectorTest extends TestCase

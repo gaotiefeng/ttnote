@@ -7,6 +7,8 @@
  * Time: 6:01 下午
  */
 
+namespace App\tests\src\Design\Create;
+
 use App\Design\Create\StaticFactory\NumberFormatter;
 use App\Design\Create\StaticFactory\StaticFactory as fomatterFactory;
 use App\Design\Create\StaticFactory\StringFormatter;
@@ -26,7 +28,7 @@ class StaticFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testException()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         fomatterFactory::factory('object');
     }

@@ -6,6 +6,10 @@
  * Date: 2020/4/7
  * Time: 9:20 上午
  */
+
+namespace App\tests\src\Design\Struct;
+
+
 use App\Design\Struct\Adapter\Kindle;
 use PHPUnit\Framework\TestCase;
 use App\Design\Struct\Adapter\PaperBook;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Builder;
+namespace App\Design\Create\Builder;
 
 /** 抽象建造者 */
 interface Builder

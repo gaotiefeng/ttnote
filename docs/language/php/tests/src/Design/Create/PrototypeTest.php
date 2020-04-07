@@ -7,6 +7,8 @@
  * Time: 2:55 下午
  */
 
+namespace App\tests\src\Design\Create;
+
 use App\Design\Create\Prototype\FooBookPrototype;
 use App\Design\Create\Prototype\BarBookPrototype;
 

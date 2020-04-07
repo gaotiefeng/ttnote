@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace App\Builder;
+namespace App\Design\Create\Builder;
 
 /** 指挥官 */
 class Director

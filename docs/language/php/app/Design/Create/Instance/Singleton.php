@@ -6,7 +6,7 @@
  * Time: 2:14 下午
  */
 
-namespace App\Instance;
+namespace App\Design\Create\Instance;
 
 
 class Singleton

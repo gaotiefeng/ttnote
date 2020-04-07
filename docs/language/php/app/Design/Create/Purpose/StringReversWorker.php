@@ -6,7 +6,7 @@
  * Time: 11:35 上午
  */
 
-namespace App\Purpose;
+namespace App\Design\Create\Purpose;
 
 use DateTime;
 

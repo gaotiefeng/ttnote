@@ -17,10 +17,10 @@
 在特定的情况下，比如如果生成器对将要创建的对象有足够多的了解，那么代表生成器的接口(interface)可以是一个抽象类(也就是说可以有一定的具体实现，就像众所周知的适配器模式)。
 如果对象有复杂的继承树，理论上创建对象的生成器也同样具有复杂的继承树。
 >
-![生成器图](app/Builder/builder.png) 
+![生成器图](app/Design/Create/Builder/builder.png) 
 <p style="text-align:center;">生成器图</p>    
 
-[代码->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Builder/)
+[代码->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/Builder/)
 
 ## 工厂模式
 - 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
@@ -92,10 +92,10 @@
 比如像数据库连接，socket连接，大量耗费资源的代表数字资源的对象，像字体或者位图。不过，在特定情况下，
 简单的对象创建池(没有请求外部的资源，仅仅将自身保存在内存中)或许并不会提升效率和性能，这时候，就需要使用者酌情考虑了。
 
-![对象池设计模式图](app/Purpose/purpose.png)
+![对象池设计模式图](app/Design/Create/Purpose/purpose.png)
 <p style="text-align:center;">对象池设计模式图</p>    
 
-[代码->对象池设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Purpose/)
+[代码->对象池设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/Purpose/)
 
 ```php
 <?php declare(strict_types=1);
@@ -172,7 +172,7 @@ class WorkerPool implements Countable
 >单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 >使应用中只存在一个对象的实例，并且使这个单实例负责所有对该对象的调用。
 
-[代码-单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
+[代码-单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/Instance/)
 
 ```php
 <?php
@@ -228,7 +228,7 @@ class Single{
 ![静态工厂模式图](app/Design/Create/StaticFactory/staticFactory.png)
 <p style="text-align:center;">静态工厂模式图</p>   
 
-[代码-静态工厂模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/StaticFactory)
+[代码-静态工厂模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/StaticFactory/)
 
 
 
@@ -237,7 +237,7 @@ class Single{
 ###### 通过创建一个原型对象，然后复制原型对象来避免通过标准的方式创建大量的对象产生的开销(new Foo())。
 
 
-[代码-原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
+[代码-原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/Prototype/)
 
 
 ```php

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\tests\src\Design\Struct;
+
 use App\Design\Struct\Combination\Form;
 use App\Design\Struct\Combination\TextElement;
 use App\Design\Struct\Combination\InputElement;

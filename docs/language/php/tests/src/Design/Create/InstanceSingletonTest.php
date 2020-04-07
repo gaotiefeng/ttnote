@@ -6,8 +6,10 @@
  * Time: 2:18 下午
  */
 
+namespace App\tests\src\Design\Create;
+
 use PHPUnit\Framework\TestCase;
-use App\Instance;
+use App\Design\Create\Instance;
 
 class InstanceSingletonTest extends TestCase
 {
