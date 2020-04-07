@@ -321,10 +321,18 @@ class Client {
 
 [代码-组合模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Combination)
 
-
-## 桥接模式
-
 ## 数据映射器
+
+###### 目的
+>数据映射器是一个数据访问层，用于将数据在持久性数据存储（通常是一个关系数据库）和内存中的数据表示（领域层）之间进行相互转换。其目的是为了将数据的内存表示、持久存储、数据访问进行分离。该层由一个或者多个映射器组成（或者数据访问对象），并且进行数据的转换。映射器的实现在范围上有所不同。通用映射器将处理许多不同领域的实体类型，而专用映射器将处理一个或几个。
+此模式的主要特点是，与Active Record不同，其数据模式遵循单一职责原则(Single Responsibility Principle)。
+
+######场景 ~~数据库对象关系映射器（ORM）~~
+
+![数据映射器](app/Design/Struct/Mapper/orm.png)
+<p style="text-align:center;">数据映射器</p>   
+
+[代码-数据映射器](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Mapper)
 
 ## 装饰器
 
