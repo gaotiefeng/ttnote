@@ -1,4 +1,4 @@
-
+# php-设计模式
  # 创建型设计模式
 
 ## 抽象工厂 abstractFactory
@@ -287,19 +287,29 @@ class Client {
 
 ## 适配器模式（Adapter）(类和对象)
 ###### 能生存下来的物种，不是最强壮的，也不是最聪明的，而是能因应环境变化的物种 --查尔斯·达尔文
->目的 将某个类的接口转换成与另一个接口兼容。适配器通过将原始接口进行转换，
-给用户提供一个兼容接口，使得原来因为接口不同而无法一起使用的类可以得到兼容。
+###### 目的 将某个类的接口转换成与另一个接口兼容。适配器通过将原始接口进行转换，
+###### 给用户提供一个兼容接口，使得原来因为接口不同而无法一起使用的类可以得到兼容。
+
 >定义一个接口(有几个方法，以及相应的参数)。然后，有几种不同的情况，就写几个类实现该接口。将完成相似功能的函数，统一成一致的方法。
 
 ![适配器图](app/Design/Struct/Adapter/adapter.png)
 <p style="text-align:center;">适配器图</p>   
 
+###### 场景-数据库客户端库适配器-使用不同的webservices，通过适配器来标准化输出数据，从而保证不同webservice输出的数据是一致的
 - 代码
 [适配器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Adapter)
 
 
 
 ## 桥接模式
+
+###### 目的-解耦一个对象的实现与抽象，这样两者可以独立地变化。
+
+![桥接模式](app/Design/Struct/Bridging/bridging.png)
+<p style="text-align:center;">桥接模式</p>   
+
+[桥接模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Bridging)
+
 
 ## 组合模式
 
