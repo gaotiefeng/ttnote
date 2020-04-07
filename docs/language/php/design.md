@@ -1,15 +1,16 @@
 
 # 创建型设计模式
+ # 创建型设计模式
 
 ## 抽象工厂 abstractFactory
 
-![1](app/Factory/abstractFactory/abstractFactory.jpg)
-<p style="text-align:center;">图1</p>    
+![抽象工厂图](app/Factory/abstractFactory/abstractFactory.jpg)
+<p style="text-align:center;">抽象工厂图</p>    
 
 > 在不指定具体类的情况下创建一系列相关或依赖对象。通常，
 > <span style="color:red;">创建的类都实现同一个接口。</span>抽象工厂的客户机并不关心这些对象是如何创建的，它只知道它们是如何组合在一起的。
 
-[图1->抽象工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/)
+[代码->抽象工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/)
 
 ## 生成器模式
 
@@ -17,20 +18,20 @@
 在特定的情况下，比如如果生成器对将要创建的对象有足够多的了解，那么代表生成器的接口(interface)可以是一个抽象类(也就是说可以有一定的具体实现，就像众所周知的适配器模式)。
 如果对象有复杂的继承树，理论上创建对象的生成器也同样具有复杂的继承树。
 >
-![2](app/Builder/builder.png) 
-<p style="text-align:center;">图2</p>    
+![生成器图](app/Builder/builder.png) 
+<p style="text-align:center;">生成器图</p>    
 
-[图2->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Builder/)
+[代码->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Builder/)
 
 ## 工厂模式
 - 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
 - 这个模式是一个 “真正” 的设计模式，因为它遵循了依赖反转原则（Dependency Inversion Principle “D” 代表了真正的面向对象程序设计。
 - 它意味着工厂方法类依赖于类的抽象，而不是具体将被创建的类，这是工厂方法模式与简单工厂模式和静态工厂模式最重要的区别
 
-![3](app/Factory/Factory/factory.png)
-<p style="text-align:center;">图3</p>    
+![工厂模式图](app/Factory/Factory/factory.png)
+<p style="text-align:center;">工厂模式图</p>    
 
-[图3->工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/Factory/)
+[代码->工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/Factory/)
 
 ###### 简单的列子
 
@@ -92,10 +93,10 @@
 比如像数据库连接，socket连接，大量耗费资源的代表数字资源的对象，像字体或者位图。不过，在特定情况下，
 简单的对象创建池(没有请求外部的资源，仅仅将自身保存在内存中)或许并不会提升效率和性能，这时候，就需要使用者酌情考虑了。
 
-![4](app/Purpose/purpose.png)
-<p style="text-align:center;">图4</p>    
+![对象池设计模式图](app/Purpose/purpose.png)
+<p style="text-align:center;">对象池设计模式图</p>    
 
-[图4->对象池设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Purpose/)
+[代码->对象池设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Purpose/)
 
 ```php
 <?php declare(strict_types=1);
@@ -172,7 +173,7 @@ class WorkerPool implements Countable
 >单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 >使应用中只存在一个对象的实例，并且使这个单实例负责所有对该对象的调用。
 
-[单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
+[代码-单列模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
 
 ```php
 <?php
@@ -225,17 +226,19 @@ class Single{
 和抽象工厂模式不同的是静态工厂模式只用一个静态方法就解决了所有类型的对象创建，
 通常被命名为``工厂`` 或者 构建器
 
-![5](app/Design/Create/StaticFactory/staticFactory.png)
-<p style="text-align:center;">图5</p>   
+![静态工厂模式图](app/Design/Create/StaticFactory/staticFactory.png)
+<p style="text-align:center;">静态工厂模式图</p>   
 
-[原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/StaticFactory)
+[代码-静态工厂模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/StaticFactory)
 
 
 
 
 ## 原型设计模式（Prototype Design Pattern) clone
 ###### 通过创建一个原型对象，然后复制原型对象来避免通过标准的方式创建大量的对象产生的开销(new Foo())。
-[原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
+
+
+[代码-原型设计模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/)
 
 
 ```php
@@ -285,7 +288,16 @@ class Client {
 
 ## 适配器模式（Adapter）(类和对象)
 ###### 能生存下来的物种，不是最强壮的，也不是最聪明的，而是能因应环境变化的物种 --查尔斯·达尔文
+>目的 将某个类的接口转换成与另一个接口兼容。适配器通过将原始接口进行转换，
+给用户提供一个兼容接口，使得原来因为接口不同而无法一起使用的类可以得到兼容。
 >定义一个接口(有几个方法，以及相应的参数)。然后，有几种不同的情况，就写几个类实现该接口。将完成相似功能的函数，统一成一致的方法。
+
+![适配器图](app/Design/Struct/Adapter/adapter.png)
+<p style="text-align:center;">适配器图</p>   
+
+- 代码
+[适配器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Adapter)
+
 
 
 ## 桥接模式
