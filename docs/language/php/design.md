@@ -450,10 +450,30 @@ class DatabaseConnection
 [代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## 连贯模式
+###### 目的-用来编写易于阅读的代码
+###### 场景
+- 框架中的 QueryBuilder
+
+![连贯模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">连贯模式图</p>   
+
+[代码-连贯模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## Flyweight模式
 
+
+![外观模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">依赖注入</p>   
+
+[代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
+
 ## 代理模式
+
+
+![外观模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">依赖注入</p>   
+
+[代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## 注册模式
 >注册模式，解决全局共享和交换对象。已经创建好的对象，挂在到某个全局可以使用的数组上，在需要使用的时候，直接从该数组上获取即可。将对象注册到全局的树上。任何地方直接去访问。
