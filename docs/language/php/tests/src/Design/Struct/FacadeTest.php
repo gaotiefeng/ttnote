@@ -29,6 +29,8 @@ class FacadeTest extends TestCase
         $facade = new Facade($os, $bios);
         $facade->turnOn();
 
+        $facade->turnOff();
+
         $this->assertSame('Linux', $os->getName());
     }
 }
