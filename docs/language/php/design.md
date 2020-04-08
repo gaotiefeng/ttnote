@@ -1,9 +1,9 @@
 # php-设计模式
 >依赖反转原则是一种特定解耦形式，它使得高层次的模块不依赖低层次的模块的实现细节，两者都应该依赖于抽象接口，
 >而且抽象接口不应该依赖于具体实现，具体实现应该依赖于抽象的接口。
- # 创建型设计模式
+ # 1.创建型设计模式
 
-## 抽象工厂 abstractFactory
+## 1.1抽象工厂 abstractFactory
 
 ![抽象工厂图](app/Factory/abstractFactory/abstractFactory.jpg)
 <p style="text-align:center;">抽象工厂图</p>    
@@ -13,7 +13,7 @@
 
 [代码->抽象工厂代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Factory/)
 
-## 生成器模式
+## 1.2生成器模式
 
 >生成器的目的是将复杂对象的创建过程（流程）进行抽象，生成器表现为接口的形式。
 在特定的情况下，比如如果生成器对将要创建的对象有足够多的了解，那么代表生成器的接口(interface)可以是一个抽象类(也就是说可以有一定的具体实现，就像众所周知的适配器模式)。
@@ -24,7 +24,7 @@
 
 [代码->生成器代码](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Create/Builder/)
 
-## 工厂模式
+## 1.3工厂模式
 - 创建你自己的方法。不要过分依赖于我给出的方法。要确定最适合你的做法！不过拜托要尽量打破常规。 ----康斯坦丁·斯坦尼斯拉夫斯基
 - 这个模式是一个 “真正” 的设计模式，因为它遵循了依赖反转原则（Dependency Inversion Principle “D” 代表了真正的面向对象程序设计。
 - 它意味着工厂方法类依赖于类的抽象，而不是具体将被创建的类，这是工厂方法模式与简单工厂模式和静态工厂模式最重要的区别
@@ -80,7 +80,7 @@
  $transport->go();
  ```
 
-## 对象池设计模式 Purpose
+## 1.4对象池设计模式 Purpose
 
 >对象池设计模式 是创建型设计模式，它会对新创建的对象应用一系列的初始化操作，
 让对象保持立即可使用的状态 - 一个存放对象的 “池子” - 而不是对对象进行一次性的的使用(创建并使用，完成之后立即销毁)。
@@ -169,7 +169,7 @@ class WorkerPool implements Countable
 }
 ```
 
-## 单例模式
+## 1.5单例模式
 ###### 单例模式已经被考虑列入到反模式中！请使用依赖注入获得更好的代码可测试性和可控性！ 
 >单例模式解决的是如何在整个项目中创建唯一对象实例的问题
 >使应用中只存在一个对象的实例，并且使这个单实例负责所有对该对象的调用。
@@ -221,7 +221,7 @@ class Single{
  }
  ```
 
-## 静态工厂
+## 1.6静态工厂
 >和抽象工厂类似，静态工厂模式用来创建一系列互相关联或依赖的对象，
 >和抽象工厂类似，静态工厂模式用来创建一系列互相关联或依赖的对象，
 和抽象工厂模式不同的是静态工厂模式只用一个静态方法就解决了所有类型的对象创建，
@@ -235,7 +235,7 @@ class Single{
 
 
 
-## 原型设计模式（Prototype Design Pattern) clone
+## 1.7原型设计模式（Prototype Design Pattern) clone
 ###### 通过创建一个原型对象，然后复制原型对象来避免通过标准的方式创建大量的对象产生的开销(new Foo())。
 
 
@@ -285,9 +285,9 @@ class Client {
 }
 ```
 
-# 结构性设计模式 （如下）
+# 2.结构性设计模式 （如下）
 
-## 适配器模式（Adapter）(类和对象)
+## 2.1适配器模式（Adapter）(类和对象)
 ###### 能生存下来的物种，不是最强壮的，也不是最聪明的，而是能因应环境变化的物种 --查尔斯·达尔文
 ###### 目的 将某个类的接口转换成与另一个接口兼容。适配器通过将原始接口进行转换，
 ###### 给用户提供一个兼容接口，使得原来因为接口不同而无法一起使用的类可以得到兼容。
@@ -303,7 +303,7 @@ class Client {
 
 
 
-## 桥接模式
+## 2.2桥接模式
 
 ###### 目的-解耦一个对象的实现与抽象，这样两者可以独立地变化。
 
@@ -313,7 +313,7 @@ class Client {
 [代码-桥接模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Bridging)
 
 
-## 组合模式
+## 2.3组合模式
 
 ###### 以单个对象的方式来对待一组对象
        
@@ -323,7 +323,7 @@ class Client {
 
 [代码-组合模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Combination)
 
-## 数据映射器
+## 2.4数据映射器
 
 ###### 目的
 >数据映射器是一个数据访问层，用于将数据在持久性数据存储（通常是一个关系数据库）和内存中的数据表示（领域层）之间进行相互转换。其目的是为了将数据的内存表示、持久存储、数据访问进行分离。该层由一个或者多个映射器组成（或者数据访问对象），并且进行数据的转换。映射器的实现在范围上有所不同。通用映射器将处理许多不同领域的实体类型，而专用映射器将处理一个或几个。
@@ -336,7 +336,7 @@ class Client {
 
 [代码-数据映射器](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Mapper)
 
-## 装饰器
+## 2.5装饰器
 ###### 目的-动态地为类的实例添加功能
 ###### 例子-Web Service层：REST服务的JSON与XML装饰器（当然，在此只能使用其中的一种)
 ![装饰器](app/Design/Struct/Mapper/orm.png)
@@ -344,7 +344,7 @@ class Client {
 
 [代码-装饰器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Decorator)
 
-## 依赖注入-DI
+## 2.6依赖注入-DI
 ###### 目的-实现了松耦合的软件架构，可得到更好的测试，管理和扩展的代码
 ###### 例子
 ###### 1.Doctrine2 ORM 使用了依赖注入，它通过配置注入了 Connection 对象。为了达到方便测试的目的，可以很容易的通过配置创建一个mock的``Connection`` 对象。
@@ -431,7 +431,7 @@ class DatabaseConnection
 }
 ```
 
-## 外观模式
+## 2.7外观模式
 ###### 　外观模式(Facade Pattern)：外部与一个子系统的通信必须通过一个统一的外观对象进行，
 ###### 　为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
 ###### 　外观模式又称为门面模式，它是一种对象结构型模式。
@@ -449,7 +449,7 @@ class DatabaseConnection
 
 [代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
-## 连贯模式
+## 2.8连贯模式
 ###### 目的-用来编写易于阅读的代码
 ###### 场景
 - 框架中的 QueryBuilder
@@ -496,7 +496,7 @@ class Sql
 }
 ```
 
-## Flyweight模式（亨元模式）
+## 2.9Flyweight模式（亨元模式）
 ###### 目的-为了最大限度地减少内存使用，Flyweight尽可能地与相似的对象共享内存。当使用了状态差别不大的大量对象时，
 ###### 就需要它。通常的做法是在外部数据结构中保持状态，并在需要时将其传递给flyweight对象。
 >享元模式的定义为：采用一个共享来避免大量拥有相同内容对象的开销。这种开销中最常见、直观的就是内存的损耗。享元模式以共享的方式高效的支持大量的细粒度对象。
@@ -543,17 +543,22 @@ class TextFactory implements Countable
 }
 ```
 
-## 代理模式
+## 2.10代理模式
 ###### 目的-为昂贵或者无法复制的资源提供接口。
-
-
-
-![代理模式](app/Design/Struct/Facade/facade.png)
+###### 场景-Cache代理-防火墙（Firewall）
+![代理模式](app/Design/Struct/Proxy/Proxy.png)
 <p style="text-align:center;">代理模式</p>   
 
-[代码-代理模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
+[代码-代理模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Proxy/)
 
-## 注册模式
+## 2.11注册模式
 >注册模式，解决全局共享和交换对象。已经创建好的对象，挂在到某个全局可以使用的数组上，在需要使用的时候，直接从该数组上获取即可。将对象注册到全局的树上。任何地方直接去访问。
+>为了实现在整个应用程序中经常使用的对象的中央存储，通常使用只有静态方法的抽象类（或使用Singleton模式）来实现。请记住，
+>这会引入全局状态，这在任何时候都应该避免！而是使用依赖注入来实现它！
+>
 
+![注册模式](app/Design/Struct/Registry/registry.png)
+<p style="text-align:center;">注册模式</p>   
+
+[代码-注册模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Registry/)
 
