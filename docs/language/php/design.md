@@ -459,21 +459,58 @@ class DatabaseConnection
 
 [代码-连贯模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
+```php
+class Sql
+{
+    protected $fields = [];
+    protected $from = [];
+    protected $where = [];
+
+    public function select(array $fields) :Sql
+    {
+        $this->fields = $fields;
+        return $this;
+    }
+
+    public function where(string $where) :Sql
+    {
+        $this->where[] = $where;
+        return $this;
+    }
+
+    public function from(string $table, string $alias) :Sql
+    {
+        $this->from[] = $table . ' AS ' . $alias;
+        return $this;
+    }
+
+    public function __toString():string
+    {
+        return sprintf(
+            'SELECT %s FROM %s WHERE %s',
+            join(', ', $this->fields),
+            join(', ', $this->from),
+            join(' AND ', $this->where)
+        );
+    }
+}
+```
+
 ## Flyweight模式
 
 
-![外观模式](app/Design/Struct/Facade/facade.png)
-<p style="text-align:center;">依赖注入</p>   
+![Flyweight模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">Flyweight模式</p>   
 
-[代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
+[代码-Flyweight模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## 代理模式
 
 
-![外观模式](app/Design/Struct/Facade/facade.png)
-<p style="text-align:center;">依赖注入</p>   
+![代理模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">代理模式</p>   
 
-[代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
+[代码-代理模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## 注册模式
 >注册模式，解决全局共享和交换对象。已经创建好的对象，挂在到某个全局可以使用的数组上，在需要使用的时候，直接从该数组上获取即可。将对象注册到全局的树上。任何地方直接去访问。
