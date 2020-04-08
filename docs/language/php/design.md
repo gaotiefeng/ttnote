@@ -432,6 +432,17 @@ class DatabaseConnection
 ```
 
 ## 外观模式
+###### Facade通过嵌入多个（当然，有时只有一个）接口来解耦访客与子系统，当然也降低复杂度。
+- Facade 不会禁止你访问子系统
+- 你可以（应该）为一个子系统提供多个 Facade
+
+>因此一个好的 Facade 里面不会有 new 。如果每个方法里都要构造多个对象，那么它就不是 Facade，而是生成器或者[抽象|静态|简单] 工厂 [方法]。
+优秀的 Facade 不会有 new，并且构造函数参数是接口类型的。如果你需要创建一个新实例，则在参数中传入一个工厂对象。
+
+![外观模式](app/Design/Struct/Facade/facade.png)
+<p style="text-align:center;">依赖注入</p>   
+
+[代码-外观模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
 
 ## 连贯模式
 
