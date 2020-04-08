@@ -544,6 +544,8 @@ class TextFactory implements Countable
 ```
 
 ## 代理模式
+###### 目的-为昂贵或者无法复制的资源提供接口。
+
 
 
 ![代理模式](app/Design/Struct/Facade/facade.png)
