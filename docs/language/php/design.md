@@ -332,11 +332,18 @@ class Client {
 ###### 场景 ~~数据库对象关系映射器（ORM）~~
 
 ![数据映射器](app/Design/Struct/Mapper/orm.png)
-<p style="text-align:center;">数据映射器</p>   
+<p style="text-align:center;">数据映射器图</p>   
 
 [代码-数据映射器](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Mapper)
 
 ## 装饰器
+###### 目的-动态地为类的实例添加功能
+###### 例子-Web Service层：REST服务的JSON与XML装饰器（当然，在此只能使用其中的一种)
+![装饰器](app/Design/Struct/Mapper/orm.png)
+<p style="text-align:center;">装饰器图</p>   
+
+[代码-装饰器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Decorator)
+
 
 ## 依赖注入
 
