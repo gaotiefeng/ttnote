@@ -496,13 +496,52 @@ class Sql
 }
 ```
 
-## Flyweight模式
+## Flyweight模式（亨元模式）
+###### 目的-为了最大限度地减少内存使用，Flyweight尽可能地与相似的对象共享内存。当使用了状态差别不大的大量对象时，
+###### 就需要它。通常的做法是在外部数据结构中保持状态，并在需要时将其传递给flyweight对象。
+>享元模式的定义为：采用一个共享来避免大量拥有相同内容对象的开销。这种开销中最常见、直观的就是内存的损耗。享元模式以共享的方式高效的支持大量的细粒度对象。
 
-
-![Flyweight模式](app/Design/Struct/Facade/facade.png)
+![Flyweight模式](app/Design/Struct/Flyweight/flyweight.png)
 <p style="text-align:center;">Flyweight模式</p>   
 
-[代码-Flyweight模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Facade/)
+[代码-Flyweight模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Flyweight/)
+>TextFactory 来共享Character，word类
+
+
+```php
+use Countable;
+
+class TextFactory implements Countable
+{
+    /**
+     * @var Text[]
+     */
+    private $charPool = [];
+
+    public function get(string $name) : Text
+    {
+        if (!isset($this->charPool[$name])) {
+            $this->charPool[$name] = $this->create($name);
+        }
+
+        return $this->charPool[$name];
+    }
+
+    public function create(string $name)
+    {
+        if (strlen($name) == 1) {
+            return new Character($name);
+        }else{
+            return new Word($name);
+        }
+    }
+
+    public function count() : int
+    {
+        return count($this->charPool);
+    }
+}
+```
 
 ## 代理模式
 
