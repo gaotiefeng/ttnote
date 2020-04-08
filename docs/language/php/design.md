@@ -592,3 +592,6 @@ abstract class Registry
 
 [代码-注册模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Registry/)
 
+# 3.行为型设计模式Behavioral
+
+## 3.1责任链(Chain Of Responsibilities)
