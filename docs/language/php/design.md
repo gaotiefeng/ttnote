@@ -344,8 +344,92 @@ class Client {
 
 [代码-装饰器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Decorator)
 
+## 依赖注入-DI
+###### 目的-实现了松耦合的软件架构，可得到更好的测试，管理和扩展的代码
+###### 例子
+###### 1.Doctrine2 ORM 使用了依赖注入，它通过配置注入了 Connection 对象。为了达到方便测试的目的，可以很容易的通过配置创建一个mock的``Connection`` 对象。
+###### 2.框架中容器，通过容器依赖注入到controller /注解注入 
 
-## 依赖注入
+![依赖注入](app/Design/Struct/Di/di.png)
+<p style="text-align:center;">依赖注入</p>   
+
+[代码-依赖注入模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Struct/Di/)
+
+###### 将配置注入到Connection 
+```php
+class DatabaseConfiguration
+{
+    protected $host;
+
+    protected $port;
+
+    protected $username;
+
+    protected $password;
+
+    public function __construct(string $host,int $port,string $username,string $password)
+    {
+        $this->host = $host;
+        $this->port = $port;
+        $this->username = $username;
+        $this->password = $password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHost(): string
+    {
+        return $this->host;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPort(): int
+    {
+        return $this->port;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+}
+
+class DatabaseConnection
+{
+    /** @var DatabaseConfiguration $configuration */
+    private $configuration;
+
+    public function __construct(DatabaseConfiguration $config)
+    {
+        $this->configuration = $config;
+    }
+
+    public function getConfig() :string
+    {
+        return sprintf(
+            '%s:%s@%s:%d',
+            $this->configuration->getUsername(),
+            $this->configuration->getPassword(),
+            $this->configuration->getHost(),
+            $this->configuration->getPort()
+        );
+    }
+}
+```
 
 ## 外观模式
 
