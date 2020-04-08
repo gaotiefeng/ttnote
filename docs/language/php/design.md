@@ -557,6 +557,36 @@ class TextFactory implements Countable
 >这会引入全局状态，这在任何时候都应该避免！而是使用依赖注入来实现它！
 >
 
+```php
+use InvalidArgumentException;
+
+abstract class Registry
+{
+    const LOGGER = 'logger';
+
+    private static $services = [];
+    private static $allowedKeys = [ self::LOGGER ];
+
+    public static function set(string $key,Service $value)
+    {
+        if (!in_array($key,self::$allowedKeys)) {
+            throw new InvalidArgumentException('Invalid key given');
+        }
+
+        self::$services[$key] = $value;
+    }
+
+    public static function get(string $key)
+    {
+        if (!in_array($key,self::$allowedKeys) || !isset(self::$services[$key])) {
+            throw new InvalidArgumentException('Invalid key given');
+        }
+
+        return self::$services[$key];
+    }
+}
+```
+
 ![注册模式](app/Design/Struct/Registry/registry.png)
 <p style="text-align:center;">注册模式</p>   
 
