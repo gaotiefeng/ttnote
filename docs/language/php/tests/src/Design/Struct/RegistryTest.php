@@ -6,10 +6,10 @@ declare(strict_types=1);
 namespace App\tests\src\Design\Struct;
 
 
+use InvalidArgumentException;
 use App\Design\Struct\Registry\Registry;
 use App\Design\Struct\Registry\Service;
 use PHPUnit\Framework\TestCase;
-use InvalidArgumentException;
 
 class RegistryTest extends TestCase
 {
@@ -23,26 +23,28 @@ class RegistryTest extends TestCase
         $this->service = $this->getMockBuilder(Service::class)->getMock();
     }
 
-    public function testSetAndGetLogger()
+    public function testRegisterSetAndGetLogger()
     {
-        $this->service = new Service();
+        //$this->service = new Service();
 
         Registry::set(Registry::LOGGER, $this->service);
 
         $this->assertSame($this->service, Registry::get(Registry::LOGGER));
     }
 
-    public function testThrowsExceptionSet()
+    public function testRegisterSet()
     {
         $this->expectException(InvalidArgumentException::class);
 
         Registry::set('foobar', $this->service);
     }
 
-    public function testThrowsExceptionGet()
+    public function testRegisterGet()
     {
+
         $this->expectException(InvalidArgumentException::class);
 
-        Registry::get(Registry::LOGGER);
+        Registry::get('121212');
+
     }
 }

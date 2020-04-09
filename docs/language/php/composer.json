@@ -13,5 +13,8 @@
     },
     "scripts": {
         "test": "co-phpunit -c phpunit.xml --colors=always"
+    },
+    "require": {
+        "psr/http-message": "^1.0"
     }
 }

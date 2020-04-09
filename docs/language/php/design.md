@@ -595,3 +595,86 @@ abstract class Registry
 # 3.行为型设计模式Behavioral
 
 ## 3.1责任链(Chain Of Responsibilities)
+###### 目的-建立对象链以按顺序处理调用。如果一个对象不能处理一个调用，它将调用委托给链中的下一个对象，以此类推。
+`composer require psr/http-message`
+
+```php
+namespace App\Design\Behavioral\Chain;
+
+use Psr\Http\Message\RequestInterface;
+
+abstract class Handler
+{
+    /** @var Handler $handler */
+    protected $successor;
+
+    public function __construct(Handler $handler = null)
+    {
+        $this->successor = $handler;
+    }
+
+    public function handler(RequestInterface $request): ?string
+    {
+        $processing = $this->processing($request);
+
+        if ($processing === null && $this->successor !== null) {
+            $processing = $this->successor->processing($request);
+        }
+
+        return $processing;
+    }
+
+    abstract protected function processing(RequestInterface $request): ?string ;
+}
+
+class HttpInMemoryCacheHandler extends Handler
+{
+    /** @var array $data */
+    private  $data;
+
+    public function __construct(array $data, ?Handler $successor = null)
+    {
+        parent::__construct($successor);
+
+        $this->data = $data;
+    }
+
+    protected function processing(RequestInterface $request): ?string
+    {
+        $key = sprintf(
+            '%s?%s',
+            $request->getUri()->getPath(),
+            $request->getUri()->getQuery()
+        );
+
+        if ($request->getMethod() == 'GET' && isset($this->data[$key])) {
+            return $this->data[$key];
+        }
+
+        return null;
+    }
+}
+
+```
+
+## 3.2命令模式(Command)
+
+## 3.3迭代器模式(Iterator)
+
+## 3.4中介者模式(Mediator)
+
+## 3.5备忘录模式(Memento)
+
+## 3.6空对象模式(Null Object)
+
+## 3.7观察者模式(Observer)
+
+## 3.8规格模式(Specification)
+
+## 3.9状态模式(State)
+
+## 3.10策略模式(Strategy)
+
+## 3.11模版方法模式(Template Method)
+
+## 3.12访问者模式(Visitor)
