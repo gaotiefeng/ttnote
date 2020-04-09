@@ -598,6 +598,12 @@ abstract class Registry
 ###### 目的-建立对象链以按顺序处理调用。如果一个对象不能处理一个调用，它将调用委托给链中的下一个对象，以此类推。
 `composer require psr/http-message`
 
+
+![3.1责任链模式](app/Design/Behavioral/Chain/chain.png)
+<p style="text-align:center;">责任链模式</p>   
+
+[代码-责任链模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Chain/)
+
 ```php
 namespace App\Design\Behavioral\Chain;
 
