@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class IteratorTest extends TestCase
 {
-    public function testIterateBookList()
+    public function testIteratorBookList()
     {
         $bookList = new BookList();
         $bookList->addBook(new Book('Learning PHP Design Patterns', 'William Sanders'));
@@ -35,7 +35,7 @@ class IteratorTest extends TestCase
         );
     }
 
-    public function testIterateRemovingBook()
+    public function testIteratorRemovingBook()
     {
         $book = new Book('Clean Code', 'Robert C. Martin');
         $book2 = new Book('Professional Php Design Patterns', 'Aaron Saray');
@@ -56,7 +56,7 @@ class IteratorTest extends TestCase
         );
     }
 
-    public function testIterateAddBookToList()
+    public function testIteratorAddBookToList()
     {
         $book = new Book('Clean Code', 'Robert C. Martin');
 
@@ -66,7 +66,7 @@ class IteratorTest extends TestCase
         $this->assertCount(1, $bookList);
     }
 
-    public function testIterateRemoveBookFromList()
+    public function testIteratorRemoveBookFromList()
     {
         $book = new Book('Clean Code', 'Robert C. Martin');
 
