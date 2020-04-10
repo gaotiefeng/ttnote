@@ -597,7 +597,7 @@ abstract class Registry
 ## 3.1责任链(Chain Of Responsibilities)
 ###### 目的-建立对象链以按顺序处理调用。如果一个对象不能处理一个调用，它将调用委托给链中的下一个对象，以此类推。
 `composer require psr/http-message`
-
+###### 场景-审批流程-组长未审批-管理员审批
 
 ![3.1责任链模式](app/Design/Behavioral/Chain/chain.png)
 <p style="text-align:center;">责任链模式</p>   
@@ -665,6 +665,21 @@ class HttpInMemoryCacheHandler extends Handler
 
 ## 3.2命令模式(Command)
 
+>To encapsulate invocation and decoupling.
+We have an Invoker and a Receiver. This pattern uses a “Command” to delegate the method call against the Receiver and presents the same method “execute”. Therefore, the Invoker just knows to call “execute” to process the Command of the client. The Receiver is decoupled from the Invoker.
+The second aspect of this pattern is the undo(), which undoes the method execute(). Command can also be aggregated to combine more complex commands with minimum copy-paste and relying on composition over inheritance.
+封装调用和分离。
+我们有一个调用器和一个接收器。此模式使用一个“命令”将方法调用委托给接收方，并呈现相同的方法“execute”。因此，调用程序只知道调用“execute”来处理客户机的命令。接收器与调用程序分离。
+此模式的第二个方面是undo（），它撤消execute（）方法。还可以聚合命令，以将更复杂的命令与最少的复制粘贴和依赖组合而非继承结合起来。
+
+
+![3.2命令模式](app/Design/Behavioral/Command/command.png)
+<p style="text-align:center;">责任链模式</p>   
+
+[代码-3.2命令模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Command/)
+
+
+###### 
 ## 3.3迭代器模式(Iterator)
 
 ## 3.4中介者模式(Mediator)
