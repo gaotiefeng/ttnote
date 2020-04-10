@@ -671,16 +671,26 @@ The second aspect of this pattern is the undo(), which undoes the method execute
 封装调用和分离。
 我们有一个调用器和一个接收器。此模式使用一个“命令”将方法调用委托给接收方，并呈现相同的方法“execute”。因此，调用程序只知道调用“execute”来处理客户机的命令。接收器与调用程序分离。
 此模式的第二个方面是undo（），它撤消execute（）方法。还可以聚合命令，以将更复杂的命令与最少的复制粘贴和依赖组合而非继承结合起来。
-
+- 命令模式的四种角色：
+1. 接收者（Receiver）负责执行与请求相关的操作
+2. 命令接口（Command）封装execute()、undo()等方法
+3. 具体命令（HelloCommand）实现命令接口中的方法
+4. 请求者（Invoker）包含Command接口变量
 
 ![3.2命令模式](app/Design/Behavioral/Command/command.png)
 <p style="text-align:center;">责任链模式</p>   
 
 [代码-3.2命令模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Command/)
 
-
-###### 
 ## 3.3迭代器模式(Iterator)
+###### 迭代器（Iterator）模式，又叫做游标（Cursor）模式。
+###### `GOF给出的定义为：提供一种方法访问一个容器（container）对象中各个元素，而又不需暴露该对象的内部细节。`
+###### 一行一行地处理一个文件，只需遍历一个文件的所有行（这些行有一个对象表示法）（当然这也是一个对象）
+![3.3迭代器模式](app/Design/Behavioral/Iterator/iterator.png)
+<p style="text-align:center;">责任链模式</p>   
+
+[代码-迭代器模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Command/)
+
 
 ## 3.4中介者模式(Mediator)
 
