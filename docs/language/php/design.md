@@ -798,11 +798,9 @@ class BookList implements Countable, Iterator
 
 ###### UML
 ![3.4中介者模式](app/Design/Behavioral/Mediator/mediator.png)
-<p style="text-align:center;">责任链模式</p>   
+<p style="text-align:center;">3.4中介者模式</p>   
 
 [代码-Mediator模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Mediator/)
-
-
 
 ## 3.5备忘录模式(Memento)
 
