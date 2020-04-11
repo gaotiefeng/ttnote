@@ -790,6 +790,12 @@ class BookList implements Countable, Iterator
 > All components (called Colleague) are only coupled to the Mediator interface and it is a good thing because in OOP,
 > one good friend is better than many. This is the key-feature of this pattern.
 
+###### 设计场景：
+`我们有一个CD类和一个MP3类，两个类的结构相似。
+我们需要在CD类更新的时候，同步更新MP3类。
+传统的做法就是在CD类中实例化MP3类，然后去更新，但是这么做的话，代码就会很难维护，如果新增一个同样的MP4类，那么就没法处理了。
+中介者模式很好的处理了这种情况，通过中介者类，CD类中只要调用中介者这个类，就能同步更新这些数据。`
+
 ###### UML
 ![3.4中介者模式](app/Design/Behavioral/Mediator/mediator.png)
 <p style="text-align:center;">责任链模式</p>   
