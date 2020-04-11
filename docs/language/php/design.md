@@ -783,6 +783,20 @@ class BookList implements Countable, Iterator
 ```
 
 ## 3.4中介者模式(Mediator)
+###### Purpose
+>This pattern provides an easy way to decouple many components working together.
+> It is a good alternative to Observer IF you have a “central intelligence”, 
+>like a controller (but not in the sense of the MVC).
+> All components (called Colleague) are only coupled to the Mediator interface and it is a good thing because in OOP,
+> one good friend is better than many. This is the key-feature of this pattern.
+
+###### UML
+![3.4中介者模式](app/Design/Behavioral/Mediator/mediator.png)
+<p style="text-align:center;">责任链模式</p>   
+
+[代码-Mediator模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Mediator/)
+
+
 
 ## 3.5备忘录模式(Memento)
 
