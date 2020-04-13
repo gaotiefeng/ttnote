@@ -818,18 +818,78 @@ Caretaker —— 负责保存 Memento。 它可以修改一个对象；决定 O
 
 [代码-5备忘录模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Mememto/)
 
-
-
 ## 3.6空对象模式(Null Object)
+####### 目的
+- 空对象模式不属于 GoF 设计模式，但是它作为一种经常出现的套路足以被视为设计模式了。它具有如下优点：
+- 客户端代码简单
+- 可以减少报空指针异常的几率
+- 测试用例不需要考虑太多条件
+
+
+>返回一个对象或 null 应该用返回对象或者 NullObject 代替。
+NullObject 简化了死板的代码，消除了客户端代码中的条件检查，
+例如 if (!is_null($obj)) { $obj->callSomething(); } 只需 $obj->callSomething(); 就行。
+
+####### 列子
+- Symfony2: Symfony/Console 空输出
+- 责任链模式中的空处理器
+- 命令行模式中的空命令
+
+![3.6空对象模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.6空对象模式</p>   
+
+[代码-3.6空对象模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
 
 ## 3.7观察者模式(Observer)
 
+![3.7观察者模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.7观察者模式</p>   
+
+[代码-3.7观察者模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
 ## 3.8规格模式(Specification)
+
+![3.8规格模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.8规格模式</p>   
+
+[代码-3.8规格模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
 
 ## 3.9状态模式(State)
 
+![3.9状态模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.9状态模式</p>   
+
+[代码-3.9状态模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
+
 ## 3.10策略模式(Strategy)
+
+![3.10策略模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.10策略模式</p>   
+
+[代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
 
 ## 3.11模版方法模式(Template Method)
 
+![3.11模版方法模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.11模版方法模式</p>   
+
+[代码-3.11模版方法模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
+
 ## 3.12访问者模式(Visitor)
+
+![3.12访问者模式](app/Design/Behavioral/NullObject/nullobject.png)
+<p style="text-align:center;">3.12访问者模式</p>   
+
+[代码-3.12访问者模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
