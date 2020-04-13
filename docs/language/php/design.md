@@ -914,12 +914,28 @@ interface SplSubject  {
 ```
 
 ## 3.8规格模式(Specification)
+###### 目的
+>构建一个清晰的业务规则规范，其中每条规则都能被针对性地检查。
+>每个规范类中都有一个称为 isSatisfiedBy 的方法，方法判断给定的规则是否满足规范从而返回 true 或 false。
+         
+<!-- ![3.8规格模式](app/Design/Behavioral/Specification/specification.png) -->
 
-![3.8规格模式](app/Design/Behavioral/NullObject/nullobject.png)
+![3.8规格模式](https://cdn.learnku.com/uploads/images/201803/19/1/0tlZ6Tmsrn.png)
 <p style="text-align:center;">3.8规格模式</p>   
 
-[代码-3.8规格模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+[代码-3.8规格模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Specification/)
+```php
+<?php
 
+
+namespace App\Design\Behavioral\Specification;
+
+
+interface SpecificationInterface
+{
+    public function isSatisfiedBy(Item $item):bool ;
+}
+```
 
 
 ## 3.9状态模式(State)
