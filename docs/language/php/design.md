@@ -843,12 +843,75 @@ NullObject 简化了死板的代码，消除了客户端代码中的条件检查
 
 
 ## 3.7观察者模式(Observer)
+###### 目的-当对象的状态发生变化时，所有依赖于它的对象都得到通知并被自动更新。它使用的是低耦合的方式。
+###### 列子-使用观察者模式观察消息队列在 GUI 中的运行情况。
+-PHP 已经定义了 2 个接口用于快速实现观察者模式：SplObserver 和 SplSubject。
+ 
 
 ![3.7观察者模式](app/Design/Behavioral/NullObject/nullobject.png)
 <p style="text-align:center;">3.7观察者模式</p>   
 
 [代码-3.7观察者模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+```php
+/**
+ * The <b>SplObserver</b> interface is used alongside
+ * <b>SplSubject</b> to implement the Observer Design Pattern.
+ * @link https://php.net/manual/en/class.splobserver.php
+ */
+interface SplObserver  {
 
+        /**
+         * Receive update from subject
+         * @link https://php.net/manual/en/splobserver.update.php
+         * @param SplSubject $subject <p>
+	 * The <b>SplSubject</b> notifying the observer of an update.
+         * </p>
+         * @return void 
+         * @since 5.1
+         */
+        public function update (SplSubject $subject);
+
+}
+
+/**
+ * The <b>SplSubject</b> interface is used alongside
+ * <b>SplObserver</b> to implement the Observer Design Pattern.
+ * @link https://php.net/manual/en/class.splsubject.php
+ */
+interface SplSubject  {
+
+        /**
+         * Attach an SplObserver
+         * @link https://php.net/manual/en/splsubject.attach.php
+         * @param SplObserver $observer <p>
+	 * The <b>SplObserver</b> to attach.
+         * </p>
+         * @return void 
+         * @since 5.1
+         */
+        public function attach (SplObserver $observer);
+
+        /**
+         * Detach an observer
+         * @link https://php.net/manual/en/splsubject.detach.php
+         * @param SplObserver $observer <p>
+	 * The <b>SplObserver</b> to detach.
+         * </p>
+         * @return void 
+         * @since 5.1
+         */
+        public function detach (SplObserver $observer);
+
+        /**
+         * Notify an observer
+         * @link https://php.net/manual/en/splsubject.notify.php
+         * @return void 
+         * @since 5.1
+         */
+        public function notify ();
+
+}
+```
 
 ## 3.8规格模式(Specification)
 
