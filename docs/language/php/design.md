@@ -998,14 +998,17 @@ class ShippingOrder extends StateOrder
 ![3.10策略模式](https://cdn.learnku.com/uploads/images/201803/19/1/ZALJKc6DB2.png)
 <p style="text-align:center;">3.10策略模式</p>   
 
-[代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+[代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/Strategy/)
 
 
 
 
 ## 3.11模版方法模式(Template Method)
+###### 目的 它是一种让抽象模板的子类「完成」一系列算法的行为策略。
+>它是一种非常适合框架库的算法骨架。用户只需要实现子类的一种方法，其父类便可去搞定这项工作了。
+这是一种分离具体类的简单办法，且可以减少复制粘贴，这也是它常见的原因。
 
-![3.11模版方法模式](app/Design/Behavioral/NullObject/nullobject.png)
+![3.11模版方法模式](https://cdn.learnku.com/uploads/images/201803/19/1/5Brm3Ch0jM.pngtem)
 <p style="text-align:center;">3.11模版方法模式</p>   
 
 [代码-3.11模版方法模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
@@ -1014,7 +1017,7 @@ class ShippingOrder extends StateOrder
 
 ## 3.12访问者模式(Visitor)
 
-![3.12访问者模式](app/Design/Behavioral/NullObject/nullobject.png)
+![3.12访问者模式](https://cdn.learnku.com/uploads/images/201803/19/1/rtMmvjqvbN.png)
 <p style="text-align:center;">3.12访问者模式</p>   
 
 [代码-3.12访问者模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
