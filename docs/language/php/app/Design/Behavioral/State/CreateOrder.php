@@ -10,7 +10,7 @@ class CreateOrder extends StateOrder
 {
     public function __construct()
     {
-        $this->setStates('created');
+        $this->setStatus('created');
     }
 
     protected function done()

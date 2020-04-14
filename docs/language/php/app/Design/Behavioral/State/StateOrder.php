@@ -18,7 +18,7 @@ abstract class StateOrder
 
     abstract protected function done();
 
-    protected function setStates(string $status)
+    protected function setStatus(string $status)
     {
         $this->details['status'] = $status;
         $this->details['updatedTime'] = time();

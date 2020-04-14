@@ -946,14 +946,6 @@ interface SpecificationInterface
 
 [代码-3.9状态模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/State/)
 
-
-
-## 3.10策略模式(Strategy)
-
-![3.10策略模式](https://cdn.learnku.com/uploads/images/201803/19/1/ZALJKc6DB2.png)
-<p style="text-align:center;">3.10策略模式</p>   
-
-[代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
 ```php
 namespace App\Design\Behavioral\State;
 
@@ -996,6 +988,19 @@ class ShippingOrder extends StateOrder
 }
 
 ```
+
+
+## 3.10策略模式(Strategy)
+###### 目的 `分离策略并使他们快速切换。此外，这种模式使一种不错额继承替代方案（替代使用扩展抽象类的方式）`
+###### 例子
+- 对一个对象列表进行排序，一种按照日期，一种按照id
+
+![3.10策略模式](https://cdn.learnku.com/uploads/images/201803/19/1/ZALJKc6DB2.png)
+<p style="text-align:center;">3.10策略模式</p>   
+
+[代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+
+
 
 
 ## 3.11模版方法模式(Template Method)

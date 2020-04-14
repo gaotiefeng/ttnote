@@ -10,11 +10,11 @@ class ShippingOrder extends StateOrder
 {
     public function __construct()
     {
-        $this->setStates('shipping');
+        $this->setStatus('shipping');
     }
 
     protected function done()
     {
-        $this->setStates('completed');
+        $this->setStatus('completed');
     }
 }
