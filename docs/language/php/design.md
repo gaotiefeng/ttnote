@@ -939,21 +939,63 @@ interface SpecificationInterface
 
 
 ## 3.9状态模式(State)
+###### 目的-状态模式可以基于一个对象的同种事务而封装出不同的行为。它提供一种简洁的方式使得对象在运行时可以改变自身行为，而不必借助单一庞大的条件判断语句。
 
-![3.9状态模式](app/Design/Behavioral/NullObject/nullobject.png)
+![3.9状态模式](https://cdn.learnku.com/uploads/images/201803/19/1/rkjnhCggA4.png)
 <p style="text-align:center;">3.9状态模式</p>   
 
-[代码-3.9状态模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+[代码-3.9状态模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/State/)
 
 
 
 ## 3.10策略模式(Strategy)
 
-![3.10策略模式](app/Design/Behavioral/NullObject/nullobject.png)
+![3.10策略模式](https://cdn.learnku.com/uploads/images/201803/19/1/ZALJKc6DB2.png)
 <p style="text-align:center;">3.10策略模式</p>   
 
 [代码-3.10策略模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
+```php
+namespace App\Design\Behavioral\State;
 
+abstract class StateOrder
+{
+    /**
+     * @var array
+     */
+    private $details;
+
+    /** @var StateOrder $state */
+    protected static $state;
+
+    abstract protected function done();
+
+    protected function setStates(string $status)
+    {
+        $this->details['status'] = $status;
+        $this->details['updatedTime'] = time();
+    }
+
+    protected function getStatus(): string
+    {
+        return $this->details['status'];
+    }
+}
+namespace DesignPatterns\Behavioral\State;
+
+class ShippingOrder extends StateOrder
+{
+    public function __construct()
+    {
+        $this->setStatus('shipping');
+    }
+
+    protected function done()
+    {
+        $this->setStatus('completed');
+    }
+}
+
+```
 
 
 ## 3.11模版方法模式(Template Method)
