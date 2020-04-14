@@ -1016,9 +1016,73 @@ class ShippingOrder extends StateOrder
 
 
 ## 3.12访问者模式(Visitor)
+###### 目的
+>访问者模式可以让你将对象操作外包给其他对象。这样做的最主要原因就是关注（数据结构和数据操作）分离。
+>但是被访问的类必须定一个契约接受访问者。
+> (详见例子中的 Role::accept 方法)
+契约可以是一个抽象类也可直接就是一个接口。在此情况下，每个访问者必须自行选择调用访问者的哪个方法。
 
 ![3.12访问者模式](https://cdn.learnku.com/uploads/images/201803/19/1/rtMmvjqvbN.png)
 <p style="text-align:center;">3.12访问者模式</p>   
 
+```php
+interface Role
+{
+    public function accept(RoleVisitorInterface $visitor);
+}
+class User implements Role
+{
+    /**
+     * @var string
+     */
+    private $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return sprintf("User %s", $this->name);
+    }
+
+    public function accept(RoleVisitorInterface $visitor)
+    {
+        $visitor->visitUser($this);
+    }
+}
+interface  RoleVisitorInterface
+{
+    public function visitUser(User $user);
+
+    public function visitGroup(Group $group);
+}
+class RoleVisitor implements RoleVisitorInterface
+{
+    private $visited = [];
+
+    public function visitGroup(Group $group)
+    {
+       $this->visited[] = $group;
+    }
+
+    public function visitUser(User $user)
+    {
+        $this->visited[] = $user;
+    }
+
+    /**
+     * @return array
+     */
+    public function getVisited(): array
+    {
+        return $this->visited;
+    }
+}
+```
 [代码-3.12访问者模式](https://github.com/gaotiefeng/ttnote/tree/master/docs/language/php/app/Design/Behavioral/NullObject/)
 
