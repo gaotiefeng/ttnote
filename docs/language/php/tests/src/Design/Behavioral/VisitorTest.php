@@ -33,13 +33,23 @@ class VisitorTest extends TestCase
     }
 
     /**
+     * @dataProvider provideRoles
      *
      * @param Role $role
      */
-    public function testVisitor(Role $role)
+    public function testVisitorRole(Role $role)
     {
         $role->accept($this->visitor);
 
+        $this->assertSame($role,$this->visitor->getVisited()[0]);
+    }
+
+    public function testVisitorUser()
+    {
+        $role = new User('VIS');
+        $role->accept($this->visitor);
+        $name = $role->getName();
+        $this->assertSame("User VIS",$name);
         $this->assertSame($role,$this->visitor->getVisited()[0]);
     }
 }
