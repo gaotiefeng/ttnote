@@ -13,7 +13,10 @@ export PATH=$PATH:/usr/local/go/bin
 ##https://mirrors.aliyun.com/goproxy/
 export GOPROXY=https://goproxy.io
 export GO111MODULE=on
-
+##
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+go version
 ```
 - GO语言结构
 ##### 包声明 -package main
