@@ -137,7 +137,7 @@ ln -s /usr/local/mysql/bin/mysql /usr/bin
 set password=password("tf2019");
 UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
 ```
-###### 远程访问权限
+## 远程访问权限
 
 ```
 grant all privileges on *.* to 'root'@'%' identified by 'qingchen2019';
@@ -159,4 +159,10 @@ skip-grant-tables
 
 ```
 update mysql.user set authentication_string = password('qingchen2019') where user='root';
+```
+
+## source命令
+```
+use beego
+source /www/beego.sql
 ```

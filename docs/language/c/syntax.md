@@ -1,5 +1,7 @@
-
+<!--
 ![c language](https://raw.githubusercontent.com/gaotiefeng/images/master/language/c/c.png "C")
+-->
+
 ### 32位操作基本数据类型
 
 类型名称 | 占字节数 | 	其他叫法 | 表示范围
