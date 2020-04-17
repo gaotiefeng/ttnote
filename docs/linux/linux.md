@@ -3,7 +3,7 @@
 - `d 文件类型`
 - `r-读-4` `w-写-2` `x-执行-1`
 
-```
+```bash
 chown -R 777 文件名
 ls: 列出目录
 cd：切换目录
@@ -27,9 +27,35 @@ tail: 取出文件后面几行 tail [-n number] 文件  -f表示持续侦测 ctr
 
 ## 进程操作
 
+```bash
+top - 进程监控工具 load average: 0.98, 1.11, 1.29 超过1表示负载过高
+ps命令 报告程序状况
+ps -A 显示所有程序
+ps -ef 显示所有程序，并以ascii字符显示树状结构，表达程序间的相互关系
+ps -ef | grep 9501
+pstree -树形图状显示程序
+pstree -a 显示内个程序的完整指令
+pstree -h 列出树状图，标明现在正在执行的程序
+kill 删除执行中的程序或工作
+
+```
 
 ## 内存操作
 
+```bash
+free 
+free -m [MB展示] -
+vmstat 1 查看内存使用情况
+echo 1 > /proc/sys/vm/drop_caches
+```
+
+- free
+>total 物理内存总量 total = used + free
+used 使用情况（buffers/cache）
+free 未分配的内存
+shared 共享内存
+buffers 系统分配但未使用buffers
+cached  分配但未使用的cache
 
 ## 磁盘操作
 - `df` 列出文件系统的整体磁盘使用量
@@ -60,7 +86,6 @@ tail: 取出文件后面几行 tail [-n number] 文件  -f表示持续侦测 ctr
 ab -n 800 -c 800 http://go.tfuu.cn/user/list/
 ```
 
-![ab](ab.jpeg)
 
 ```
 Complete requests 完成请求数
