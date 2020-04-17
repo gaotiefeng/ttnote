@@ -1,4 +1,4 @@
-# 排序算法
+# 算法
 
 ## 冒泡排序
 
@@ -25,34 +25,7 @@ public String  sort()
     return  Arrays.toString(ns);
 }
 ```
+
 ## 插入排序
-
-## 选择排序
-
-## 希尔排序
-
-## 快排
-
-## 归并排序
-
-## 堆排序
-
-## 台阶算法
-
-```java
-public static int n(int n) {
-
-        if(n< 2) {
-            return  n;
-        }
-        int pre1 = 1;
-        int pre2 = 2;
-        int sum = 0;
-        for (int i = 2; i < n; i++){
-            sum =  pre1 + pre2;
-            pre1 = pre2;
-            pre2 = sum;
-         }
-        return sum;
-    }
-```
+- 它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
+- 插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。

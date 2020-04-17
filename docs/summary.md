@@ -7,3 +7,5 @@
 * [database](database/summary.md)
 * [tool](tool/summary.md)
 * [language](language/summary.md)
+* [linux](linux/linux.md)
+* [algorithm](algorithm/algorithm.md)
