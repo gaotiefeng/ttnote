@@ -25,17 +25,6 @@ public String  sort()
     return  Arrays.toString(ns);
 }
 ```
-## 插入排序
-
-## 选择排序
-
-## 希尔排序
-
-## 快排
-
-## 归并排序
-
-## 堆排序
 
 ## 台阶算法
 

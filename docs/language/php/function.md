@@ -1,6 +1,14 @@
 # php函数
 
+## php加密
+- `md5()`
+- `crypt()`
+- `sha1()`
+
 ## 数组函数
+- `array_unshift`
+- `array_pop`
+- `array_push`
 - `array_shift`   将数组`开头`的单元移出数组并作为结果返回
 - `array_values() `函数返回包含数组中所有的值的数组。被返回的数组将使用数值键，从 0 开始且以 1 递增
 - `uasort` — uasort ( array &$array , callable $value_compare_func ) : bool  

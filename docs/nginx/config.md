@@ -1,3 +1,13 @@
+## 编译安装
+```bash
+wget http://nginx.org/download/nginx-1.6.2.tar.gz
+tar -C /usr/local/src nginx-1.6.2.tar.gz
+cd nginx-1.6.2.tar.gz
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+make
+make install
+/usr/local/nginx/sbin/nginx -v
+```
 
 >nginx -s reload 重新加载
 >nginx -s stop 
