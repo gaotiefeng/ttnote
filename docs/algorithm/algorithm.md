@@ -32,7 +32,7 @@ public function bubbleSort(array $arr)
 - java代码
 
 ```java
-public String  bublleSort()
+public String  bubbleSort()
 {
     int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
     // 排序前:
@@ -58,7 +58,21 @@ public String  bublleSort()
 - go代码
 
 ```go
+func bubbleSort(arr []int) []int{
+	length := len(arr)
+	for i := 0; i < length - 1 ; i++  {
+		for j:= 0; j< length - 1 -i ;j++  {
+			if arr[j] > arr[j+1] {
+				var them = arr[j]
+				arr[j] = arr[j+1]
+				arr[j+1] = them
+				//arr[j], arr[j+1] = arr[j+1], arr[j]
+			}
+		}
+	}
 
+	return arr
+}
 ```
 
 ## 插入排序
