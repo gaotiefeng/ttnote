@@ -50,12 +50,12 @@ echo 1 > /proc/sys/vm/drop_caches
 ```
 
 - free
->total 物理内存总量 total = used + free
-used 使用情况（buffers/cache）
-free 未分配的内存
-shared 共享内存
-buffers 系统分配但未使用buffers
-cached  分配但未使用的cache
+- `total` 物理内存总量 total = used + free
+- `used` 使用情况（buffers/cache）
+- `free` 未分配的内存
+- `shared` 共享内存
+- `buffers` 系统分配但未使用buffers
+- `cached` 分配但未使用的cache
 
 ## 磁盘操作
 - `df` 列出文件系统的整体磁盘使用量
