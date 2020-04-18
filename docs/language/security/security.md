@@ -28,3 +28,8 @@
 
 ######  Go语言提供了HTML的过滤函数： text/template包下面的HTMLEscapeString、JSEscapeString等函数
 
+## sql注入
+
+
+## 文件上传漏洞
+
