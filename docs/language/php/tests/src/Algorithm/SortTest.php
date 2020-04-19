@@ -28,4 +28,11 @@ class SortTest extends TestCase
 
         $this->assertSame(8,$res[0]);
     }
+
+    public function testSelectSort()
+    {
+        $res = $this->sort->selectSort($this->data);
+
+        $this->assertSame(8,$res[0]);
+    }
 }
