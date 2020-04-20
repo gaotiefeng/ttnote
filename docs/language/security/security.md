@@ -29,7 +29,29 @@
 ######  Go语言提供了HTML的过滤函数： text/template包下面的HTMLEscapeString、JSEscapeString等函数
 
 ## sql注入
+>SQL注入攻击（SQL Injection），简称注入攻击，是Web开发中最常见的一种安全漏洞。
+>可以用它来从数据库获取敏感信息，或者利用数据库的特性执行添加用户，
+>导出文件等一系列恶意操作，甚至有可能获取数据库乃至系统用户最高权限。
+>而造成SQL注入的原因是因为程序没有有效过滤用户的输入，使攻击者成功的向服务器提交恶意的SQL查询代码，
+>程序在接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变，额外的执行了攻击者精心构造的恶意代码。
 
+```
+$sql ="SELECT * FROM user WHERE username='"+username+"' AND password='"+password+"'"
+SELECT * FROM user WHERE username='myuser' or 'foo' = 'foo' --'' AND password='xxx'
+sql --是注释标记
+```
+
+###### 预防sql注入
+- 1.严格限制Web应用的数据库的操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度的减少注入攻击对数据库的危害。
+- 2.检查输入的数据是否具有所期望的数据格式，严格限制变量的类型，例如使用regexp包进行一些匹配处理，或者使用strconv包对字符串转化成其他基本类型的数据进行判断。
+- 3.对进入数据库的特殊字符（'"\尖括号&*;等）进行转义处理，或编码转换。
+-   Go 的text/template包里面的`HTMLEscapeString`函数可以对字符串进行转义处理。
+-   php `addslashes`
+- 4.所有的查询语句建议使用数据库提供的参数化查询接口，参数化的语句使用参数而不是将用户输入变量嵌入到SQL语句中，即不要直接拼接SQL语句。
+-   例如使用database/sql里面的查询函数Prepare和Query，或者Exec(query string, args ...interface{})。
+-   php mysql_real_escape_string -- 转义 SQL 语句中使用的字符串中的特殊字符
+- 5.在应用发布之前建议使用专业的SQL注入检测工具进行检测，以及时修补被发现的SQL注入漏洞。网上有很多这方面的开源工具，例如sqlmap、SQLninja等
+- 6.不要对网站暴露sql错误信息。
 
 ## 文件上传漏洞
 

@@ -166,3 +166,6 @@ update mysql.user set authentication_string = password('qingchen2019') where use
 use beego
 source /www/beego.sql
 ```
+
+## 分表
+
