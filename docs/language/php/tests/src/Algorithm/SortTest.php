@@ -35,4 +35,11 @@ class SortTest extends TestCase
 
         $this->assertSame(8,$res[0]);
     }
+
+    public function testInsertSort()
+    {
+        $res = $this->sort->insertSort($this->data);
+
+        var_dump($res);
+    }
 }

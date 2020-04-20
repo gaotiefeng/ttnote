@@ -8,7 +8,11 @@ namespace App\Algorithm;
 
 class Sort
 {
-
+    /**
+     * 冒泡排序
+     * @param array $arr
+     * @return array
+     */
     public function bubbleSort(array $arr):array
     {
         $length = count($arr);
@@ -25,6 +29,11 @@ class Sort
         return $arr;
     }
 
+    /**
+     * 选择排序
+     * @param array $arr
+     * @return array
+     */
     public function selectSort(array $arr)
     {
         $length = count($arr);
@@ -38,6 +47,21 @@ class Sort
             $temp = $arr[$i];
             $arr[$i] = $arr[$minIndex];
             $arr[$minIndex] = $temp;
+        }
+        return $arr;
+    }
+
+    public function insertSort(array $arr)
+    {
+        $len = count($arr);
+        for ($i = 1; $i< $len; $i++) {
+            $preIndex = $i - 1;
+            $current = $arr[$i];
+            while ($preIndex >= 0 && $arr[$preIndex] > $current) {
+                $arr[$preIndex+1] = $arr[$preIndex];
+                $preIndex--;
+            }
+            $arr[$preIndex+1] = $current;
         }
         return $arr;
     }
