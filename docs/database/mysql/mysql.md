@@ -167,5 +167,4 @@ use beego
 source /www/beego.sql
 ```
 
-## 分表
 
