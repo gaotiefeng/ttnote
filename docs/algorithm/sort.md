@@ -1,5 +1,5 @@
 # 算法
-![原文](https://sort.hust.cc)
+[算法](https://sort.hust.cc)
 
 ## 冒泡排序
 >Bubble Sort 简单直观的排序算法。
