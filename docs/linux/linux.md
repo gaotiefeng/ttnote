@@ -78,6 +78,18 @@ echo 1 > /proc/sys/vm/drop_caches
 - `mount 磁盘挂载` `umount卸载命令`
 
 
+## netstat
+```bash
+端口占用情况
+netstat -tunlp | grep 80
+netstat -lntup 
+-s 显示网络统计
+-g 显示组播组关系
+-i 显示网卡列表
+-r 显示路由信息
+-pt tcp连接信息
+```
+
 - 使用 `netstat -an | grep 端口`，查看端口是否已经被打开处于 Listening 状态
 
 ## ab 压测
