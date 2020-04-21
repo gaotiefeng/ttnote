@@ -15,12 +15,12 @@ quit 退出
 - 分组 group by column 
 -     with rollup 可以实现在分组统计数据基础上再进行相同的统计（sum,avg,count） 
 -     coalesce 来设置一个可以取代null的名称
-- join inner join   内连接   `两个表中字断匹配关系`
-       left join    左连接    `左表所有记录`
-       right join   右连接   `右表所有记录`
-       ```
-       select u.mobile from user as u inner join teach as t on u.id = t.user_id;
-       ```
+- join inner join   内连接     两个表中字断匹配关系
+-       left join    左连接    左表所有记录
+-       right join   右连接    右表所有记录
+```
+select u.mobile from user as u inner join teach as t on u.id = t.user_id;
+```
 -  null 使用 is null 或者 is not null 运算符  where id is not null 查询id为NULL的值不会显示出来
 
 ## create
@@ -74,11 +74,11 @@ alter table user change user_name username varchar(32); ##change 可以修改名
 ## 事务
 - mysql 事务只有数据库引擎为innodb才支持事务
 - 事务用来管理insert,update,delete
-###### 满足事务的4个条件
-- 原子性
-- 一致性
-- 隔离性
-- 持久性
+- 满足事务的4个条件
+- 1.原子性
+- 2.一致性
+- 3.隔离性
+- 4.持久性
 - set autocommit = 0禁止自动提交1开启自动提交
 ```mysql
 begin ;#开启事务
