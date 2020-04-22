@@ -68,9 +68,33 @@ alter table user add user_name varchar(32) default '' comment '名称';
 alter table user drop user_name; #删除字断
 alter table user modify user_name varchar(64);  ##modify修改类型不可修改字断名称
 alter table user change user_name username varchar(32); ##change 可以修改名称
+alter table user add primary key ('id'); #添加主键
 
 ```
+## key
+- 1.0主键 primary key 每个表只能定义一个主键，
+- 1.1复合主键 primary key [filed,filed,filed]
+- 1.2外键  foreign key `constraint user_dep_id foreign key(user_id) references user(id) `
+- 父表定义的主键
+>外键是表的一个字段，不是本表的主键，但对应另一个表的主键。定义外键后，不允许删除另一个表中具有关联关系的行。
 
+
+```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
+create table user_dep (
+    id int(10) not null primary key,
+    user_id int(10) not null,
+    created_at datetime,
+    name varchar(32) default '',
+    constraint user_dep_id foreign key(user_id) references user(id) 
+);
+```
+
+- 1.3唯一索引 unique 要求该列唯一，允许为空，但只能出现一个空值
+`constraint unique_name unique(mobile)`
 ## 事务
 - mysql 事务只有数据库引擎为innodb才支持事务
 - 事务用来管理insert,update,delete
@@ -88,6 +112,15 @@ rollback ;#回滚事务
 ```
 
 ## 索引
+- 顺序访问-全表扫描
+- 索引访问
+>索引存储指定数据值的指针
+- 1.0普通索引
+- 1.1唯一性索引
+- 1.2主键索引
+- 1.3空间索引
+- 1.4全文索引（varchar || text）
+- 通常创建索引 `单列索引`  || `组合索引`
 
 ## 分表
 
