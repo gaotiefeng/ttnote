@@ -132,24 +132,27 @@ explain select * from user where mobile='15955559999';
 - 11个字断
 - 1.0 id 选择标识符
 - 1.1 select_type 查询类型 
->simple 简单select 不使用union或者子查询
->primary 子查询中最外层查询，查询中若包含任何复杂的子部分
->union union中第二个或后边的select
->dependent union union中第二个或者后边的select，取决于外面的查询
->union result union的结果， union语句中第二个select开始后面所有的select
->subquery 子查询中第一个select
->dependent subquery 子查询中的第一个select, 依赖于外部查询
->derived 派生表的select,from子句的子查询
->uncacheable subquery 子查询的结果不能被缓存，必须重新评估链接的第一行
+- 1.1.0 simple 简单select 不使用union或者子查询
+- 1.1.1 primary 子查询中最外层查询，查询中若包含任何复杂的子部分
+- 1.1.2 union union中第二个或后边的select
+- 1.1.3 dependent union union中第二个或者后边的select，取决于外面的查询
+- 1.1.4 union result union的结果， union语句中第二个select开始后面所有的select
+- 1.1.5 subquery 子查询中第一个select
+- 1.1.6 dependent subquery 子查询中的第一个select, 依赖于外部查询
+- 1.1.7 derived 派生表的select,from子句的子查询
+- 1.1.8 uncacheable subquery 子查询的结果不能被缓存，必须重新评估链接的第一行
+
 - 1.2 table 表
 - 1.3 type  访问类型
->all 遍历全表
->index 遍历索引树
->range 只检索给定范围行，使用一个索引来选择
->ref 连接匹配条件，
->er_ref 使用primary key 或者 unique key 作为条件
->const/system 
->null 
+
+- 1.3.0 all 遍历全表
+- 1.3.1 index 遍历索引树
+- 1.3.2 range 只检索给定范围行，使用一个索引来选择
+- 1.3.3 ref 连接匹配条件，
+- 1.3.4 er_ref 使用primary key 或者 unique key 作为条件
+- 1.3.5 const/system 
+- 1.3.6 null 
+
 - 1.4 possible_keys 查询字段若存在索引 则显示该索引，但不一定被查询使用
 - 1.5 key 使用索引，必然包含在possible_keys 中
 - 1.6 key_len 索引字段的最大可能长度并非实际长度
@@ -157,7 +160,9 @@ explain select * from user where mobile='15955559999';
 - 1.8 rows 结果集行数
 - 1.9 filtered 存储引擎返回的数据在server层过滤后，剩下多少满足查询的记录数量的比例
 - 2.0 extra 额外的信息说明
+
 ## 分表
+
 
 ## 分库
 
