@@ -161,7 +161,75 @@ explain select * from user where mobile='15955559999';
 - 1.9 filtered 存储引擎返回的数据在server层过滤后，剩下多少满足查询的记录数量的比例
 - 2.0 extra 额外的信息说明
 
+
+## 锁
+- 悲观锁
+- 乐观锁
+
+## 分区
+```mysql
+SHOW VARIABLES LIKE '%partition%'; 
+##have_partition_engine = yes
+```
+
+### RANGE-range
+**分区定义明确** 
+`属于一个连续区间值的集合`
+
+```mysql
+create table user (id int(10) primary key ,name varchar(64)) comment 'user';
+##对mobile range 分区
+create table mobile(id int(10) primary key,user_id int(10) not null,mobile varchar(16))
+partition by range(user_id) (
+    partition p0 values less than (6),
+    partition p1 values less than (11),
+    partition p2 values less than maxvalue 
+);
+```
+
+- maxvalue表示最大可能的整数值
+- user_id 大于11 等于11 存到p2分区
+- user_id 1-6之间存p0 6-11存到p1
+### LIST
+`每个分区的定义和选择是基于某列的值从属于一个值列表集中的一个值`
+
+```mysql
+create table user (id int(10) primary key ,name varchar(64)) comment 'user';
+##对mobile list 分区
+create table mobile(id int(10) primary key,user_id int(10) not null,mobile varchar(16))
+partition by list(user_id) (
+    partition p0 values in (1,3,5,7,9,11),
+    partition p1 values in (2,4,6,8,10)
+);
+```
+### HASH
+- HASH分区中，MySQL 自动完成这些工作，你所要做的只是基于将要被哈希的列值指定一个列值或表达式，以及指定被分区的表将要被分割成的分区数量。
+- 自定义表达式
+
+```mysql
+create table user (id int(10) primary key,name varchar(64));
+create table mobile(id int(10) primary key,user_id int(10))
+partition by hash ( user_id )
+partitions 4;
+```
+
+### KEY
+- MySQL簇（Cluster）使用函数MD5()来实现KEY分区；对于使用其他存储引擎的表，服务器使用其自己内部的 哈希函数，这些函数是基于与PASSWORD()一样的运算法则。
+
+```mysql
+create table user(id int(10) primary key,name varchar(64));
+create table mobile(id int(10) primary key,user_id int(10),mobile varchar(64))
+##partition by key (user_id)
+partition by linear key (user_id)
+partitions 6;
+```
+
+### 子分区
+- 子分区是分区表中每个分区的再次分割
+
+
 ## 分表
+###### 目的-减轻数据库负担，缩短查询时间
 
 
 ## 分库
