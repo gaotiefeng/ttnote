@@ -36,6 +36,10 @@ primary key ('id')) comment 'user表';
 ```
 ## select
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
 select * from user;
 select MAX(id) from user;
 ```
@@ -43,6 +47,10 @@ select MAX(id) from user;
 ## regexp
 - 正则匹配
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
 select name from user where name regexp '^f';
 #^ 字断以f开头的所有数据
 #$ filed 以 'f$' f为结果的所有数据
@@ -51,19 +59,36 @@ select name from user where name regexp '^f';
 
 ## insert
 ```mysql
-insert into user
+create table user (
+    id int(10) not null primary key comment 'id',
+    mobile varchar(16) default '' comment '手机号',
+    created_at datetime
+);
+insert into user (id,mobile,created_at)
 values (1,'15903430044','2020-04-21 12:00:00');
 ```
 ## update
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    mobile varchar(16) default '' comment '手机号'
+);
 update user set mobile='15900003333' where id=1;
 ```
 ## delete
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
 delete from user where id=2;
 ```
 ## alter
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
 alter table user add user_name varchar(32) default '' comment '名称';
 alter table user drop user_name; #删除字断
 alter table user modify user_name varchar(64);  ##modify修改类型不可修改字断名称
@@ -105,6 +130,10 @@ create table user_dep (
 - 4.持久性
 - set autocommit = 0禁止自动提交1开启自动提交
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    name varchar(30) default '' comment '名称'
+);
 begin ;#开启事务
 insert into user values (2,'15900008888','2020-4-03');
 commit;#提交事务
@@ -124,6 +153,10 @@ rollback ;#回滚事务
 
 ## explain
 ```mysql
+create table user (
+    id int(10) not null primary key comment 'id',
+    mobile varchar(16) default '' comment '手机号'
+);
 explain select * from user where mobile='15955559999';
 ```
 
@@ -163,10 +196,19 @@ explain select * from user where mobile='15955559999';
 
 
 ## 锁
-- 悲观锁
-- 乐观锁
+- 锁是协调计算机多个进程或多个线程访问某一资源的机制。保证数据并发访问的一致性，有效性
+- 加锁是消耗资源的
+###### 共享锁-读锁
+- 其他事务不可写入，可读
+###### 排他锁-写锁
+- 其他事务不可读，不可写
+###### -悲观锁-`假设会发生冲突`
+- 每次拿数据都会认为别人会修改，每次拿都会上锁
+###### -乐观锁-`假设不会发生冲突`
+- 每次取数据都假设别人不会修改，不会上锁，只有在更新是会判断一下在此期间别人有没有更新这个数据
 
 ## 分区
+- 将数据划分到多个位置存放
 ```mysql
 SHOW VARIABLES LIKE '%partition%'; 
 ##have_partition_engine = yes
@@ -179,7 +221,7 @@ SHOW VARIABLES LIKE '%partition%';
 ```mysql
 create table user (id int(10) primary key ,name varchar(64)) comment 'user';
 ##对mobile range 分区
-create table mobile(id int(10) primary key,user_id int(10) not null,mobile varchar(16))
+create table mobile(id int(10),user_id int(10) not null,mobile varchar(16))
 partition by range(user_id) (
     partition p0 values less than (6),
     partition p1 values less than (11),
@@ -196,7 +238,7 @@ partition by range(user_id) (
 ```mysql
 create table user (id int(10) primary key ,name varchar(64)) comment 'user';
 ##对mobile list 分区
-create table mobile(id int(10) primary key,user_id int(10) not null,mobile varchar(16))
+create table mobile(id int(10),user_id int(10) not null,mobile varchar(16))
 partition by list(user_id) (
     partition p0 values in (1,3,5,7,9,11),
     partition p1 values in (2,4,6,8,10)
@@ -208,7 +250,7 @@ partition by list(user_id) (
 
 ```mysql
 create table user (id int(10) primary key,name varchar(64));
-create table mobile(id int(10) primary key,user_id int(10))
+create table mobile(id int(10),user_id int(10) not null )
 partition by hash ( user_id )
 partitions 4;
 ```
@@ -218,21 +260,42 @@ partitions 4;
 
 ```mysql
 create table user(id int(10) primary key,name varchar(64));
-create table mobile(id int(10) primary key,user_id int(10),mobile varchar(64))
-##partition by key (user_id)
-partition by linear key (user_id)
-partitions 6;
+create table mobile(id int(10),user_id int(10) not null,mobile varchar(64))
+partition by key (user_id)
+partitions 4;
+
 ```
 
 ###### 子分区
 - 子分区是分区表中每个分区的再次分割
 
+- 分区合并 reorganize
+```mysql
+create table user (id int(10) primary key ,name varchar(64));
+create table mobile(id int(10),user_id int(10) not null ,mobile varchar(64))
+partition by list (user_id) (
+    partition p0 values in (1,3,5),
+    partition p1 values in (2,4,6)
+);
+alter table mobile reorganize partition p0,p1 into (
+    partition p0 values in (1,2,3,4,5,6)
+);
+```
+
+**注意事项**
+- 1.做分区，不定义主键，要不分区字段加入主键
+- 2.分区字段不能为null
 
 ## 分表
 ###### 目的-减轻数据库负担，缩短查询时间
+###### 水平分表-横向
+- 单表数据量大
+- 1.根据id取摸%来插入表
 
+###### 垂直分表-纵向
+- 1.表的体积过大大于2G行数大于1000万
+- 2.表中有text,blob,varchar(1000)
 
-## 分库
 
 
 ## source命令
