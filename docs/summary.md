@@ -8,4 +8,4 @@
 * [tool](tool/summary.md)
 * [language](language/summary.md)
 * [linux](linux/linux.md)
-* [algorithm](algorithm/sort.md)
+* [algorithm](algorithm/summary.md)

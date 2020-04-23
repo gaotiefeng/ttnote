@@ -1,11 +1,2 @@
 
-* [lnmp](lnmp/lnmp.md)
-* [mnmp](mnmp/brew.md)
-* [composer](tool/composer/composer.md)
-* [docker](tool/docker/docker.md)
-* [nginx](nginx/config.md)
-* [database](database/summary.md)
-* [tool](tool/summary.md)
-* [language](language/summary.md)
-* [linux](linux/linux.md)
-* [algorithm](algorithm/sort.md)
+* [排序算法](algorithm/sort.md)

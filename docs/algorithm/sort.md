@@ -1,6 +1,11 @@
-# 算法
+# 排序算法
 [算法](https://sort.hust.cc)
 
+###### 时间复杂度
+- 1.平方阶(O(n2))排序
+- 2.线性对数阶(O(nlog2n))排序
+- 3.O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。希尔排序
+- 4.线性阶(O(n))排序
 ## 冒泡排序
 >Bubble Sort 简单直观的排序算法。
 >重复的走访要排序的数列，`一次比较两个元素`
@@ -14,7 +19,7 @@
 - php代码
 
 ```php
-public function bubbleSort(array $arr)
+function bubbleSort(array $arr)
     {
         $length = count($arr);
         for ($i = 0; $i < $length - 1; $i++) {
@@ -86,7 +91,7 @@ func bubbleSort(arr []int) []int{
 - 重复第二步，直到所有元素均排序完毕。
 
 ```php
-public function selectSort(array $arr)
+function selectSort(array $arr)
     {
         $length = count($arr);
         for ($i = 0; $i < $length - 1; $i++) {
@@ -116,7 +121,7 @@ public function selectSort(array $arr)
 - （如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）
 
 ```php
-public function insertSort(array $arr)
+ function insertSort(array $arr)
     {
         $len = count($arr);
         for ($i = 1; $i< $len; $i++) {
@@ -148,12 +153,57 @@ func insertSort(arr []int) []int {
 }
 ```
 
+## 快速排序
+`快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。
+在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。
+事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，
+因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。`
+
+>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，
+>且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。
+>所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。
+###### 算法步骤
+
+- 1.从数列中挑出一个元素，称为 “基准”（pivot）;
+- 2.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。
+- 在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
+- 3.递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；
+- 递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，
+- 但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。
+
+```php
+class Sort {
+public function quickSort(array $arr)
+    {
+        $length = count($arr);
+        if ($length <= 1) {
+            return $arr;
+        }
+        $pivot = $arr[0];
+        $leftArray = [];
+        $rightArray = [];
+        for ($i = 1;$i < $length;$i++) {
+            if ($arr[$i] > $pivot) {
+                $rightArray[] = $arr[$i];
+            }else {
+                $leftArray[] = $arr[$i];
+            }
+        }
+        $leftArray = $this->quickSort($leftArray);
+        $rightArray[] = $pivot;
+        $rightArray = $this->quickSort($rightArray);
+
+        return array_merge($leftArray,$rightArray);
+    }
+}
+```
+
+
+
 
 ## 希尔排序
 
 ## 归并排序
-
-## 快速排序
 
 ## 堆排序
 
