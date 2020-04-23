@@ -39,7 +39,13 @@ class SortTest extends TestCase
     public function testInsertSort()
     {
         $res = $this->sort->insertSort($this->data);
+        $this->assertSame(8,$res[0]);
+    }
 
-        var_dump($res);
+    public function testQuickSort()
+    {
+        $res = $this->sort->quickSort($this->data);
+var_dump($res);
+        $this->assertSame(8,$res[0]);
     }
 }

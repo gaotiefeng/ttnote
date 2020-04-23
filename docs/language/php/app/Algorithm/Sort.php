@@ -65,4 +65,27 @@ class Sort
         }
         return $arr;
     }
+
+    public function quickSort(array $arr)
+    {
+        $length = count($arr);
+        if ($length <= 1) {
+            return $arr;
+        }
+        $pivot = $arr[0];
+        $leftArray = [];
+        $rightArray = [];
+        for ($i = 1;$i < $length;$i++) {
+            if ($arr[$i] > $pivot) {
+                $rightArray[] = $arr[$i];
+            }else {
+                $leftArray[] = $arr[$i];
+            }
+        }
+        $leftArray = $this->quickSort($leftArray);
+        $rightArray[] = $pivot;
+        $rightArray = $this->quickSort($rightArray);
+
+        return array_merge($leftArray,$rightArray);
+    }
 }
