@@ -45,7 +45,7 @@ class SortTest extends TestCase
     public function testQuickSort()
     {
         $res = $this->sort->quickSort($this->data);
-var_dump($res);
+
         $this->assertSame(8,$res[0]);
     }
 }

@@ -82,6 +82,7 @@ class Sort
                 $leftArray[] = $arr[$i];
             }
         }
+
         $leftArray = $this->quickSort($leftArray);
         $rightArray[] = $pivot;
         $rightArray = $this->quickSort($rightArray);
