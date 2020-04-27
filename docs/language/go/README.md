@@ -89,7 +89,7 @@ for ture {
     goto
 }
 ```
-
+- continue 跳过当前循环执行下一次
 <div style="color:#F136FF">变量</div>
 <div style="color:#F136FF">全局变量（函数外变量）</div>
 <div style="color:#F136FF">局部变量（函数内变量）</div>
