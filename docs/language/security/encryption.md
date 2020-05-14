@@ -35,3 +35,13 @@ echo sha1($pass);
 ```
 
 ## SHA-256
+
+## BASE64
+
+## URLENCODE
+
+```php
+$url = 'go.tfuu.cn';
+urlencode($url);
+urldecode($url);
+```
