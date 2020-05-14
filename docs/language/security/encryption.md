@@ -4,6 +4,7 @@
 
 ## MD5 
 - 单向加密
+
 ```php
 $str = '123456';
 md5($str);
@@ -17,6 +18,20 @@ io.WriteString(s,"my password is 123456")
 fmt.Sprintf("%x \n",m.Sum(nil))
 ```
 
+## crype(str,salt)
+- 加盐
+
+```php
+$password = '123456';
+$salt = 'password';
+echo crype($password,$salt);
+```
+
 ## SHA-1
+
+```php
+$pass = '123456';
+echo sha1($pass);
+```
 
 ## SHA-256
