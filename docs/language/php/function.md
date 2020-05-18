@@ -6,6 +6,11 @@
 - `sha1()`
 
 ## 数组函数
+```php
+array_unique(); //数组去重
+array_slice($arr=[1],0,$length=1);
+```
+
 - `array_unshift`
 - `array_pop`
 - `array_push`
