@@ -9,6 +9,8 @@
 ```php
 array_unique(); //数组去重
 array_slice($arr=[1],0,$length=1);
+join($glue=",",$arr);//数组分割为字符串
+implode($glue=",",$arr);//数组分割为字符串
 ```
 
 - `array_unshift`
