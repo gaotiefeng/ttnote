@@ -8,7 +8,7 @@
 ## 数组函数
 ```php
 array_unique(); //数组去重
-array_slice($arr=[1],0,$length=1);
+array_slice($arr=[1],0,$length=1);//取出数组中的元素
 join($glue=",",$arr);//数组分割为字符串
 implode($glue=",",$arr);//数组分割为字符串
 ```
@@ -23,3 +23,58 @@ implode($glue=",",$arr);//数组分割为字符串
 
 ## 对象函数
 - `spl_object_hash ( object $obj ) : string ` — 返回指定对象的hash id
+
+## php7
+```php
+//标量类型声明
+//declare(strict_types=1);
+//int string array float interfaces callable
+$isset = $isset ?? null;
+$empty = 1;
+$empty = $empty ?: null; 
+$a = 1<=>2; //太空运算符 1,0,-1
+define('array',[1,2,3]);
+//增加了可以为 unserialize() 提供过滤的特性，可以防止非法数据进行代码注入，提供了更安全的反序列化数据。
+class a {}
+$a = serialize(new a());
+$b = unserialize($a,['allowed_classes'=>["a"]]);
+//IntlChar::BLOCK_CODE_AEGEAN_NUMBERS
+
+```
+
+## php7 匿名类
+```php
+<?php
+interface Logger {
+   public function log(string $msg);
+}
+
+class Application {
+   private $logger;
+
+   public function getLogger(): Logger {
+      return $this->logger;
+   }
+
+   public function setLogger(Logger $logger) {
+      $this->logger = $logger;
+   }  
+}
+
+$app = new Application;
+// 使用 new class 创建匿名类
+$app->setLogger(new class implements Logger {
+   public function log(string $msg) {
+      print($msg);
+   }
+});
+
+$app->getLogger()->log("我的第一条日志");
+$function = function() {
+    return $this->logger.'闭包函数';
+};
+//closure::call 闭包函数绑定到类上
+$function->bindTo(new Application,'getLogg');
+$function->call(new Application);
+```
+
