@@ -1,4 +1,10 @@
 ## ubuntu
+```bash
+uname -a //内核
+cat /etc/issue
+cat /etc/lsb-release
+cat /pro/version
+```
 
 `apt 是ubuntu 高级软件包 apt-get apt-cache`
 ## 安装php
@@ -7,11 +13,13 @@ sudo apt-get update
 sudo apt install software-properties-common
 //最新的php构建包
 sudo add-apt-repository ppa:ondrej/php
-sudo apt install php7.4
+sudo apt install php7.4 php7.4-dev php7.4-mysql
 php -m
 
 sudo apt install php7.4-mysql
 sudo apt install php7.4-fpm
+sudo apt -y install php7.4-curl php7.4-json php7.4-mbstring php7.4-xml php7.4-intl php7.4-gd php7.4-bz2 php7.4-bcmath
+//等等......
 /etc/php/7.4/fpm/pool.d/www.conf->listen 9090
 sudo service php7.4-fpm start
 ```
@@ -32,4 +40,18 @@ pecl install redis
 ```
 sudo apt-get nginx
 sudo service nginx start
+```
+
+## 安装mysql
+```bash
+sudo apt-get install mysql-server
+sudo service mysql start
+sudo netstat -tap | grep mysql
+mysql -u root -p
+
+```
+
+## pecl
+```bash
+sudo pecl install redis
 ```

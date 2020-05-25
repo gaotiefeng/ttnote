@@ -7,6 +7,9 @@
 
 ## 数组函数
 ```php
+$arr = [['last'=>1,1],['last'=>2,3]];
+$key = 'last';
+array_column($arr,$key); //返回数组中单一列的值
 array_unique(); //数组去重
 array_slice($arr=[1],0,$length=1);//取出数组中的元素
 join($glue=",",$arr);//数组分割为字符串
@@ -39,6 +42,10 @@ class a {}
 $a = serialize(new a());
 $b = unserialize($a,['allowed_classes'=>["a"]]);
 //IntlChar::BLOCK_CODE_AEGEAN_NUMBERS
+//PHP 7 通过引入几个 CSPRNG 函数提供一种简单的机制来生成密码学上强壮的随机数
+$bytes = random_bytes(6);
+$int_rand = random_int(100,1000);
+//异常 zend.assertions =1，0，-1 assert.exception=1,0
 
 ```
 
