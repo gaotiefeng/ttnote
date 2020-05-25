@@ -13,6 +13,7 @@ php -m
 sudo apt install php7.4-mysql
 sudo apt install php7.4-fpm
 /etc/php/7.4/fpm/pool.d/www.conf->listen 9090
+sudo service php7.4-fpm start
 ```
 
 ## pecl
