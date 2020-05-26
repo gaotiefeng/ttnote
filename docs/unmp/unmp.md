@@ -51,7 +51,7 @@ mysql -u root -p
 
 ```
 
-## pecl
+## 安装redis
 ```bash
 sudo pecl install redis
 ```
