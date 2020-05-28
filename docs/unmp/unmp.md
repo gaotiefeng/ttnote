@@ -55,3 +55,8 @@ mysql -u root -p
 ```bash
 sudo pecl install redis
 ```
+
+## pip
+```bash
+sudo apt-get install python3-pip
+```
