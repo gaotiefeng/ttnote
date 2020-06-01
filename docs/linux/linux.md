@@ -92,6 +92,10 @@ netstat -lntup
 
 - 使用 `netstat -an | grep 端口`，查看端口是否已经被打开处于 Listening 状态
 
+## ssh
+```bash
+ssh root@192.168.10.1
+```
 ## ab 压测
 
 ```bash
