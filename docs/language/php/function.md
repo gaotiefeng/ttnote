@@ -14,6 +14,7 @@ array_unique(); //数组去重
 array_slice($arr=[1],0,$length=1);//取出数组中的元素
 join($glue=",",$arr);//数组分割为字符串
 implode($glue=",",$arr);//数组分割为字符串
+array_key_exists($key,$arr);//判断数组存在key
 ```
 
 - `array_unshift`
@@ -26,4 +27,5 @@ implode($glue=",",$arr);//数组分割为字符串
 
 ## 对象函数
 - `spl_object_hash ( object $obj ) : string ` — 返回指定对象的hash id
+- `func_get_args` - 获取一个函数的所有参数
 
