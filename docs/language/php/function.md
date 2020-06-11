@@ -5,6 +5,9 @@
 - `crypt()`
 - `sha1()`
 
+## 
+- uniqid(prefix,more_entropy)函数基于以微秒计的当前时间，生成一个唯一的ID。
+
 ## 数组函数
 ```php
 $arr = [['last'=>1,1],['last'=>2,3]];
@@ -24,6 +27,10 @@ array_key_exists($key,$arr);//判断数组存在key
 - `array_values() `函数返回包含数组中所有的值的数组。被返回的数组将使用数值键，从 0 开始且以 1 递增
 - `uasort` — uasort ( array &$array , callable $value_compare_func ) : bool  
 
+## 字符串函数
+```php
+echo str_pad('112434',8,'',STR_PAD_LEFT);//填充字符串的右侧，到 30 个字符的新长度：
+```
 
 ## 对象函数
 - `spl_object_hash ( object $obj ) : string ` — 返回指定对象的hash id

@@ -132,6 +132,8 @@ type Books struct {
     book_id int
 }
 ```
+## 组作用域
+- 内置作用域机制 文件首字母大写**外部可调用** 它将无法在 main 包之外使用。
 
 ## Go语言数组
 
@@ -184,7 +186,7 @@ type_name(expression)
 ```
 type_name 为类型，expression 为表达式。
 
--Go 语言接口
+## Go 语言接口
 
 ```go
 type jiekou interface{
