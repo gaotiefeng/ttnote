@@ -18,6 +18,14 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 go version
 ```
+
+## 镜像源
+```
+//阿里云
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+```
+
 - GO语言结构
 ##### 包声明 -package main
 ##### 引入包 import "fmt"

@@ -5,6 +5,15 @@
 - `crypt()`
 - `sha1()`
 
+##
+```php
+$data = array(1,'什么');
+#json_encode 中文不转码两个条件1文件编码utf-8,
+$encode = json_encode($data,JSON_UNESCAPED_UNICODE);
+json_decodo($encode,true);
+
+```
+
 ## 
 - uniqid(prefix,more_entropy)函数基于以微秒计的当前时间，生成一个唯一的ID。
 
