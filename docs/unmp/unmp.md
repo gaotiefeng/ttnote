@@ -56,6 +56,13 @@ mysql -u root -p
 sudo pecl install redis
 ```
 
+## 安装node/npm/bower
+```bash
+sudo apt install node
+sudo apt install npm
+npm install -g bower
+```
+
 ## pip
 ```bash
 sudo apt-get install python3-pip

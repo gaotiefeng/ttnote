@@ -57,6 +57,13 @@ ssh-keygen -t rsa -C "1096392101@qq.com"
 cd ~/.ssh
 cat id_rsa.pub 
 ```
+## branch
+```bash
+git branch
+git branch -a
+git branch -v //每个分支最会一次提交
+```
+
 ## git tag
 ```bash
 git tag -a v1.0.9 -m 'version 1.0.9' 
