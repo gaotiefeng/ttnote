@@ -140,10 +140,9 @@ UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root'
 
 ## 添加用户
 ```
-SHOW VARIABLES LIKE 'validate_password%';
-set global validate_password_length=6;
-set global  validate_password_policy=0;
 create user 'zentao'@'localhost' identified by 'zentao#.';
+//给数据库权限
+grant all privileges on zentao.* to 'zentao'@'localhost';
 ```
 
 - ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
