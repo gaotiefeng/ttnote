@@ -137,6 +137,13 @@ ln -s /usr/local/mysql/bin/mysql /usr/bin
 set password=password("tf2019");
 UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
 ```
+
+## 添加用户
+```
+SHOW VARIABLES LIKE 'validate_password%';
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+```
+
 ## 远程访问权限
 
 ```
