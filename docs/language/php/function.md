@@ -39,6 +39,7 @@ array_key_exists($key,$arr);//判断数组存在key
 ## 字符串函数
 ```php
 echo str_pad('112434',8,'',STR_PAD_LEFT);//填充字符串的右侧，到 30 个字符的新长度：
+echo strtolower('ABCEDER'); //都装换成小写
 ```
 
 ## 对象函数
