@@ -136,13 +136,15 @@ ln -s /usr/local/mysql/bin/mysql /usr/bin
 ```
 set password=password("tf2019");
 UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
+set password for 'username'@'host' = password('newpassword') 
 ```
 
 ## 添加用户
 ```
 create user 'zentao'@'localhost' identified by 'zentao#.';
 //给数据库权限
-grant all privileges on zentao.* to 'zentao'@'localhost';
+grant all privileges on `zentao`.* to 'zentao'@'localhost' identified by '123456';
+flush privileges;
 ```
 
 - ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
