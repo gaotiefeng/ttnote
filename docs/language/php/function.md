@@ -1,4 +1,9 @@
 # php函数
+```bash
+查看php 扩展位置
+php -r "echo ini_get('extension_dir');"
+```
+
 
 ## php加密
 - `md5()`
