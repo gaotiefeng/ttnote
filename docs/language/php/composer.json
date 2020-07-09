@@ -12,7 +12,8 @@
         "phpunit/phpunit": "^6.2"
     },
     "scripts": {
-        "test": "co-phpunit -c phpunit.xml --colors=always"
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "phpunit": "phpunit -c phpunit.xml --colors=always"
     },
     "require": {
         "psr/http-message": "^1.0"
