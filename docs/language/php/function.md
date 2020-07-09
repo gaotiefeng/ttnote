@@ -32,6 +32,7 @@ array_slice($arr=[1],0,$length=1);//取出数组中的元素
 join($glue=",",$arr);//数组分割为字符串
 implode($glue=",",$arr);//数组分割为字符串
 array_key_exists($key,$arr);//判断数组存在key
+compact();//创建一个包含变量名和它们的值的数组
 ```
 
 - `array_unshift`
