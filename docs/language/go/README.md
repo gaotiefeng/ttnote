@@ -29,51 +29,6 @@ go env -w GOPROXY=https://goproxy.io/,direct
 
 ```
 
-## 变量声明
-- 关键字 名称 类型
-- var 变量名 变量类型
-- var name type
-- name := miss
-
-**匿名变量，没有名字的变量**
-
-## 变量作用域
-```go
-package main
-
-import "fmt"
-//全局变量
-var age int
-
-func main()
-{
-    //局部变量
-    var a,b int
-    a = 3
-    b = 4
-    c = a + b
-    fmt.printf("c = %d",c)
-}
-```
-
-__定义函数时函数名后面括号中的变量叫做形式参数（简称形参）__
-
-
-## 数据类型
-- 当一个变量被声明之后，系统自动赋予它该类型的零值 int 0 bool fase 指针为nil 等
-- 变量命名 驼峰法 首个字母小写每个新单词字母为大写 startData
-***
-```bash
-bool
-string
-int、int8、int16、int32、int64
-uint、uint8、uint16、uint32、uint64、uintptr
-byte // uint8 的别名
-rune // int32 的别名 代表一个 Unicode 码
-float32、float64
-complex64、complex128
-```
-
 - GO语言结构
 ##### 包声明 -package main
 ##### 引入包 import "fmt"
@@ -179,6 +134,20 @@ const identifier [type] = value
       iota 可以被用作枚举值：
 </div>
 
+## 数据类型
+- 当一个变量被声明之后，系统自动赋予它该类型的零值 int 0 bool fase 指针为nil 等
+- 变量命名 驼峰法 首个字母小写每个新单词字母为大写 startData
+***
+```bash
+bool
+string
+int、int8、int16、int32、int64
+uint、uint8、uint16、uint32、uint64、uintptr
+byte // uint8 的别名
+rune // int32 的别名 代表一个 Unicode 码
+float32、float64
+complex64、complex128
+```
 ## 结构体
 ```go
 type Books struct {
@@ -190,8 +159,58 @@ type Books struct {
 ```
 ## 组作用域
 - 内置作用域机制 文件首字母大写**外部可调用** 它将无法在 main 包之外使用。
+## 变量声明
+- 关键字 名称 类型
+- var 变量名 变量类型
+- var name type
+- name := miss
 
-## Go语言数组
+**匿名变量，没有名字的变量**
+
+## 变量作用域
+```go
+package main
+
+import "fmt"
+//全局变量
+var age int
+
+func main()
+{
+    //局部变量
+    var a,b int
+    a = 3
+    b = 4
+    c = a + b
+    fmt.printf("c = %d",c)
+}
+```
+
+__定义函数时函数名后面括号中的变量叫做形式参数（简称形参）__
+
+## 容器
+__变量在一定程度上能满足函数及代码要求。
+如果编写一些复杂算法、结构和逻辑，就需要更复杂的类型来实现。
+具有各种形式的存储和处理数据的功能，将它们称为“容器（container）”。__
+**数组、切片、映射，**
+__一维数组__
+
+```go
+#关|变量名|元素数量|类型
+ var arr [6]int
+...数组长度由元素个数来判断的
+数组比较可以用== 
+#遍历数组
+for k, v := range team {
+    fmt.println(k,v)
+}
+```
+__多维维数组__
+```go
+#   变量名 数组大小 类型
+var arr [4][3] int
+```
+
 
 ```go
 var array := []int {}
@@ -199,14 +218,15 @@ var array := []int {}
 
 - 使用指针在函数间传递大数组
 
-
-
-
 ## slice 切片
-slice  切片[] 空切片nil   数组的抽象长度可变 append追加
+-切片（slice）是对数组的一个连续片段的引用，所以切片是一个引用类型
 ```go
-make([]type, len)
+var arr [3]int{1,2,3}
+#从第一开始 第二个结束
+arr[1,2]
+make([]type,size, cap)
 ```
+-slice  切片[] 空切片nil   数组的抽象长度可变 append追加
 
 ***new 只分配内存，而 make 只能用于 slice、map 和 channel 的初始化***
 
