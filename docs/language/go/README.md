@@ -245,6 +245,25 @@ for i, num := range nums {
     }
 ```
 
+-并发sync.Map
+
+## 列表
+-列表是一种非连续的存储容器，由多个节点组成，节点通过一些变量记录彼此之间的关系，列表有多种实现方法，如单链表、双链表等。
+```go
+list := list.New()
+#插入元素 尾部添加
+element := list.PushBack("first")
+#头部添加
+list.PushFront("55")
+#删除
+list.Remove(element)
+```
+
+## nil空值/零值
+-布尔类型的零值（初始值）为 false，数值类型的零值为 0，字符串类型的零值为空字符串""，
+-**指针、切片、映射、通道、函数和接口的零值则是 nil。**
+-nil 是 map、slice、pointer、channel、func、interface 的零值
+
 - GO语言 递归，就是在运行的过程中调用自己。
 根据条件退出
 
