@@ -16,6 +16,7 @@
         "phpunit": "phpunit -c phpunit.xml --colors=always"
     },
     "require": {
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "godruoyi/php-snowflake": "^1.0"
     }
 }
