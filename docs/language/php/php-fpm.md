@@ -1,5 +1,3 @@
-## php-fpm
-
 ## php-fpm监控
 _fpm.conf配置文件_
 ```
