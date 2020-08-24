@@ -184,4 +184,12 @@ use beego
 source /www/beego.sql
 ```
 
+## 慢查询
+````
+show variables like '%query%';
+````
+|name|value|des|
+|:----    |:---|:---|
+|slow_query_log_file|/data/slow.log|日志存放地址|
+|slow_query_log|OFF|on开启off关闭|
 
