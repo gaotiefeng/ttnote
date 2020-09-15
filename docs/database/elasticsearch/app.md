@@ -1,0 +1,16 @@
+###### es核心概念
+- Node节点 es集群的基本服务单元
+- Cluster 集群  集群名相同，节点名不同
+- 节点状态
+  - Green 健康 100%
+  - Yellow 主分片无问题，副本分片至少有一个有问题
+  - Red 无法使用
+- Shards 分片 
+- `es 默认一个索引创建5个分片，每个主分片创建一个副本`
+- Replicas 副本
+- Index 索引
+- Type 类别 索引内部逻辑分区
+- Mapping 字段类型 定义索引字段 
+- Document文档 索引中每一条数据叫做一个文档 _id type进行唯一标识
+- Setting 集群中索引定义的信息
+- Analyzer 字段分词的定义
