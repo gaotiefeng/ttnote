@@ -82,7 +82,7 @@ class Elastic extends ElasticClient
                 "match" => [
                     $field => [
                         "query" => $data[$field],
-                        "minimum_should_match" => "90%"
+                        "minimum_should_match" => "40%"
                     ]
                 ]
             ];
@@ -105,5 +105,19 @@ class Elastic extends ElasticClient
         return $response;
     }
 
-
+    // 删除数据
+    public function delete($id)
+    {
+        try {
+            $params = [
+                'index' =>  $this->index,
+                'type' => $this->type,
+                'id' => $id
+            ];
+            $response = $this->client->delete($params);
+        } catch (\Exception $e) {
+            $response = $e->getMessage();
+        }
+        return $response;
+    }
 }

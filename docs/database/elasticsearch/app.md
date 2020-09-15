@@ -14,3 +14,21 @@
 - Document文档 索引中每一条数据叫做一个文档 _id type进行唯一标识
 - Setting 集群中索引定义的信息
 - Analyzer 字段分词的定义
+
+## 配置
+- config/elasticsearch.yml
+- 
+```
+#跨域
+http.cors.enabled: true 
+http.cors.allow-origin: "*"
+#节点配置
+node.master: true
+node.data: true
+#分片
+index_number_of_shards:5
+index_number_of_replicas:1
+#数据的储存路径
+path.data:/path #索引数据
+path.log:/path #日志记录
+````
