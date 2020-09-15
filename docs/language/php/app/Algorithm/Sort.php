@@ -51,6 +51,11 @@ class Sort
         return $arr;
     }
 
+    /**
+     * 插入排序
+     * @param array $arr
+     * @return array
+     */
     public function insertSort(array $arr)
     {
         $len = count($arr);
