@@ -82,3 +82,15 @@ vi /etc/security/limits.conf
 server.port: 5602
 server.host: "0.0.0.0"
 ```
+
+## head
+```
+https://github.com/mobz/elasticsearch-head
+```
+
+- 未连接elasticsearch.yml
+```
+http.port: 9200
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+```
