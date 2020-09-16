@@ -27,7 +27,7 @@ class EsTest extends TestCase
     {
         $es = new Elastic();
         //$setMapp = $es->setMapping(['title'=>'text','content'=>'text']);
-        
+
         //$res = $es->add(); //添加条
         //$res = $es->batchAdd($this->data); //批量添加
         //$res = $es->search(['title'=>'test2']); //搜索
