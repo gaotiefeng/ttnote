@@ -10,7 +10,11 @@ class Elastic extends ElasticClient
     {
         $this->setIndex($index);
         $this->setType($type);
-        $this->init();
+        $this->getClient();
+        $index = $this->indexIsExists();
+        if (!$index) {
+            $this->createIndex();
+        }
     }
 
     /**
@@ -82,7 +86,7 @@ class Elastic extends ElasticClient
                 "match" => [
                     $field => [
                         "query" => $data[$field],
-                        "minimum_should_match" => "40%"
+                        "minimum_should_match" => 2
                     ]
                 ]
             ];
@@ -104,6 +108,62 @@ class Elastic extends ElasticClient
         }
         return $response;
     }
+
+    // 判断数据存在
+    public function dataIsExists($id)
+    {
+        try {
+            $params = [
+                'index' =>  $this->index,
+                'type' => $this->type,
+                'id' => $id
+            ];
+
+            $response = $this->client->exists($params);
+        } catch (\Exception $e) {
+            $response = $e->getMessage();
+        }
+        return $response;
+    }
+
+    // 获取指定数据
+    public function get($id)
+    {
+        try {
+            $params = [
+                'index' =>  $this->index,
+                'type' => $this->type,
+                'id' => $id
+            ];
+
+            $response = $this->client->get($params);
+        } catch (\Exception $e) {
+            $response = $e->getMessage();
+        }
+        return $response;
+    }
+
+    // 更新数据
+    public function update($id, $mod_info)
+    {
+        // 可以灵活添加新字段,最好不要乱添加
+        try {
+            $params = [
+                'index' =>  $this->index,
+                'type' => $this->type,
+                'id' => $id,
+                'body' => [
+                    'doc' => $mod_info
+                ]
+            ];
+            $response = $this->client->update($params);
+        } catch (\Exception $e) {
+            $response = $e->getMessage();
+        }
+
+        return $response;
+    }
+
 
     // 删除数据
     public function delete($id)
