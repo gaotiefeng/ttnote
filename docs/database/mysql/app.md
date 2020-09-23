@@ -8,7 +8,7 @@ LOAD DATA LOCAL INFILE 'user.txt' INTO TABLE user;
 quit 退出
 ```
 
-# 基本操作
+## 基本操作
 - distinct 去重
 - like
 - union连接两个select `select name from user union select name form teach` 重复的名字会去掉
