@@ -22,9 +22,7 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH
 java -version
 ```
 
-
-## oop
-## 构造方法 
+## init
 >字符串型的数组 变量 args
 
 ```java
@@ -32,6 +30,10 @@ public static void main(String[] args) {
         
     }
 ```
+## oop
+## 构造方法 
+- 构造方法的名称必须与类同名，一个类可以有多个构造方法。
+
 ## 方法重载
 >在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法
 
@@ -65,7 +67,6 @@ class Student extends Person {
 }
 ```
 
-
 - 在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
 <div style="color: lightsalmon">覆写Object方法
 因为所有的class最终都继承自Object，而Object定义了几个重要的方法：</div>
@@ -83,7 +84,7 @@ public final String hello() {
 >final修饰的class可以阻止被继承；
 >final修饰的field必须在创建对象时初始化，随后不可修改。
 
-##抽象类（abstract class）
+## 抽象类（abstract class）
 - 这种尽量引用高层类型，避免引用实际子类型的方式，称之为面向抽象编程。
 - 面向抽象编程的本质就是：
 - 上层代码只定义规范（例如：abstract class Person）；
