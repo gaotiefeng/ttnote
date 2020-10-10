@@ -40,3 +40,27 @@ _ @Repository
 
 - @RequestMapping(value = ("/login"), method = RequestMethod.GET)
 >路由-控制或者方法 
+
+## WebMvcConfigurer
+- 拦截器、跨域、静态资源访问、页面跳转
+```
+@Configuration
+public class ConfigurerAdapter implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        System.out.println("21312121212");
+        //拦截器配置后台登录
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**");
+        //前台登录
+        //registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/home/**");
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/cors/**")
+                .allowedHeaders("*")
+                .allowedMethods("POST","GET")
+                .allowedOrigins("*");
+    }
+}
+```
