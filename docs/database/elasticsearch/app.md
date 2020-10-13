@@ -1,34 +1,110 @@
-## 核心概念
-- Node节点 es集群的基本服务单元
-- Cluster 集群  集群名相同，节点名不同
-- 节点状态
-  - Green 健康 100%
-  - Yellow 主分片无问题，副本分片至少有一个有问题
-  - Red 无法使用
-- Shards 分片 
-- `es 默认一个索引创建5个分片，每个主分片创建一个副本`
-- Replicas 副本
-- Index 索引
-- Type 类别 索引内部逻辑分区
-- Mapping 字段类型 定义索引字段 
-- Document文档 索引中每一条数据叫做一个文档 _id type进行唯一标识
-- Setting 集群中索引定义的信息
-- Analyzer 字段分词的定义
+## 搜索
+- _index = baijiao
+- _type = bj
+- _id   = 2
 
-## 配置
-- config/elasticsearch.yml
-- 
+### 索引-类型-id
+- `http://localhost:9200/baijiao/bj/2`
+
+### 全部查询
+- `http://localhost:9200/baijiao/_search`
+
+### 数字字段精确匹配
 ```
-#跨域
-http.cors.enabled: true 
-http.cors.allow-origin: "*"
-#节点配置
-node.master: true
-node.data: true
-#分片
-index_number_of_shards:5
-index_number_of_replicas:1
-#数据的储存路径
-path.data:/path #索引数据
-path.log:/path #日志记录
-````
+{
+	"query":{
+		"constant_score":{
+			"filter":{
+				"term":{"test":16}
+			}
+		}
+	}
+}
+```
+
+- terms
+```
+{
+	"query":{
+		"terms":{
+			"title":["tests", "dance"]
+		}
+	}
+}
+```
+
+### range 范围查询
+```
+GET /_search
+{
+	"query":{
+		"range":{
+			"test":{
+				"gte":"126",
+				"lte":"167",
+			}
+		}
+	}
+}
+```
+
+- 前缀查询
+```
+GET /_search
+
+{
+	"query":{
+		"prefix":{
+			"title":"tes"
+		}
+	}
+}
+```
+
+### 通配符查询
+> ?匹配一个 *匹配多个
+
+```
+GET /_search
+
+{
+	"query":{
+		"wildcard":{
+			"title":"dan?"
+		}
+	}
+}
+```
+
+- 正则匹配 regexp
+> 查找test字段带有4位数字
+
+```
+{
+	"query":{
+		"regexp":{
+			"test":"[0-9]{2}"
+		}
+	}
+}
+```
+
+### 模糊查询(fuzzy query)
+```
+{
+	"query":{
+		"fuzzy":{
+			"content":"test"
+		}
+	}
+}
+```
+
+### 复合查询
+
+属性| 作用|
+----  |  ----
+must	| 必须匹配，相当于SQL中的AND
+should	| 可以匹配，相当于SQL中的OR
+must_not|	必须不匹配
+filter  |	 和must一样，但是不评分

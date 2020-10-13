@@ -6,7 +6,7 @@ namespace App\Database\Es;
 
 class Elastic extends ElasticClient
 {
-    public function __construct($index = 'baijiao',$type = 'bj')
+    public function __construct($index = 'tf',$type = 'gg')
     {
         $this->setIndex($index);
         $this->setType($type);
