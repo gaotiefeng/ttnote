@@ -406,3 +406,6 @@ func main() {
 	<- o
 }
 ```  
+
+## 模板引擎
+- 转义html标签 {{.html | str2html }}
