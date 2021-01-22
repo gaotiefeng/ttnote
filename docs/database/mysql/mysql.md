@@ -35,6 +35,12 @@ yum -y install mysql-community-server mysql-community-devel
 systemctl start mysqld
 systemctl enable mysqld
 ```
+## ACID
+- A代表原子性，即在事务中执行多个操作是原子性的，要么事务中的操作全部执行，要么一个都不执行
+- C代表一致性，即保证进行事务的过程中整个数据库的状态是一致的，不会出现数据花掉的情况
+- I代表隔离性，即两个事务不会相互影响，覆盖彼此数据等
+- D表示持久化，即事务一旦完成，那么数据应该是被写到安全的，持久化存储的设备上（比如磁盘）
+
 #### 查看密码
 ```bash
 grep 'temporary password' /var/log/mysqld.log

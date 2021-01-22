@@ -1,3 +1,5 @@
+- NoSQL系统通常注重性能和扩展性，而非事务机制（事务就是强一致性的体现）
+
 ## 安装redis
 ```bash
 yum --enablerepo=remi install redis
