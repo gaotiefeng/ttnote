@@ -22,6 +22,17 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH
 java -version
 ```
 
+## windows安装环境
+```
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+下载1.8
+环境变量配置
+单击下方【系统变量】下的【新建】按钮；
+然后输入JAVA_HOME,对应的变量值为你jdk安装的目录。
+然后新建变量名：classpath 变量值%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar点确定
+“Path”的变量并双击，新建变量为 %JAVA_HOME%\bin
+```
+
 ## init
 >字符串型的数组 变量 args
 

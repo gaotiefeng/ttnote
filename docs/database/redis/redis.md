@@ -8,6 +8,15 @@ requirepass yourpassword
 service redis start
 ```
 
+## 清除命令
+```sh
+切换数据库 select 1;
+查看所有key值：keys *
+删除指定索引的值：del key
+清空整个 Redis 服务器的数据：flushall
+清空当前库中的所有 key：flushdb 
+```
+
 ## string
 ```php
 $key = 'string key';
