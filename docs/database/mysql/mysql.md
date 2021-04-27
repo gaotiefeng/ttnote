@@ -184,6 +184,11 @@ skip-grant-tables
 update mysql.user set authentication_string = password('qingchen2019') where user='root';
 ```
 
+## 5.7group by
+```sh
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+```
+
 ## source命令
 ```
 use beego
