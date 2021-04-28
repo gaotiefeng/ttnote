@@ -46,7 +46,26 @@
     服务提供者无状态，可动态增加机器部署实例，注册中心将推送新的服务提供者信息给消费者
 
 ## nacos 注册中心
-- 注册中心解决了服务发现的问题
+    - 注册中心解决了服务发现的问题
     -  在没有注册中心时候，服务间调用需要知道被调方的地址或者代理地址。
     -  当服务更换部署地址，就不得不修改调用当中指定的地址或者修改代理配置。
     -  而有了注册中心之后，每个服务在调用别人的时候只需要知道服务名称就好，继续地址都会通过注册中心同步过来。
+  ### 安装nacos
+  - [https://gitee.com/mirrors/Nacos](https://gitee.com/mirrors/Nacos)
+    - sql导入
+    - 配置文件修改 sql修改
+    - java8环境安装
+    - sh startup.sh -m standalone （单机启动）
+    - http://localhost:8848/nacos/index.html#/login
+```sh
+## unbutun
+## https://www.oracle.com/ 下载jdk-8u291-linux-x64.tar.gz
+## 环境配置
+## 加载配置
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_291/bin/java 100
+## 选择配置
+update-alternatives --config java
+```
+  #### 问题
+       1. HmacSHA256算法不可用（openjdk 改为 oraclejdk）
+        `caused: Unable to obtain JCA MAC algorithm 'HmacSHA256': Algorithm HmacSHA256 not available;caused: Algorithm HmacSHA256 not available;`
