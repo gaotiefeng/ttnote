@@ -69,6 +69,7 @@ update-alternatives --config java
   #### 问题
        1. HmacSHA256算法不可用（openjdk 改为 oraclejdk）
         `caused: Unable to obtain JCA MAC algorithm 'HmacSHA256': Algorithm HmacSHA256 not available;caused: Algorithm HmacSHA256 not available;`
+       2. bash -f ./startup.sh -m standalone
 
 ## apollo [阿波罗](https://ctripcorp.github.io/apollo/#/zh/usage/apollo-user-guide)
 
