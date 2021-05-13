@@ -18,13 +18,12 @@ __ @Autowired
     }
 ```
 - @Controller
-
 >需要返回页面class @Controller
+
 - @ResponseBody
-
 >返回json等内容到页面，则需要加@ResponseBody注解
-- @RestController
 
+- @RestController
 >相当于@Controller+@ResponseBody两个注解的结合,
 返回json数据不需要在方法前面加@ResponseBody注解了,
 但使用@RestController这个注解,视图解析器无法解析jsp,html页面
@@ -63,4 +62,34 @@ public class ConfigurerAdapter implements WebMvcConfigurer {
                 .allowedOrigins("*");
     }
 }
+```
+
+## java包
+```shell
+            <properties>
+                <commons.io.version>2.5</commons.io.version>
+                <commons.fileupload.version>1.3.3</commons.fileupload.version>
+                <poi.version>4.1.2</poi.version>
+            </properties>
+            
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
 ```
