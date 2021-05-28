@@ -33,6 +33,11 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 “Path”的变量并双击，新建变量为 %JAVA_HOME%\bin
 ```
 
+## java体系
+- 1、javaSE，标准版，各应用平台的基础，桌面开发和低端商务应用的解决方案。
+- 2、javaEE，企业版，以企业为环境而开发应用程序的解决方案。
+- 3、javaME，微型版，致力于消费产品和嵌入式设备的最佳方案。
+
 ## init
 >字符串型的数组 变量 args
 
