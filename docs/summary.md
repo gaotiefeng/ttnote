@@ -7,6 +7,6 @@
 * [database](database/summary.md)
 * [tool](tool/summary.md)
 * [language](language/summary.md)
-* [linux](linux/linux.md)
+* [linux](linux/summary.md)
 * [algorithm](algorithm/summary.md)
 * [tomcat](tomcat/tomcat.md)
