@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 
@@ -11,6 +10,24 @@ use PHPUnit\Framework\TestCase;
 
 class JsonTest extends TestCase
 {
+    public function testIforElse()
+    {
+        /*$pid = pcntl_fork();
+        if($pid){
+            echo '1--';
+            echo $pid;
+        }else{
+            echo '2--';
+            echo $pid;
+        }*/
+
+        if (3) {
+            echo 3;
+        } else label:{
+                echo 4;
+        }
+    }
+
     public function testJsonString()
     {
         $json = '{ "a": [ { "b": "c" }, "d" ,{ "cc": "gg" },"e"], "x": 1, "y": 4,"b": [ { "b": "c" }, "d" ,{ "bb": "ee" },"e"]}';

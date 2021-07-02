@@ -35,6 +35,12 @@ yum -y install mysql-community-server mysql-community-devel
 systemctl start mysqld
 systemctl enable mysqld
 ```
+## ACID
+- A代表原子性，即在事务中执行多个操作是原子性的，要么事务中的操作全部执行，要么一个都不执行
+- C代表一致性，即保证进行事务的过程中整个数据库的状态是一致的，不会出现数据花掉的情况
+- I代表隔离性，即两个事务不会相互影响，覆盖彼此数据等
+- D表示持久化，即事务一旦完成，那么数据应该是被写到安全的，持久化存储的设备上（比如磁盘）
+
 #### 查看密码
 ```bash
 grep 'temporary password' /var/log/mysqld.log
@@ -136,7 +142,24 @@ ln -s /usr/local/mysql/bin/mysql /usr/bin
 ```
 set password=password("tf2019");
 UPDATE user SET authentication_string=PASSWORD('qingchen2019') where USER='root';
+set password for 'username'@'host' = password('newpassword') 
 ```
+
+## 添加用户
+```
+create user 'zentao'@'localhost' identified by 'zentao#.';
+//给数据库权限
+grant all privileges on `zentao`.* to 'zentao'@'localhost' identified by '123456';
+flush privileges;
+```
+
+- ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+```
+SHOW VARIABLES LIKE 'validate_password%';
+set global validate_password_length=6;
+set global  validate_password_policy=0;
+```
+
 ## 远程访问权限
 
 ```
@@ -161,10 +184,23 @@ skip-grant-tables
 update mysql.user set authentication_string = password('qingchen2019') where user='root';
 ```
 
+## 5.7group by
+```sh
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+```
+
 ## source命令
 ```
 use beego
 source /www/beego.sql
 ```
 
+## 慢查询
+````
+show variables like '%query%';
+````
+|name|value|des|
+|:----    |:---|:---|
+|slow_query_log_file|/data/slow.log|日志存放地址|
+|slow_query_log|OFF|on开启off关闭|
 

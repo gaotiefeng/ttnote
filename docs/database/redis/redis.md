@@ -1,9 +1,20 @@
+- NoSQL系统通常注重性能和扩展性，而非事务机制（事务就是强一致性的体现）
+
 ## 安装redis
 ```bash
 yum --enablerepo=remi install redis
 vim /etc/redis.conf
 requirepass yourpassword
 service redis start
+```
+
+## 清除命令
+```sh
+切换数据库 select 1;
+查看所有key值：keys *
+删除指定索引的值：del key
+清空整个 Redis 服务器的数据：flushall
+清空当前库中的所有 key：flushdb 
 ```
 
 ## string

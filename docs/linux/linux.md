@@ -37,7 +37,7 @@ pstree -树形图状显示程序
 pstree -a 显示内个程序的完整指令
 pstree -h 列出树状图，标明现在正在执行的程序
 kill 删除执行中的程序或工作
-
+kill -l  系统定义的所有信号
 ```
 
 ## 内存操作
@@ -92,6 +92,10 @@ netstat -lntup
 
 - 使用 `netstat -an | grep 端口`，查看端口是否已经被打开处于 Listening 状态
 
+## ssh
+```bash
+ssh root@192.168.10.1
+```
 ## ab 压测
 
 ```bash

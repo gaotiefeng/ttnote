@@ -53,7 +53,88 @@ function __wakeup() {}
 function __set_state(array $data) {}
 ##(未来将被废弃->抛出的异常不能被catch)__autoload自动加载类和接口，但更建议使用 spl_autoload_register() 函数
 function __autoload() {}
+```
 
+## TestClass
+```php
+class TestClass
+{
+    //一个类被当成字符串时应怎样回应
+    public function __toString(): string
+    {
+        return "model is toString";
+    }
+
+    //函数的方式调用一个对象
+    public function __invoke($data)
+    {
+        var_dump($data);
+    }
+
+    public $var1;
+    public $var2;
+
+    //var_export 导出类时，此静态方法调用
+    static function __set_state(array $properties)
+    {
+        $obj = new TestClass();
+        $obj->var1 = $properties['var1'];
+        $obj->var2 = $properties['var2'];
+
+        return $obj;
+    }
+
+    private $name = '12';
+    //不可访问属性赋值时调用
+    public function __set($name,$value)
+    {
+        echo "不可访问属性";
+        echo PHP_EOL;
+    }
+
+    //读取不可访问属性的值
+    public function __get($name)
+    {
+        echo "读取不可访问属性的值";
+        echo PHP_EOL;
+    }
+
+    //对不可访问属性调用 isset() 或 empty() 时
+    public function __isset($name)
+    {
+        echo "不可访问属性，你使用isset了";
+        echo PHP_EOL;
+    }
+
+    //对不可访问属性调用 unset() 时
+    public function __unset($name)
+    {
+        echo "对不可访问属性调用 unset() 时";
+        echo PHP_EOL;
+    }
+
+    //对象中调用一个不可访问方法时
+    public function __call($name, $arguments)
+    {
+        // 注意: $name 的值区分大小写
+        echo "Calling object method '$name' "
+            . implode(', ', $arguments). "\n";
+    }
+
+    //静态上下文中调用一个不可访问方法时
+    public static function __callStatic($name, $arguments)
+    {
+        // 注意: $name 的值区分大小写
+        echo "Calling static method '$name' "
+            . implode(', ', $arguments). "\n";
+    }
+
+    //对象复制
+    public function __clone()
+    {
+        $this->var2 = '122121';
+    }
+}
 ```
 
 

@@ -1,9 +1,26 @@
 # php函数
+```bash
+查看php 扩展位置
+php -r "echo ini_get('extension_dir');"
+```
+
 
 ## php加密
 - `md5()`
 - `crypt()`
 - `sha1()`
+
+##
+```php
+$data = array(1,'什么');
+#json_encode 中文不转码两个条件1文件编码utf-8,
+$encode = json_encode($data,JSON_UNESCAPED_UNICODE);
+json_decodo($encode,true);
+
+```
+
+## 
+- uniqid(prefix,more_entropy)函数基于以微秒计的当前时间，生成一个唯一的ID。
 
 ## 数组函数
 ```php
@@ -14,6 +31,8 @@ array_unique(); //数组去重
 array_slice($arr=[1],0,$length=1);//取出数组中的元素
 join($glue=",",$arr);//数组分割为字符串
 implode($glue=",",$arr);//数组分割为字符串
+array_key_exists($key,$arr);//判断数组存在key
+compact();//创建一个包含变量名和它们的值的数组
 ```
 
 - `array_unshift`
@@ -23,85 +42,13 @@ implode($glue=",",$arr);//数组分割为字符串
 - `array_values() `函数返回包含数组中所有的值的数组。被返回的数组将使用数值键，从 0 开始且以 1 递增
 - `uasort` — uasort ( array &$array , callable $value_compare_func ) : bool  
 
+## 字符串函数
+```php
+echo str_pad('112434',8,'',STR_PAD_LEFT);//填充字符串的右侧，到 30 个字符的新长度：
+echo strtolower('ABCEDER'); //都装换成小写
+```
 
 ## 对象函数
 - `spl_object_hash ( object $obj ) : string ` — 返回指定对象的hash id
-
-## php7
-```php
-#标量类型声明
-#declare(strict_types=1);
-#int string array float interfaces callable
-$isset = $isset ?? null;
-$empty = 1;
-$empty = $empty ?: null; 
-$a = 1<=>2; //太空运算符 1,0,-1
-define('array',[1,2,3]);
-#增加了可以为 unserialize() 提供过滤的特性，可以防止非法数据进行代码注入，提供了更安全的反序列化数据。
-class a {}
-$a = serialize(new a());
-$b = unserialize($a,['allowed_classes'=>["a"]]);
-#IntlChar::BLOCK_CODE_AEGEAN_NUMBERS
-#PHP 7 通过引入几个 CSPRNG 函数提供一种简单的机制来生成密码学上强壮的随机数
-$bytes = random_bytes(6);
-$int_rand = random_int(100,1000);
-#异常 zend.assertions =1，0，-1 assert.exception=1,0
-# PHP 7 之前版本需要使用多次 use
-#use some\namespace\ClassA;
-#use some\namespace\ClassC as C;
-#use function some\namespace\fn_a;
-#use function some\namespace\fn_b;
-#use const some\namespace\ConstA;
-#use const some\namespace\ConstB;
-# PHP 7+ 之后版本可以使用一个 use 导入同一个 namespace 的类
-#use some\namespace\{ClassA, ClassB, ClassC as C};
-#use function some\namespace\{fn_a, fn_b, fn_c};
-#use const some\namespace\{ConstA, ConstB, ConstC};
-#错误处理
-#Error 类并不是从 Exception 类 扩展出来的，所以用 catch (Exception $e) { ... } 
-#这样的代码是捕获不 到 Error 的。你可以用 catch (Error $e) { ... } 这样的代码，
-#或者通过注册异常处理函数（ set_exception_handler()）来捕获 Error。
-echo intdiv(9,3);#第一个参数除以第二个参数并取整数
-session_start([
-    'cache_limiter' => 'private',
-    'read_and_close' => true,
-]);
-#废弃  类名和方法名相同/以静态的方式调用非静态方法
-```
-
-## php7 匿名类
-```php
-<?php
-interface Logger {
-   public function log(string $msg);
-}
-
-class Application {
-   private $logger;
-
-   public function getLogger(): Logger {
-      return $this->logger;
-   }
-
-   public function setLogger(Logger $logger) {
-      $this->logger = $logger;
-   }  
-}
-
-$app = new Application;
-// 使用 new class 创建匿名类
-$app->setLogger(new class implements Logger {
-   public function log(string $msg) {
-      print($msg);
-   }
-});
-
-$app->getLogger()->log("我的第一条日志");
-$function = function() {
-    return $this->logger.'闭包函数';
-};
-//closure::call 闭包函数绑定到类上
-$function->bindTo(new Application,'getLogg');
-$function->call(new Application);
-```
+- `func_get_args` - 获取一个函数的所有参数
 

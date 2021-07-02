@@ -8,14 +8,17 @@ https://nodejs.org/en/download/
 ```
 yum install -y wget
 
-wget https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz 
+wget https://nodejs.org/dist/v12.18.2/node-v12.18.2-linux-x64.tar.xz 
 ```
 
 ### 解压
 ```
-tar xvJf node-v12.13.1-linux-x64.tar.xz
+tar xf node-v12.18.2-linux-x64.tar.xz
 
-rm -rf node-v12.13.1-linux-x64.tar.xz
+# cd node-v10.9.0-linux-x64/                  // 进入解压目录
+# ./bin/node -v
+
+rm -rf node-v12.18.2-linux-x64.tar.xz
 ```
  
 

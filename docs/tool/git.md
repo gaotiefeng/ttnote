@@ -57,6 +57,13 @@ ssh-keygen -t rsa -C "1096392101@qq.com"
 cd ~/.ssh
 cat id_rsa.pub 
 ```
+## branch
+```bash
+git branch
+git branch -a
+git branch -v //每个分支最会一次提交
+```
+
 ## git tag
 ```bash
 git tag -a v1.0.9 -m 'version 1.0.9' 
@@ -71,3 +78,21 @@ git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区�
 git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
 git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
 ```
+
+## github-webhook
+- php文件
+```php
+//挂链接
+echo shell_exec(" cd /data/www/project && sudo git pull 2>&1");
+```
+
+```bash
+vim /etc/sudoers;
+//配置php用户
+nginx   ALL=(ALL) NOPASSWD:ALL
+//配置git sudo git --version
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/git/bin
+```
+
+## gitlab-ci
+-.gitlab-ci.yml

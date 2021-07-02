@@ -72,4 +72,45 @@ phpize
            --enable-mysqlnd
 make && make install
 extension=your/full/path/swoole.so
+
+```
+
+## FFMPEG
+```bash
+##git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+wget https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.bz2
+
+tar -jxvf ffmpeg-4.2.3.tar.bz2
+yum -y install bzip2
+cd ffmpeg-4.2.3
+
+#error nasm/yasm not found or too old. Use --disable-x86asm for a crippled build.
+#编译 使用汇编编译器 yum -y install yasm或者下边
+./configure --disable-x86asm
+make && make install
+ffmpeg
+#如果出现：ffmpeg: error while loading shared libraries: libavdevice.so.52: cannot open shared object file: No such file or directory
+#编辑这个文件    
+vim /etc/ld.so.conf
+#加上   
+include ld.so.conf.d/*.conf
+/usr/local/ffmpeg-4.0
+执行ldconfig
+```
+
+```bash
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 4.8.5 (GCC) 20150623 (Red Hat 4.8.5-39)
+  configuration: --disable-x86asm
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+Hyper fast Audio and Video encoder
+usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+
+Use -h to get full help or, even better, run 'man ffmpeg'
 ```

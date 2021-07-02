@@ -24,6 +24,19 @@ sudo apt -y install php7.4-curl php7.4-json php7.4-mbstring php7.4-xml php7.4-in
 sudo service php7.4-fpm start
 ```
 
+## 编译安装
+[downloads](https://www.php.net/downloads)
+```shell
+##下载解压
+ ./configure --prefix=/usr/local/php7.4 --enable-fpm --with-openssl --enable-pcntl --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-mbstring --enable-ftp --enable-sockets --enable-session --enable-zip --enable-soap --with-curl --enable-opcache --with-xmlrpc --enable-ftp --with-openssl --enable-mbregex --enable-inline-optimization --enable-shmop --with-iconv --with-zlib --enable-xml --with-pdo-mysql --with-mysqli --enable-bcmath --enable-pdo --enable-filter --enable-fileinfo
+## 环境变量 /etc/profile
+
+php --ini
+## php.ini
+
+make && make install
+```
+
 ## pecl
 ```bash
 sudo apt install php-pear
@@ -51,7 +64,19 @@ mysql -u root -p
 
 ```
 
-## pecl
+## 安装redis
 ```bash
 sudo pecl install redis
+```
+
+## 安装node/npm/bower
+```bash
+sudo apt install node
+sudo apt install npm
+npm install -g bower
+```
+
+## pip
+```bash
+sudo apt-get install python3-pip
 ```
