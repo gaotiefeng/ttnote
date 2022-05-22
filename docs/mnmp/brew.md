@@ -111,11 +111,12 @@ pecl uninstall swoole
 
 ###### 编译安装swoole
 ```
-wget https://github.com/swoole/swoole-src/archive/v4.4.7.zip
-unzip v4.4.7.zip
-cd swoole-src-4.4.7
+
+wget https://github.com/swoole/swoole-src/archive/v4.8.10.zip
+unzip v4.8.10.zip
+cd swoole-src4.8.10
 phpize
-./configure --enable-async-redis --enable-mysqlnd --enable-openssl --enable-http2
+./configure --enable-mysqlnd --enable-openssl --enable-http2
 make
 ```
 
@@ -131,6 +132,7 @@ which php   #运行
 fatal error: 'openssl/ssl.h' file not found
 
 使用 --with-openssl-dir 参数指定 openssl 
+./configure --enable-mysqlnd --with-openssl-dir=/usr/local/Cellar/openssl@1.1 --enable-openssl --enable-http2 
 
 ```
 
